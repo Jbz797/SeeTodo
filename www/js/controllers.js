@@ -11,7 +11,7 @@ seetodoCtrl.controller('MainCtrl', function (ionicMaterialInk) {
 		location.href = 'https://twitter.com/ZachFitzgerald';
 	});
 
-	var fab_git_hub = document.getElementById('fab_seemy');
+	var fab_git_hub = document.getElementById('fab_git_hub');
 	fab_git_hub.addEventListener('click', function () {
 		location.href = 'https://github.com/Jbz797/SeeTodo';
 	});
