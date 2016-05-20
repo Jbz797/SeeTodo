@@ -1,6 +1,6 @@
 "use strict";
 
-var seetodoApp = angular.module('seetodo', ['ionic', 'seetodo.controllers', 'seetodo.services']);
+var seetodoApp = angular.module('seetodo', ['ionic','ionic-material', 'seetodo.controllers', 'seetodo.services']);
 
 seetodoApp.run(function ($ionicPlatform) {
 	$ionicPlatform.ready(function () {
