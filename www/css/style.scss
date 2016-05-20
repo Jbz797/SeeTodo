@@ -1,4 +1,8 @@
 body {
+  .bar,
+  .bar .buttons {
+    z-index: 11;
+  }
   ion-header-bar {
     align-items: center;
     justify-content: center;
