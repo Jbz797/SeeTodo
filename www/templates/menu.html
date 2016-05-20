@@ -1,5 +1,7 @@
 <ion-side-menus>
   <ion-side-menu-content>
+
+    <!--HEADER-->
     <ion-nav-bar class="bar bar-header bar-balanced">
       <div class="buttons buttons-left header-item">
         <span class="left-buttons">
@@ -7,16 +9,19 @@
         </span>
       </div>
     </ion-nav-bar>
+    <!--CONTENT-->
     <ion-nav-view name="menuContent"></ion-nav-view>
-    <div class="bar bar-footer bar-balanced">
-      <div class="buttons buttons-right">
-        <button class="button button-energized-900 button-fab">
+    <!--FOOTER-->
+    <ion-footer-bar class="bar bar-footer bar-balanced">
+      <div class="buttons buttons-right footer-item">
+        <button class="button button-balanced-900 button-fab">
           <i class="icon ion-code light"></i>
         </button>
       </div>
-    </div>
+    </ion-footer-bar>
   </ion-side-menu-content>
 
+  <!--MENU-->
   <ion-side-menu side="left">
     <ion-header-bar class="expanded bar bar-header">
       <h2>Filtres</h2>
