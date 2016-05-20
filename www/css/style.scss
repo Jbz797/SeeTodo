@@ -12,17 +12,19 @@ body {
     -ms-flex-pack: center;
     justify-content: center;
   }
+  .button {
+    img {
+      vertical-align: middle;
+      width: 90%;
+    }
+  }
+  .bar-footer .buttons-right .button-fab:first-child {
+    right: 70px;
+  }
 }
 
 .SeeTodo {
   .item-input {
     margin-top: 10%;
-  }
-}
-
-.button {
-  img {
-    vertical-align: middle;
-    width: 90%;
   }
 }
