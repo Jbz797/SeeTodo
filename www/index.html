@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>SeeTodo: Une application simple de gestion de liste des tâches pour apareils android et ios</title>
+    <link href="css/style.min.css" rel="stylesheet">
+    <link href="lib/ionic-material/src/scss/index.min.css" rel="stylesheet">
+    <script src="lib/ionic/release/js/ionic.bundle.min.js"></script>
+    <script src="cordova.js"></script>
+    <script src="js/min/script-min.js"></script>
+  </head>
+  <body ng-app="seetodo">
+    <ion-side-menus ng-controller="MenuCtrl">
+      <ion-side-menu side="left"></ion-side-menu>
+      <ion-side-menu-content>
+        <ion-nav-bar class="bar bar-header bar-balanced disable-user-behavior" align-title="center">
+          <button class="button back-button hide buttons no-text button-clear header-item" ng-click="$ionicGoBack($event)">
+            <i class="icon ion-ios-arrow-back"></i>
+            <span class="back-text">
+              <span class="default-title">Back</span>
+              <span class="previous-title hide"></span>
+            </span>
+          </button>
+          <div class="buttons buttons-left header-item">
+            <span class="left-buttons">
+              <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+            </span>
+          </div>
+          <div class="title title-center header-item"></div>
+          <div class="buttons buttons-right header-item">
+            <span class="right-buttons">
+              <button class="button button-icon button-clear ion-android-more-vertical" ng-click="toggleLeft()"></button>
+            </span>
+          </div>
+        </ion-nav-bar>
+        <ion-nav-view></ion-nav-view>
+        <div class="bar bar-footer bar-balanced">
+          <div class="buttons buttons-right">
+            <button class="button button-energized-900 button-fab">
+              <i class="icon ion-code light"></i>
+            </button>
+          </div>
+        </div>
+      </ion-side-menu-content>
+    </ion-side-menus>
+  </body>
+</html>
