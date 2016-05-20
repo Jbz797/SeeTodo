@@ -6,7 +6,12 @@ seetodoCtrl.controller('MainCtrl', function (ionicMaterialInk) {
 
 	ionicMaterialInk.displayEffect();
 
-	var fab = document.getElementById('fab_seemy');
+	var fab_seemy = document.getElementById('fab_seemy');
+	fab_seemy.addEventListener('click', function () {
+		location.href = 'https://twitter.com/ZachFitzgerald';
+	});
+
+  var fab = document.getElementById('fab_seemy');
 	fab.addEventListener('click', function () {
 		location.href = 'https://twitter.com/ZachFitzgerald';
 	});
