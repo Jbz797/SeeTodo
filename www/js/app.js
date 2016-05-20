@@ -30,5 +30,5 @@ seetodoApp.config(function ($stateProvider, $urlRouterProvider) {
 				}
 			}
 		});
-	$urlRouterProvider.otherwise('/index');
+	$urlRouterProvider.otherwise('/main');
 });
