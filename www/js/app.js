@@ -21,6 +21,14 @@ seetodoApp.config(function ($stateProvider, $urlRouterProvider) {
 			abstract: true,
 			templateUrl: 'templates/menu.html',
 			controller: 'AppCtrl'
-		});
+		})
+		.state('app.search', {
+	url: '/search',
+	views: {
+		'menuContent': {
+			templateUrl: 'templates/search.html'
+		}
+	}
+});
 	$urlRouterProvider.otherwise('/index');
 });
