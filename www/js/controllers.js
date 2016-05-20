@@ -11,8 +11,8 @@ seetodoCtrl.controller('MainCtrl', function (ionicMaterialInk) {
 		location.href = 'https://twitter.com/ZachFitzgerald';
 	});
 
-  var fab = document.getElementById('fab_seemy');
-	fab.addEventListener('click', function () {
+	var fab_git_hub = document.getElementById('fab_seemy');
+	fab_git_hub.addEventListener('click', function () {
 		location.href = 'https://twitter.com/ZachFitzgerald';
 	});
 });
