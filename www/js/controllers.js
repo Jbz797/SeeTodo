@@ -13,6 +13,6 @@ seetodoCtrl.controller('MainCtrl', function (ionicMaterialInk) {
 
 	var fab_git_hub = document.getElementById('fab_seemy');
 	fab_git_hub.addEventListener('click', function () {
-		location.href = 'https://twitter.com/ZachFitzgerald';
+		location.href = 'https://github.com/Jbz797/SeeTodo';
 	});
 });
