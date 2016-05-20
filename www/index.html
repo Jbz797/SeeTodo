@@ -11,7 +11,7 @@
     <script src="js/min/script-min.js"></script>
   </head>
   <body ng-app="seetodo">
-    <ion-side-menus ng-controller="MenuCtrl">
+    <ion-side-menus>
       <ion-side-menu side="left"></ion-side-menu>
       <ion-side-menu-content>
         <ion-nav-bar class="bar bar-header bar-balanced disable-user-behavior" align-title="center">
@@ -28,11 +28,6 @@
             </span>
           </div>
           <div class="title title-center header-item"></div>
-          <div class="buttons buttons-right header-item">
-            <span class="right-buttons">
-              <button class="button button-icon button-clear ion-android-more-vertical" ng-click="toggleLeft()"></button>
-            </span>
-          </div>
         </ion-nav-bar>
         <ion-nav-view></ion-nav-view>
         <div class="bar bar-footer bar-balanced">
