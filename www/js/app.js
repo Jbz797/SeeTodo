@@ -16,11 +16,11 @@ seetodoApp.run(function ($ionicPlatform) {
 
 seetodoApp.config(function ($stateProvider, $urlRouterProvider) {
 	$stateProvider
-	.state('app', {
-	url: '/app',
-	abstract: true,
-	templateUrl: 'templates/menu.html',
-	controller: 'AppCtrl'
-});
+		.state('app', {
+			url: '/app',
+			abstract: true,
+			templateUrl: 'templates/menu.html',
+			controller: 'AppCtrl'
+		});
 	$urlRouterProvider.otherwise('/index');
 });
