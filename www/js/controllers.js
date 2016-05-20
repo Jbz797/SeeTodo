@@ -8,9 +8,6 @@ seetodoCtrl.controller('MainCtrl', function (ionicMaterialInk) {
 
 	var fab = document.getElementById('fab_seemy');
 	fab.addEventListener('click', function () {
-    window.open(
-      'https://www.seemy.com/fr/',
-      '_blank'
-    );
+		location.href = 'https://twitter.com/ZachFitzgerald';
 	});
 });
