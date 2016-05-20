@@ -22,13 +22,13 @@ seetodoApp.config(function ($stateProvider, $urlRouterProvider) {
 			templateUrl: 'templates/menu.html',
 			controller: 'AppCtrl'
 		})
-		.state('app.search', {
-	url: '/search',
-	views: {
-		'menuContent': {
-			templateUrl: 'templates/search.html'
-		}
-	}
-});
+		.state('app.main', {
+			url: '/main',
+			views: {
+				'menuContent': {
+					templateUrl: 'templates/main.html'
+				}
+			}
+		});
 	$urlRouterProvider.otherwise('/index');
 });
