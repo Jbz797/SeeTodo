@@ -14,6 +14,8 @@ angular.module('seetodo')
 						.then(function (data) {
 							if(data === 'test') {
 								console.log("Tâche ajoutée en base");
+							} else {
+								console.log("Erreur lors de l'ajout de la tâche ajoutée en base");
 							}
 						});
 				}));
