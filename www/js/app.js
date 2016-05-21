@@ -14,7 +14,7 @@ seetodoApp.run(function ($ionicPlatform) {
 	});
 });
 
-seetodoApp.config(function ($stateProvider, $urlRouterProvider) {
+seetodoApp.config(function ($stateProvider) {
 	$stateProvider
 		.state('app', {
 			url: '/app',
