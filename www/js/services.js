@@ -7,11 +7,9 @@ angular.module('seetodo')
 	return {
 
 		add: function (todo) {
-			/*var deferred = $q.defer();
-			$scope.todos.push(todo);
+			var deferred = $q.defer();
 			localStorage.setItem("1", JSON.stringify(todo));
-			deferred.resolve($scope.todos);
-			return deferred.promise;*/
+			return deferred.promise;
 		}
 
 	};
