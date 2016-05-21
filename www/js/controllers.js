@@ -22,9 +22,6 @@ seetodoCtrl.controller('MainCtrl', function (ionicMaterialInk, $scope, storage) 
 			storage.add(newTodo)
 				.then(function success() {
 					$scope.newTodo = '';
-				})
-				.finally(function () {
-					$scope.saving = false;
 				});
 		}
 	};
