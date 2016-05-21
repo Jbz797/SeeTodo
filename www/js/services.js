@@ -11,7 +11,7 @@ angular.module('seetodo')
 			$localForage.setItem(todo)
 				.then(function () {
 					console.log("Tâche ajoutée en base");
-					$localForage.getItem('myName')
+					$localForage.getItem(todo)
 						.then(function (data) {
 							console.log(data);
 						});
