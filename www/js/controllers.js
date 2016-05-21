@@ -22,14 +22,14 @@ angular.module('seetodo')
 
 	$scope.addTodo = function () {
 		var newTodo = $scope.newTodo;
-		console.log(newTodo.title);
 		if(newTodo.title.length > 0) {
 			storage.add(newTodo)
 				.then(function success() {
-					console.log('Todo envoyée avec succés');
 					$scope.todos_list.push(newTodo);
+				}).finally(function () {
+					console.log('Todo envoyée avec succés');
 					$scope.newTodo = {};
-				});
+});
 		}
 	};
 });
