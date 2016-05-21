@@ -2,7 +2,7 @@
 
 angular.module('seetodo.services', [])
 
-.service('storage', function ($q, $scope) {
+.factory('storage', function ($q, $scope) {
 
 	return {
 
