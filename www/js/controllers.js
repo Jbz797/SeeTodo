@@ -18,16 +18,9 @@ angular.module('seetodo')
 		location.href = 'https://github.com/Jbz797/SeeTodo';
 	});
 
-	$scope.options = {
-		loop: false,
-		effect: 'fade',
-		speed: 500,
+	$scope.onReadySwiper = function(swiper){
+	        swiper.initObservers();
 	};
-
-	$scope.$on("$ionicSlides.sliderInitialized", function (event, data) {
-		// data.slider is the instance of Swiper
-		$scope.slider = data.slider;
-	});
 
 	$scope.newTodo = {};
 	$scope.todos = storage.get_todos();
