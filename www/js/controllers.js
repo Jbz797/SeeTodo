@@ -25,10 +25,10 @@ angular.module('seetodo')
 		if(newTodo.title.length > 0) {
 			storage.add(newTodo)
 				.then(function success() {
-					$scope.todos_list.push(newTodo);
+					$scope.newTodo = {};
 				})
 				.finally(function (response) {
-					$scope.newTodo = {};
+					refreshTodos();
 				});
 		}
 	};
