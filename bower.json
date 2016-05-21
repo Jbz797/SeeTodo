@@ -1,9 +1,12 @@
 {
   "name": "HelloIonic",
-  "version": "0.3.36",
+  "version": "0.3.37",
   "private": "true",
   "devDependencies": {
     "ionic": "driftyco/ionic-bower#latest"
   },
-  "dependencies": {}
+  "dependencies": {
+    "angular-localforage": "^1.2.5",
+    "localforage": "^1.4.2"
+  }
 }
