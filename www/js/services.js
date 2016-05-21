@@ -21,6 +21,11 @@ angular.module('seetodo')
 						});
 				}));
 			return deferred.promise;
+		},
+
+		get_todos: function () {
+			return todos;
 		}
+
 	};
 });
