@@ -1,8 +1,8 @@
 "use strict";
 
-var app = angular.module('seetodo', ['ionic', 'ionic-material', 'seetodo.controllers', 'seetodo.services']);
+angular.module('seetodo', ['ionic', 'ionic-material'])
 
-app.run(function ($ionicPlatform) {
+.run(function ($ionicPlatform) {
 	$ionicPlatform.ready(function () {
 		if(window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
 			cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
@@ -12,9 +12,9 @@ app.run(function ($ionicPlatform) {
 			StatusBar.styleDefault();
 		}
 	});
-});
+})
 
-app.config(function ($stateProvider, $urlRouterProvider) {
+.config(function ($stateProvider, $urlRouterProvider) {
 	$stateProvider
 		.state('app', {
 			url: '/app',
