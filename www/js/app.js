@@ -32,6 +32,21 @@ angular.module('seetodo', ['ionic', 'ionic-material'])
 		});
 	$urlRouterProvider.otherwise('/app/main');
 })
+.service('storage', function ($q, $scope) {
+
+	return {
+
+		add: function (todo) {
+			var deferred = $q.defer();
+			$scope.todos.push(todo);
+			localStorage.setItem("1", JSON.stringify(todo));
+			deferred.resolve($scope.todos);
+			return deferred.promise;
+		}
+
+	};
+})
+
 
 .controller('AppCtrl', function (ionicMaterialInk, $scope, storage) {
 	ionicMaterialInk.displayEffect();
@@ -54,19 +69,4 @@ angular.module('seetodo', ['ionic', 'ionic-material'])
 				});
 		}
 	};*/
-})
-
-.factory('storage', function ($q, $scope) {
-
-	return {
-
-		add: function (todo) {
-			var deferred = $q.defer();
-			$scope.todos.push(todo);
-			localStorage.setItem("1", JSON.stringify(todo));
-			deferred.resolve($scope.todos);
-			return deferred.promise;
-		}
-
-	};
 });
