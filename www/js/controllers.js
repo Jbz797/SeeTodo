@@ -18,6 +18,8 @@ angular.module('seetodo')
 		location.href = 'https://github.com/Jbz797/SeeTodo';
 	});
 
+	$scope.newTodo = '';
+
 	$scope.addTodo = function () {
 		var newTodo = $scope.newTodo;
 		if(newTodo.length > 0) {
