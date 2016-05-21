@@ -7,7 +7,7 @@ angular.module('seetodo')
 })
 
 .controller('MainCtrl', function (ionicMaterialInk, $scope, storage) {
-	ionicMaterialInk.displayEffect();
+
 	var fab_seemy = document.getElementById('fab_seemy');
 	fab_seemy.addEventListener('click', function () {
 		location.href = 'https://twitter.com/ZachFitzgerald';
