@@ -37,7 +37,7 @@ gulp.task('material-sass', function (done) {
 });
 
 gulp.task('sass', function (done) {
-	gulp.src(['./scss/ionic.app.scss', 'lib/Swiper/dist/css/swiper.min.css', paths.sass])
+	gulp.src(['./scss/ionic.app.scss', './www/lib/Swiper/dist/css/swiper.min.css', paths.sass])
 		.pipe(concat('style.css'))
 		.pipe(sass())
 		.on('error', sass.logError)
