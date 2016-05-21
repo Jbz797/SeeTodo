@@ -7,8 +7,9 @@
   "globalstrict": true,
   "globals": {
     "angular": false,
-    "document": false,
     "cordova": false,
+    "document": false,
+    "localStorage": false,
     "location": false,
     "StatusBar": false,
     "window": false
