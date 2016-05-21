@@ -16,7 +16,7 @@ angular.module('seetodo')
 						.then(function (data) {
 							if(data === 'test') {
 								console.log('Tâche "' + todo.title + '" ajoutée en base');
-								todos.push(todo.title);
+								todos.push(todo);
 							}
 						});
 				}));
