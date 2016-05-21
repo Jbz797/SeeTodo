@@ -13,7 +13,7 @@ angular.module('seetodo')
 					console.log("Tâche ajoutée en base");
 					$localForage.getItem('myName')
 						.then(function (data) {
-							console.log('data');
+							console.log(data);
 						});
 				});
 			return deferred.promise;
