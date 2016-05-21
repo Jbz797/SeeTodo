@@ -1,6 +1,6 @@
 "use strict";
 
-module('seetodo.services', [])
+angular.module('seetodo.services', [])
 
 .factory('storage', function ($q, $scope) {
 
