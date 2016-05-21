@@ -21,7 +21,7 @@ angular.module('seetodo', ['ionic', 'ionic-material', 'LocalForageModule'])
 		name: 'SeeTodo',
 		version: 1.0,
 		storeName: 'todos_list',
-			description: 'todos list for SeeTodo app'
+		description: 'todos list for SeeTodo app'
 	});
 
 	$stateProvider
