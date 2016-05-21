@@ -15,40 +15,40 @@ angular.module('seetodo', ['ionic', 'ionic-material'])
 })
 
 .config(function ($stateProvider, $urlRouterProvider) {
-	$stateProvider
-		.state('app', {
-			url: '/app',
-			abstract: true,
-			templateUrl: 'templates/menu.html',
-			controller: 'AppCtrl'
-		})
-		.state('app.main', {
-			url: '/main',
-			views: {
-				'menuContent': {
-					templateUrl: 'templates/main.html'
+		$stateProvider
+			.state('app', {
+				url: '/app',
+				abstract: true,
+				templateUrl: 'templates/menu.html',
+				controller: 'AppCtrl'
+			})
+			.state('app.main', {
+				url: '/main',
+				views: {
+					'menuContent': {
+						templateUrl: 'templates/main.html'
+					}
 				}
+			});
+		$urlRouterProvider.otherwise('/app/main');
+	})
+	.service('storage', function ($q, $scope) {
+
+		return {
+
+			add: function (todo) {
+				var deferred = $q.defer();
+				$scope.todos.push(todo);
+				localStorage.setItem("1", JSON.stringify(todo));
+				deferred.resolve($scope.todos);
+				return deferred.promise;
 			}
-		});
-	$urlRouterProvider.otherwise('/app/main');
-})
-.service('storage', function ($q, $scope) {
 
-	return {
-
-		add: function (todo) {
-			var deferred = $q.defer();
-			$scope.todos.push(todo);
-			localStorage.setItem("1", JSON.stringify(todo));
-			deferred.resolve($scope.todos);
-			return deferred.promise;
-		}
-
-	};
-})
+		};
+	})
 
 
-.controller('AppCtrl', function (ionicMaterialInk, $scope, storage) {
+.controller('AppCtrl', ['ionicMaterialInk', '$scope', 'storage', function (ionicMaterialInk, $scope, storage) {
 	ionicMaterialInk.displayEffect();
 	var fab_seemy = document.getElementById('fab_seemy');
 	fab_seemy.addEventListener('click', function () {
@@ -69,4 +69,4 @@ angular.module('seetodo', ['ionic', 'ionic-material'])
 				});
 		}
 	};*/
-});
+}]);
