@@ -1,19 +1,18 @@
 "use strict";
 
-var seetodoService = angular.module('seetodo.services', []);
+angular.module('seetodo.services', [])
 
-seetodoService
-	.factory('storage', function ($q, $scope) {
+.factory('storage', function ($q, $scope) {
 
-		return {
+	return {
 
-			add: function (todo) {
-				var deferred = $q.defer();
-				$scope.todos.push(todo);
-				localStorage.setItem("1", JSON.stringify(todo));
-				deferred.resolve($scope.todos);
-				return deferred.promise;
-			}
+		add: function (todo) {
+			var deferred = $q.defer();
+			$scope.todos.push(todo);
+			localStorage.setItem("1", JSON.stringify(todo));
+			deferred.resolve($scope.todos);
+			return deferred.promise;
+		}
 
-		};
-	});
+	};
+});
