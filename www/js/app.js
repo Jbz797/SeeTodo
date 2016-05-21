@@ -32,7 +32,7 @@ angular.module('seetodo', ['ionic', 'ionic-material'])
 			});
 		$urlRouterProvider.otherwise('/app/main');
 	})
-	.service('storage', function ($q, $scope) {
+	.service('storage', function ($q) {
 
 		/*return {
 
