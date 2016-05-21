@@ -29,7 +29,7 @@ angular.module('seetodo')
 					$scope.todos_list.push(newTodo);
 				})
 				.finally(function (response) {
-					deferred.resolve('Todo envoyée avec succés');
+					deferred.resolve(response);
 					$scope.newTodo = {};
 				});
 		}
