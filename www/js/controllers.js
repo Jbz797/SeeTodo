@@ -28,7 +28,7 @@ angular.module('seetodo')
 					$scope.newTodo = {};
 				})
 				.finally(function (response) {
-					refreshTodos();
+					console.log(response);
 				});
 		}
 	};
