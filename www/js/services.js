@@ -8,7 +8,6 @@ angular.module('seetodo')
 
 		add: function (todo) {
 			var deferred = $q.defer();
-			console.log("test");
 			localStorage.setItem("1", JSON.stringify(todo));
 			return deferred.promise;
 		}
