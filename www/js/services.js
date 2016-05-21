@@ -9,7 +9,7 @@ angular.module('seetodo')
 		add: function (todo) {
 			var deferred = $q.defer();
 			var response = "Erreur lors de l'ajout de la tâche";
-			$localForage.setItem(todo.title, 'test')
+			deferred.resolve($localForage.setItem(todo.title, 'test')
 				.then(function () {
 					$localForage.getItem(todo.title)
 						.then(function (data) {
@@ -18,7 +18,7 @@ angular.module('seetodo')
 								console.log("Tâche ajoutée en base");
 							}
 						});
-				});
+				}));
 			return deferred.promise;
 		}
 
