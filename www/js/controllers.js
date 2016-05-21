@@ -6,7 +6,7 @@ angular.module('seetodo')
 	ionicMaterialInk.displayEffect();
 })
 
-.controller('MainCtrl', function (ionicMaterialInk,$q, $scope, storage) {
+.controller('MainCtrl', function (ionicMaterialInk, $q, $scope, storage) {
 
 	var fab_seemy = document.getElementById('fab_seemy');
 	fab_seemy.addEventListener('click', function () {
@@ -20,7 +20,7 @@ angular.module('seetodo')
 
 	$scope.newTodo = {};
 
-	$scope.addTodo = function ($q) {
+	$scope.addTodo = function () {
 		var newTodo = $scope.newTodo;
 		if(newTodo.title.length > 0) {
 			var deferred = $q.defer();
