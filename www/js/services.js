@@ -13,7 +13,7 @@ angular.module('seetodo')
 					$localForage.getItem(todo.title)
 						.then(function (data) {
 							if(data === 'test') {
-								console.log("Tâche ajoutée en base");
+								console.log('Tâche "' + todo.title + '" ajoutée en base');
 							}
 						});
 				}));
