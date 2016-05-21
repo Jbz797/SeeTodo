@@ -1,6 +1,6 @@
 "use strict";
 
-var seetodoService = module('seetodo.services', []);
+var seetodoService = angular.module('seetodo.services', []);
 
 seetodoService
 	.factory('storage', function ($q, $scope) {
