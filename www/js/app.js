@@ -34,7 +34,7 @@ angular.module('seetodo', ['ionic', 'ionic-material'])
 	})
 	.service('storage', function ($q, $scope) {
 
-		return {
+		/*return {
 
 			add: function (todo) {
 				var deferred = $q.defer();
@@ -44,7 +44,7 @@ angular.module('seetodo', ['ionic', 'ionic-material'])
 				return deferred.promise;
 			}
 
-		};
+		};*/
 	})
 
 
