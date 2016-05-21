@@ -1,18 +1,21 @@
-"use strict";
+(function () {
 
-angular.module('seetodo')
+	"use strict";
 
-.factory('storage', function ($q, $scope) {
+	angular.module('seetodo')
 
-	return {
+	.factory('storage', function ($q, $scope) {
 
-		add: function (todo) {
-			var deferred = $q.defer();
-			$scope.todos.push(todo);
-			localStorage.setItem("1", JSON.stringify(todo));
-			deferred.resolve($scope.todos);
-			return deferred.promise;
-		}
+		return {
 
-	};
-});
+			add: function (todo) {
+				var deferred = $q.defer();
+				$scope.todos.push(todo);
+				localStorage.setItem("1", JSON.stringify(todo));
+				deferred.resolve($scope.todos);
+				return deferred.promise;
+			}
+
+		};
+	});
+})();
