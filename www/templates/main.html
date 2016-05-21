@@ -1,7 +1,9 @@
-<ion-view view-title="SeeTodo">
+<ion-view view-title="SeeTodo" ng-init="todos = []">
   <ion-content class="padding SeeTodo">
-    <label class="item item-input item-floating-label">
-        <input type="text" placeholder="Ce qui est à faire">
-    </label>
+    <form ng-submit="addTodo()">
+      <label class="item item-input item-floating-label">
+        <input type="text" placeholder="Ce qui est à faire" ng-model="newTodo">
+      </label>
+    </form>
   </ion-content>
 </ion-view>
