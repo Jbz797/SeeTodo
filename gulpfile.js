@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 var bump = require('gulp-bump');
 var concat = require('gulp-concat');
@@ -6,7 +6,7 @@ var fs = require('fs');
 var git = require('gulp-git');
 var gulp = require('gulp');
 var minify = require('gulp-minify');
-var minifyCss = require('gulp-minify-css');
+var minifyCss = require('gulp-clean-css');
 var ngAnnotate = require('gulp-ng-annotate');
 var rename = require('gulp-rename');
 var sass = require('gulp-sass');
@@ -16,6 +16,12 @@ var paths = {
 	sass: './www/css/*.scss'
 };
 
+var libs = {
+	ionic: './scss/ionic.app.scss',
+	ionic_material: './www/lib/ionic-material/src/scss/index.scss',
+	swiper: './www/lib/Swiper/dist/css/swiper.min.css'
+};
+
 var getPackageJson = function () {
 	return JSON.parse(fs.readFileSync('./package.json', 'utf8'));
 };
@@ -23,7 +29,7 @@ var getPackageJson = function () {
 gulp.task('default', ['material-sass', 'sass', 'js', 'watch']);
 
 gulp.task('material-sass', function (done) {
-	gulp.src('./www/lib/ionic-material/src/scss/index.scss')
+	gulp.src(libs.ionic_material)
 		.pipe(sass())
 		.on('error', sass.logError)
 		.pipe(minifyCss({
@@ -37,7 +43,7 @@ gulp.task('material-sass', function (done) {
 });
 
 gulp.task('sass', function (done) {
-	gulp.src(['./scss/ionic.app.scss', './www/lib/Swiper/dist/css/swiper.min.css', paths.sass])
+	gulp.src([libs.ionic, libs.swiper, paths.sass])
 		.pipe(concat('style.css'))
 		.pipe(sass())
 		.on('error', sass.logError)
