@@ -23,6 +23,7 @@ angular.module('seetodo')
 	$scope.addTodo = function ($q) {
 		var newTodo = $scope.newTodo;
 		if(newTodo.title.length > 0) {
+			var deferred = $q.defer();
 			storage.add(newTodo)
 				.then(function success() {
 					$scope.todos_list.push(newTodo);
