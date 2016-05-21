@@ -18,10 +18,6 @@ angular.module('seetodo')
 		location.href = 'https://github.com/Jbz797/SeeTodo';
 	});
 
-	$scope.onReadySwiper = function(swiper){
-	        swiper.initObservers();
-	};
-
 	$scope.newTodo = {};
 	$scope.todos = storage.get_todos();
 
