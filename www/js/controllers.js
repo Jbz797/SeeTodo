@@ -1,6 +1,6 @@
 "use strict";
 
-var app = angular.module('seetodo.controllers', ['seetodo.services']);
+var app = angular.module('seetodo.controllers', []);
 
 app.controller('AppCtrl', function (ionicMaterialInk) {
 	ionicMaterialInk.displayEffect();
