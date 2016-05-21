@@ -7,9 +7,10 @@ angular.module('seetodo')
 	return {
 
 		add: function (todo) {
-			var deferred = $q.defer();
-			window.localStorage.SeeTodo = angular.toJson(todo);
-			return deferred.promise;
+			$localForage.setItem(todo)
+				.then(function () {
+					return;
+				});
 		}
 
 	};
