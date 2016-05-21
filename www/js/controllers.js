@@ -18,7 +18,7 @@ angular.module('seetodo')
 		location.href = 'https://github.com/Jbz797/SeeTodo';
 	});
 
-	$scope.newTodo = '';
+	$scope.newTodo = 'dftggfd';
 
 	$scope.addTodo = function () {
 		var newTodo = $scope.newTodo;
