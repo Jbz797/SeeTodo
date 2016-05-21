@@ -19,7 +19,7 @@ angular.module('seetodo')
 	});
 
 	$scope.addTodo = function () {
-		var newTodo = $scope.newTodo;
+		var newTodo = $scope.newTodo.title;
 		console.log(newTodo);
 		if(newTodo.length > 0) {
 			console.log('test');
