@@ -22,7 +22,7 @@ angular.module('seetodo')
 
 	$scope.addTodo = function () {
 		var newTodo = $scope.newTodo;
-		if(newTodo.length > 0) {
+		if(newTodo.title.length > 0) {
 			storage.add(newTodo)
 				.then(function success() {
 					$scope.todos_list.push(newTodo);
