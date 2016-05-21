@@ -2,10 +2,6 @@
 
 var app = angular.module('seetodo.controllers', []);
 
-app.controller('AppCtrl', function (ionicMaterialInk) {
-	ionicMaterialInk.displayEffect();
-});
-
 app.controller('MainCtrl', function (ionicMaterialInk, $scope, storage) {
 
 	var fab_seemy = document.getElementById('fab_seemy');
