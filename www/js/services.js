@@ -10,7 +10,7 @@ angular.module('seetodo')
 			var deferred = $q.defer();
 			$localForage.setItem(todo)
 				.then(function () {
-					console.log("ok");
+					console.log("Tâche ajoutée en base");
 				});
 			return deferred.promise;
 		}
