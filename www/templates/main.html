@@ -5,9 +5,9 @@
         <input type="text" placeholder="Ce qui est à faire" ng-model="newTodo.title">
       </label>
     </form>
-    <ks-swiper-container class="list" ng-repeat="todo in todos track by $index" swiper="swiper" on-ready="onReadySwiper(swiper)">
-        <ks-swiper-slide class="swiper-slide item">{{todo.title}}</ks-swiper-slide>
-        <ks-swiper-slide class="swiper-slide item">"Test"</ks-swiper-slide>
+    <ks-swiper-container ng-repeat="todo in todos track by $index">
+        <ks-swiper-slide class="swiper-slide">{{todo.title}}</ks-swiper-slide>
+        <ks-swiper-slide class="swiper-slide">test</ks-swiper-slide>
     </ks-swiper-container>
   </ion-content>
 </ion-view>
