@@ -2,7 +2,7 @@
 
 angular.module('seetodo')
 
-.factory('storage', function ($localForage, $q) {
+.factory('storage', function ($localForage) {
 
 	return {
 
