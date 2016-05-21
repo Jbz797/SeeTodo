@@ -7,11 +7,12 @@ angular.module('seetodo')
 	return {
 
 		add: function (todo) {
+			var deferred = $q.defer();
 			$localForage.setItem(todo)
 				.then(function () {
 					console.log("ok");
 				});
-			return;
+			return deferred.promise;
 		}
 
 	};
