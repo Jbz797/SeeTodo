@@ -25,6 +25,7 @@ angular.module('seetodo')
 		if(newTodo.title.length > 0) {
 			storage.add(newTodo)
 				.then(function success() {
+					console.log('Todo envoyée avec succés');
 					$scope.todos_list.push(newTodo);
 					$scope.newTodo = {};
 				});
