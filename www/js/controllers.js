@@ -21,7 +21,7 @@ angular.module('seetodo')
 	$scope.newTodo = {};
 
 	$scope.addTodo = function () {
-		var newTodo = $scope.newTodo.title;
+		var newTodo = $scope.newTodo;
 		if(newTodo.length > 0) {
 			storage.add(newTodo)
 				.then(function success() {
