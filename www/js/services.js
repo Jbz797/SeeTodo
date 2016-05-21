@@ -1,10 +1,10 @@
 "use strict";
 
+var todos = ['test'];
+
 angular.module('seetodo')
 
 .factory('storage', function ($localForage, $q) {
-
-	var todos = ['test'];
 
 	return {
 
