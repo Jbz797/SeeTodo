@@ -15,7 +15,7 @@ angular.module('seetodo')
 						.then(function (data) {
 							if(true) {
 								data = 'test';
-								console.log("Tâche ajoutée en base");
+								response = "Tâche ajoutée en base";
 							}
 						});
 				});
