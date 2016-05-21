@@ -4,7 +4,7 @@ angular.module('seetodo')
 
 .factory('storage', function ($localForage, $q) {
 
-	var todos = [];
+	var todos = ['test'];
 
 	return {
 
