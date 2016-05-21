@@ -1,8 +1,11 @@
 {
   "name": "HelloIonic",
-  "version": "0.3.34",
+  "version": "0.3.35",
   "private": "true",
   "devDependencies": {
     "ionic": "driftyco/ionic-bower#latest"
+  },
+  "dependencies": {
+    "angular-local-storage": "^0.2.7"
   }
 }

@@ -1,6 +1,6 @@
 "use strict";
 
-angular.module('seetodo', ['ionic', 'ionic-material'])
+angular.module('seetodo', ['ionic', 'ionic-material', 'LocalStorageModule'])
 
 .run(function ($ionicPlatform) {
 	$ionicPlatform.ready(function () {
@@ -14,7 +14,10 @@ angular.module('seetodo', ['ionic', 'ionic-material'])
 	});
 })
 
-.config(function ($stateProvider, $urlRouterProvider) {
+.config(function (localStorageServiceProvider, $stateProvider, $urlRouterProvider) {
+
+	localStorageServiceProvider.setPrefix('SeeTodo');
+
 	$stateProvider
 		.state('app', {
 			url: '/app',
