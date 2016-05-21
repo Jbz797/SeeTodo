@@ -14,7 +14,16 @@ angular.module('seetodo', ['ionic', 'ionic-material', 'LocalForageModule'])
 	});
 })
 
-.config(function ($stateProvider, $urlRouterProvider) {
+.config(function ($localForageProvider, $stateProvider, $urlRouterProvider) {
+
+	$localForageProvider.config({
+		driver: 'localStorageWrapper', // if you want to force a driver
+		name: 'myApp', // name of the database and prefix for your data, it is "lf" by default
+		version: 1.0, // version of the database, you shouldn't have to use this
+		storeName: 'keyvaluepairs', // name of the table
+		description: 'some description'
+	});
+
 	$stateProvider
 		.state('app', {
 			url: '/app',
