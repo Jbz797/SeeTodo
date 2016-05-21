@@ -8,7 +8,6 @@ angular.module('seetodo')
 
 		add: function (todo) {
 			var deferred = $q.defer();
-			var response = "Erreur lors de l'ajout de la tâche";
 			deferred.resolve($localForage.setItem(todo.title, 'test')
 				.then(function () {
 					$localForage.getItem(todo.title)
