@@ -19,7 +19,7 @@ angular.module('seetodo')
 	});
 
 	$scope.newTodo = {};
-	$scope.todos = storage.get_todos();
+	$scope.todos =  [];
 
 	$scope.addTodo = function () {
 		var newTodo = $scope.newTodo;
@@ -27,6 +27,7 @@ angular.module('seetodo')
 			storage.add(newTodo)
 				.then(function success(response) {
 					$scope.newTodo = {};
+					$scope.todos = storage.get_todos();
 				});
 		}
 	};
