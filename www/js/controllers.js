@@ -28,7 +28,7 @@ angular.module('seetodo')
 				.then(function success() {
 					$scope.todos_list.push(newTodo);
 				})
-				.finally(function () {
+				.finally(function (response) {
 					deferred.resolve('Todo envoyée avec succés');
 					$scope.newTodo = {};
 				});
