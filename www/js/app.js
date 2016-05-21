@@ -19,8 +19,7 @@ seetodoApp.config(function ($stateProvider, $urlRouterProvider) {
 		.state('app', {
 			url: '/app',
 			abstract: true,
-			templateUrl: 'templates/menu.html',
-			controller: 'MainCtrl'
+			templateUrl: 'templates/menu.html'
 		})
 		.state('app.main', {
 			url: '/main',
