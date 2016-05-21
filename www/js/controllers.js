@@ -6,7 +6,7 @@ angular.module('seetodo.controllers', ['seetodo.services'])
 	ionicMaterialInk.displayEffect();
 })
 
-.controller('MainCtrl', function (ionicMaterialInk, $scope, storage) {
+.controller('MainCtrl', ['storage',function (ionicMaterialInk, $scope, storage) {
 
 	var fab_seemy = document.getElementById('fab_seemy');
 	fab_seemy.addEventListener('click', function () {
@@ -27,4 +27,4 @@ angular.module('seetodo.controllers', ['seetodo.services'])
 				});
 		}
 	};
-});
+}]);
