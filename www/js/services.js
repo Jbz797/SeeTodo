@@ -9,8 +9,9 @@ angular.module('seetodo')
 		add: function (todo) {
 			$localForage.setItem(todo)
 				.then(function () {
-					return;
+					console.log("ok");
 				});
+			return;
 		}
 
 	};
