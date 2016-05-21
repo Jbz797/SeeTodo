@@ -9,7 +9,6 @@
     "angular": false,
     "cordova": false,
     "document": false,
-    "localStorage": false,
     "location": false,
     "StatusBar": false,
     "window": false
