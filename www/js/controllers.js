@@ -27,7 +27,6 @@ angular.module('seetodo')
 				.then(function success() {
 					$scope.todos_list.push(newTodo);
 					$scope.newTodo = {};
-					$scope.newTodo.title = '';
 				});
 		}
 	};
