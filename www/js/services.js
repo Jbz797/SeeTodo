@@ -4,6 +4,8 @@ angular.module('seetodo')
 
 .factory('storage', function ($localForage, $q) {
 
+	var todos = [];
+
 	return {
 
 		add: function (todo) {
@@ -14,6 +16,7 @@ angular.module('seetodo')
 						.then(function (data) {
 							if(data === 'test') {
 								console.log('Tâche "' + todo.title + '" ajoutée en base');
+								todos.push(todo.title);
 							}
 						});
 				}));
