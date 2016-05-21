@@ -1,6 +1,6 @@
 "use strict";
 
-angular.module('seetodo', ['ionic', 'ionic-material'])
+angular.module('seetodo', ['ionic', 'ionic-material','storage'])
 
 .run(function ($ionicPlatform) {
 	$ionicPlatform.ready(function () {
