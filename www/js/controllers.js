@@ -23,13 +23,15 @@ angular.module('seetodo')
 	$scope.addTodo = function () {
 		var newTodo = $scope.newTodo;
 		if(newTodo.title.length > 0) {
+			console.log("test");
 			storage.add(newTodo)
 				.then(function success() {
 					$scope.todos_list.push(newTodo);
-				}).finally(function () {
+				})
+				.finally(function () {
 					console.log('Todo envoyée avec succés');
 					$scope.newTodo = {};
-});
+				});
 		}
 	};
 });
