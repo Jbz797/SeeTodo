@@ -18,7 +18,7 @@ angular.module('seetodo')
 		location.href = 'https://github.com/Jbz797/SeeTodo';
 	});
 
-	/*$scope.addTodo = function () {
+	$scope.addTodo = function () {
 		var newTodo = $scope.newTodo;
 		if(newTodo.length > 0) {
 			storage.add(newTodo)
@@ -26,5 +26,5 @@ angular.module('seetodo')
 					$scope.newTodo = '';
 				});
 		}
-	};*/
+	};
 });
