@@ -1,12 +1,12 @@
 "use strict";
 
-angular.module('seetodo.controllers', ['seetodo.services'])
+angular.module('seetodo.controllers', [])
 
 .controller('AppCtrl', function (ionicMaterialInk) {
 	ionicMaterialInk.displayEffect();
 })
 
-.controller('MainCtrl', ['storage',function (ionicMaterialInk, $scope, storage) {
+.controller('MainCtrl', function (ionicMaterialInk, $scope, storage) {
 
 	var fab_seemy = document.getElementById('fab_seemy');
 	fab_seemy.addEventListener('click', function () {
@@ -27,4 +27,4 @@ angular.module('seetodo.controllers', ['seetodo.services'])
 				});
 		}
 	};
-}]);
+});
