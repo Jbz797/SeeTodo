@@ -1,6 +1,6 @@
 "use strict";
 
-angular.module('seetodo', ['ionic', 'ionic-material', 'LocalForageModule'])
+angular.module('seetodo', ['ionic', 'ionic-material', 'ksSwiper', 'LocalForageModule'])
 
 .run(function ($ionicPlatform) {
 	$ionicPlatform.ready(function () {
