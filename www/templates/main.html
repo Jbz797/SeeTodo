@@ -5,10 +5,10 @@
         <input type="text" placeholder="Ce qui est à faire" ng-model="newTodo.title">
       </label>
     </form>
-    <ion-slides class="list" options="options" slider="data.slider">
-      <ion-slide-page class="item" ng-repeat="todo in todos track by $index">
+    <div class="list">
+      <div class="item" ng-repeat="todo in todos track by $index">
         {{todo.title}}
-      </ion-slide-page>
-    </ion-slides>
+      </div>
+    </div>
   </ion-content>
 </ion-view>
