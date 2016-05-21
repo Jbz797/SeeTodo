@@ -25,9 +25,11 @@ angular.module('seetodo')
 		if(newTodo.title.length > 0) {
 			storage.add(newTodo)
 				.then(function success() {
+					console.log("ok");
 					$scope.todos_list.push(newTodo);
 				})
 				.finally(function (response) {
+					console.log("ok");
 					$scope.newTodo = {};
 				});
 		}
