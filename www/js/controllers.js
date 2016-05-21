@@ -6,7 +6,7 @@ angular.module('seetodo')
 	ionicMaterialInk.displayEffect();
 })
 
-.controller('MainCtrl', function (ionicMaterialInk, $q, $scope, storage) {
+.controller('MainCtrl', function (ionicMaterialInk, $scope, storage) {
 
 	var fab_seemy = document.getElementById('fab_seemy');
 	fab_seemy.addEventListener('click', function () {
@@ -23,13 +23,11 @@ angular.module('seetodo')
 	$scope.addTodo = function () {
 		var newTodo = $scope.newTodo;
 		if(newTodo.title.length > 0) {
-			var deferred = $q.defer();
 			storage.add(newTodo)
 				.then(function success() {
 					$scope.todos_list.push(newTodo);
 				})
 				.finally(function (response) {
-					deferred.resolve(response);
 					$scope.newTodo = {};
 				});
 		}
