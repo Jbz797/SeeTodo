@@ -1,8 +1,8 @@
 "use strict";
 
-angular.module('seetodo.services', [])
+var app = angular.module('seetodo.services', []);
 
-.factory('storage', function ($q, $scope) {
+app.factory('storage', function ($q, $scope) {
 
 	return {
 

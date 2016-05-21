@@ -1,12 +1,12 @@
 "use strict";
 
-angular.module('seetodo.controllers', [])
+var app = angular.module('seetodo.controllers', []);
 
-.controller('AppCtrl', function (ionicMaterialInk) {
+app.controller('AppCtrl', function (ionicMaterialInk) {
 	ionicMaterialInk.displayEffect();
-})
+});
 
-.controller('MainCtrl', function (ionicMaterialInk, $scope, storage) {
+app.controller('MainCtrl', function (ionicMaterialInk, $scope, storage) {
 
 	var fab_seemy = document.getElementById('fab_seemy');
 	fab_seemy.addEventListener('click', function () {
