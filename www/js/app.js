@@ -31,4 +31,42 @@ angular.module('seetodo', ['ionic', 'ionic-material'])
 			}
 		});
 	$urlRouterProvider.otherwise('/app/main');
+})
+
+.controller('AppCtrl', function (ionicMaterialInk, $scope, storage) {
+	ionicMaterialInk.displayEffect();
+	var fab_seemy = document.getElementById('fab_seemy');
+	fab_seemy.addEventListener('click', function () {
+		location.href = 'https://twitter.com/ZachFitzgerald';
+	});
+
+	var fab_git_hub = document.getElementById('fab_git_hub');
+	fab_git_hub.addEventListener('click', function () {
+		location.href = 'https://github.com/Jbz797/SeeTodo';
+	});
+
+	/*$scope.addTodo = function () {
+		var newTodo = $scope.newTodo;
+		if(newTodo.length > 0) {
+			storage.add(newTodo)
+				.then(function success() {
+					$scope.newTodo = '';
+				});
+		}
+	};*/
+})
+
+.factory('storage', function ($q, $scope) {
+
+	return {
+
+		add: function (todo) {
+			var deferred = $q.defer();
+			$scope.todos.push(todo);
+			localStorage.setItem("1", JSON.stringify(todo));
+			deferred.resolve($scope.todos);
+			return deferred.promise;
+		}
+
+	};
 });
