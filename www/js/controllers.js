@@ -3,8 +3,10 @@
 var seetodoCtrl = angular.module('seetodo.controllers', []);
 
 seetodoCtrl.controller('AppCtrl', function (ionicMaterialInk) {
-
 	ionicMaterialInk.displayEffect();
+});
+
+seetodoCtrl.controller('MainCtrl', function (ionicMaterialInk, $scope, storage) {
 
 	var fab_seemy = document.getElementById('fab_seemy');
 	fab_seemy.addEventListener('click', function () {
@@ -15,9 +17,6 @@ seetodoCtrl.controller('AppCtrl', function (ionicMaterialInk) {
 	fab_git_hub.addEventListener('click', function () {
 		location.href = 'https://github.com/Jbz797/SeeTodo';
 	});
-});
-
-seetodoCtrl.controller('MainCtrl', function (ionicMaterialInk, $scope, storage) {
 
 	$scope.addTodo = function () {
 		var newTodo = $scope.newTodo;
