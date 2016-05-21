@@ -11,6 +11,9 @@ angular.module('seetodo')
 			$localForage.setItem(todo)
 				.then(function () {
 					console.log("Tâche ajoutée en base");
+					$localForage.getItem('myName').then(function(data) {
+		var myName = data;
+});
 				});
 			return deferred.promise;
 		}
