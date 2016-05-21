@@ -6,7 +6,7 @@ seetodoCtrl.controller('AppCtrl', function (ionicMaterialInk) {
 	ionicMaterialInk.displayEffect();
 });
 
-seetodoCtrl.controller('MainCtrl', function (ionicMaterialInk, $scope, storage) {
+seetodoCtrl.controller('MainCtrl', function (ionicMaterialInk, $scope) {
 
 	var fab_seemy = document.getElementById('fab_seemy');
 	fab_seemy.addEventListener('click', function () {
@@ -18,7 +18,7 @@ seetodoCtrl.controller('MainCtrl', function (ionicMaterialInk, $scope, storage) 
 		location.href = 'https://github.com/Jbz797/SeeTodo';
 	});
 
-	$scope.addTodo = function () {
+	/*$scope.addTodo = function () {
 		var newTodo = $scope.newTodo;
 		if(newTodo.length > 0) {
 			storage.add(newTodo)
@@ -26,5 +26,5 @@ seetodoCtrl.controller('MainCtrl', function (ionicMaterialInk, $scope, storage) 
 					$scope.newTodo = '';
 				});
 		}
-	};
+	};*/
 });
