@@ -1,6 +1,6 @@
 "use strict";
 
-var todos = ['test'];
+var todos = [];
 
 angular.module('seetodo')
 

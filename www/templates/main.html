@@ -6,7 +6,7 @@
       </label>
     </form>
     <ul>
-      <li ng-repeat="todo in todos">{{todo.title}}</li>
+      <li ng-repeat="todo in todos track by $index">{{todo.title}}</li>
     </ul>
 </ion-content>
 </ion-view>
