@@ -2,7 +2,7 @@
 
 var seetodoCtrl = angular.module('seetodo.controllers', []);
 
-seetodoCtrl.controller('AppCtrl', function (ionicMaterialInk, $scope, storage) {
+seetodoCtrl.controller('AppCtrl', function (ionicMaterialInk) {
 
 	ionicMaterialInk.displayEffect();
 
