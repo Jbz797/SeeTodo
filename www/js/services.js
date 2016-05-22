@@ -23,6 +23,10 @@ angular.module('seetodo')
 			return deferred.promise;
 		},
 
+		get_database: function () {
+			console.log('database');
+		},
+
 		get_todos: function () {
 			return todos;
 		}
