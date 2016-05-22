@@ -71,13 +71,9 @@ angular.module('seetodo')
 			}]
 		});
 	};
-})
-
-.controller('popup_editCtrl', function ($scope, storage) {
-
-	$scope.todo = storage.get_todo();
 
 	$scope.editTodo = function () {
+		$scope.todo = storage.get_todo();
 		var newTodo = $scope.newTodo;
 		if(newTodo.title.length > 0) {
 			storage.add(newTodo)
@@ -86,4 +82,4 @@ angular.module('seetodo')
 				});
 		}
 	};
-});
+})
