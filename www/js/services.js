@@ -20,7 +20,7 @@ angular.module('seetodo')
 			deferred.resolve(
 				$localForage.setItem(todo.id, this_todo)
 				.then(function () {
-					console.log('SeeTodo -> Tâche "' + todo.title + '" ajoutée en base');
+					console.log('SeeTodo -> Tâche "' + todo.id + '" ajoutée en base');
 					todos.push(this_todo);
 				}));
 			return deferred.promise;
