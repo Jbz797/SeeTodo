@@ -35,6 +35,9 @@ body {
   }
   .popup_edit {
     .popup {
+      input {
+        margin: 10px 0;
+      }
       height: 50%;
       width: 80%;
     }
