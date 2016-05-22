@@ -12,6 +12,7 @@ angular.module('seetodo')
 			var deferred = $q.defer();
 			var this_todo = {
 				activate: true,
+				color: false,
 				date: new Date(),
 				delete: false,
 				description: '',
@@ -31,6 +32,7 @@ angular.module('seetodo')
 			var deferred = $q.defer();
 			var this_todo = {
 				activate: todo.activate,
+				color: todo.color,
 				date: todo.date,
 				delete: true,
 				description: todo.description,
@@ -54,6 +56,7 @@ angular.module('seetodo')
 			var deferred = $q.defer();
 			var this_todo = {
 				activate: todo.activate,
+				color: todo.color,
 				date: todo.date,
 				delete: todo.delete,
 				description: todo.description,
@@ -97,6 +100,7 @@ angular.module('seetodo')
 			var deferred = $q.defer();
 			var this_todo = {
 				activate: !todo.activate,
+				color: todo.color,
 				date: todo.date,
 				delete: todo.delete,
 				description: todo.description,
