@@ -33,14 +33,12 @@ body {
   .bar-footer .buttons-right .button-fab:first-child {
     right: 75px;
   }
-  .popup_edit {
     .popup {
       input {
         margin: 10px 0;
       }
-      width: 80%;
+      width: auto;
     }
-  }
 }
 
 .SeeTodo {

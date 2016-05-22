@@ -2,7 +2,7 @@
   <div class="item item-avatar">
     <img src="img/arya.jpg">
     <h2>{{todo.title}}</h2>
-    <p>{{todo.date}}</p>
+    <p>{{todo.date | date:"dd/MM/yy 'à' h:mm"}}</p>
   </div>
   <div class="item item-body">
     {{todo.description}}
