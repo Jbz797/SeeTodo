@@ -12,6 +12,7 @@ angular.module('seetodo')
 			var deferred = $q.defer();
 			var this_todo = {
 				activate: true,
+				delete: false,
 				title: todo.title
 			};
 			deferred.resolve(
@@ -25,13 +26,18 @@ angular.module('seetodo')
 
 		delete: function (todo) {
 			var deferred = $q.defer();
+			var this_todo = {
+				activate: todo.activate,
+				delete: true,
+				title: todo.title
+			};
 			deferred.resolve(
-				$localForage.removeItem(todo.title)
+				$localForage.setItem(todo.title, this_todo)
 				.then(function () {
 					console.log('SeeTodo -> Tâche "' + todo.title + '" archivée');
 					for(var i in todos) {
 						if(todos[i].title === todo.title) {
-							todos.splice(i, 1);
+							todos[i].delete = true;
 						}
 					}
 				}));
@@ -61,6 +67,7 @@ angular.module('seetodo')
 			deferred.resolve(
 				$localForage.setItem(todo.title, {
 					activate: !todo.activate,
+					delete: todo.delete,
 					title: todo.title
 				})
 				.then(function () {
