@@ -26,9 +26,11 @@ body {
 .SeeTodo {
   .item-input,
   ks-swiper-container:nth-child(2) {
-    border-top-width: 1px;
     display: block;
     margin-top: 10%;
+  }
+  ks-swiper-container:nth-child(2) {
+    border-width: 0 1px;
   }
   .swiper-slide {
     border-color: #ddd;
