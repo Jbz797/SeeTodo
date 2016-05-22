@@ -23,6 +23,25 @@ angular.module('seetodo')
 			return deferred.promise;
 		},
 
+		switch: function (todo) {
+			var that = this;
+			var deferred = $q.defer();
+			deferred.resolve(
+				$localForage.setItem(todo.title, {
+					activate: !todo.activate,
+					title: todo.title
+				})
+				.then(function () {
+					console.log('SeeTodo -> Tâche "' + todo.title + '" inversée');
+					for(var i in todos) {
+						if(todos[i].title === todo.title) {
+							todos[i].activate = !todo.activate;
+						}
+					}
+				}));
+			return deferred.promise;
+		},
+
 		get_database: function () {
 			var deferred = $q.defer();
 			deferred.resolve(
