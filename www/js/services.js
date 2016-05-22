@@ -27,10 +27,7 @@ angular.module('seetodo')
 			var that = this;
 			var deferred = $q.defer();
 			deferred.resolve(
-				$localForage.setItem(todo.title, {
-					activate: !todo.activate,
-					title: todo.title
-				})
+				$localForage.removeItem(todo.title)
 				.then(function () {
 					console.log('SeeTodo -> Tâche "' + todo.title + '" inversée');
 					for(var i in todos) {
