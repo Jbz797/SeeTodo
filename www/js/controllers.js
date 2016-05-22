@@ -26,7 +26,7 @@ angular.module('seetodo')
 
 	$scope.newTodo = {};
 	storage.get_database();
-	var todos = $scope.todos = storage.get_todos();
+	$scope.todos = storage.get_todos();
 
 	$scope.addTodo = function () {
 		var newTodo = $scope.newTodo;
