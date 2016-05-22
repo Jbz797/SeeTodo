@@ -55,6 +55,7 @@ angular.module('seetodo')
 			templateUrl: '../templates/popup_edit.html',
 			title: 'Modifier la tâche',
 			cssClass: 'popup_edit',
+			scope: $scope,
 			buttons: [{
 				text: 'Annuler'
 			}, {
