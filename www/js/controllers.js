@@ -61,15 +61,8 @@ angular.module('seetodo')
 		$ionicPopup.show({
 			templateUrl: '../templates/popup_details.html',
 			title: 'Modifier la tâche',
-			cssClass: 'popup_edit',
-			scope: $scope,
-			buttons: [{
-				text: 'Annuler'
-			}, {
-				text: 'Sauvegarder',
-				type: 'button-balanced',
-				onTap: $scope.editTodo(todo)
-			}]
+			cssClass: 'popup_details',
+			scope: $scope
 		});
 	};
 
