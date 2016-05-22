@@ -46,7 +46,7 @@ angular.module('seetodo')
 			return deferred.promise;
 		},
 
-		editTodo: function (todo) {
+		edit: function (todo) {
 			var deferred = $q.defer();
 			var this_todo = {
 				activate: todo.activate,
