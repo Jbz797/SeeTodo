@@ -31,7 +31,7 @@ angular.module('seetodo')
 			var deferred = $q.defer();
 			var this_todo = {
 				activate: todo.activate,
-				date: new Date(),
+				date: todo.date,
 				delete: true,
 				description: todo.description,
 				id: todo.id,
