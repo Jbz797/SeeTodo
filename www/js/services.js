@@ -38,7 +38,7 @@ angular.module('seetodo')
 			deferred.resolve(
 				$localForage.setItem(todo.id, this_todo)
 				.then(function () {
-					console.log('SeeTodo -> Tâche "' + todo.title + '" archivée');
+					console.log('SeeTodo -> Tâche "' + todo.id + '" archivée');
 					for(var i in todos) {
 						if(todos[i].title === todo.title) {
 							todos[i].delete = true;
