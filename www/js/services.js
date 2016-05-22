@@ -49,6 +49,11 @@ angular.module('seetodo')
 		edit: function (todo) {
 			var deferred = $q.defer();
 			$localForage.removeItem(todo.title);
+			for(var i in todos) {
+				if(todos[i].title === todo.title) {
+					todos.splice(i,1);
+				}
+			}
 			var this_todo = {
 				activate: todo.activate,
 				delete: todo.delete,
