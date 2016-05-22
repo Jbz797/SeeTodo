@@ -49,7 +49,7 @@ angular.module('seetodo')
 		edit: function (todo) {
 			var deferred = $q.defer();
 			for(var i in todos) {
-				if(todos[i].title !== todo.title) {
+				if(todos[i].title === todo.title) {
 					todos.splice(i, 1);
 					$localForage.removeItem(todo.title);
 				}
