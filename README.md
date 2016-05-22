@@ -8,7 +8,6 @@ Une application simple de gestion de liste des tâches pour appareils android et
 - [Gulp](http://gulpjs.com/)
 - [Ionic](http://ionicframework.com/)
 - [IonicMaterial](http://http://ionicmaterial.com/)
-- [Npm](https://www.npmjs.com/)
 - [Sass](http://sass-lang.com/)
 
 
