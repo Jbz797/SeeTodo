@@ -11,7 +11,7 @@ angular.module('seetodo')
 		add: function (todo) {
 			var deferred = $q.defer();
 			deferred.resolve(
-				$localForage.setItem(todo.title, 'test')
+				$localForage.setItem(todo.title, todo.title)
 				.then(function () {
 					$localForage.getItem(todo.title)
 						.then(function (data) {
