@@ -50,6 +50,16 @@ angular.module('seetodo')
 		}
 	};
 
+	$scope.editTodo = function (todo) {
+		/*var newTodo = $scope.newTodo;
+		if(newTodo.title.length > 0) {
+			storage.add(newTodo)
+				.then(function success(response) {
+					$scope.newTodo = {};
+				});
+		}*/
+	};
+
 	$scope.showPopup = function (todo) {
 		$scope.todo = todo;
 		$ionicPopup.show({
@@ -62,25 +72,8 @@ angular.module('seetodo')
 			}, {
 				text: 'Sauvegarder',
 				type: 'button-balanced',
-				onTap: function (e) {
-					if(!$scope.data.wifi) {
-						//don't allow the user to close unless he enters wifi password
-						e.preventDefault();
-					} else {
-						return $scope.data.wifi;
-					}
-				}
+				onTap: $scope.editTodo(todo)
 			}]
 		});
-	};
-
-	$scope.editTodo = function (todo) {
-		/*var newTodo = $scope.newTodo;
-		if(newTodo.title.length > 0) {
-			storage.add(newTodo)
-				.then(function success(response) {
-					$scope.newTodo = {};
-				});
-		}*/
 	};
 });
