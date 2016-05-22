@@ -14,7 +14,7 @@ angular.module('seetodo')
 				activate: true,
 				delete: false,
 				description: '',
-				id: Math.floor(Math.random() * (100000)) + 1,
+				id: Math.floor(Math.random() * 100000) + 1,
 				title: todo.title
 			};
 			deferred.resolve(
