@@ -32,7 +32,7 @@ angular.module('seetodo')
 					console.log('SeeTodo -> Tâche "' + todo.title + '" archivée');
 					for(var i in todos) {
 						if(todos[i].title === todo.title) {
-							todos[i].activate = !todo.activate;
+							todos.splice(i, 1);
 						}
 					}
 				}));
