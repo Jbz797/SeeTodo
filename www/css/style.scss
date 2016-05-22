@@ -53,5 +53,11 @@ body {
       height: 30px;
       width: 40px;
     }
+    button::before {
+      left: 0;
+      right: 0;
+      position: absolute;
+      top: 28%;
+    }
   }
 }
