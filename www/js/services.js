@@ -29,7 +29,8 @@ angular.module('seetodo')
 		get_database: function () {
 			var deferred = $q.defer();
 			deferred.resolve(
-				$localForage.iterate(function (value, key) {
+				$localForage.clear()
+				.iterate(function (value, key) {
 					if(angular.isString(value.title)) {
 						todos.push(value);
 					}
