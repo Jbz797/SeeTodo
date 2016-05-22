@@ -29,7 +29,7 @@ angular.module('seetodo')
 			deferred.resolve(
 				$localForage.removeItem(todo.title)
 				.then(function () {
-					console.log('SeeTodo -> Tâche "' + todo.title + '" inversée');
+					console.log('SeeTodo -> Tâche "' + todo.title + '" archivée');
 					for(var i in todos) {
 						if(todos[i].title === todo.title) {
 							todos[i].activate = !todo.activate;
