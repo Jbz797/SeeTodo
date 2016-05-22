@@ -36,9 +36,5 @@ angular.module('seetodo')
 					console.log($scope.todos);
 				});
 		}
-
-		$scope.get_databe = function () {
-			storage.get_database();
-		};
 	};
 });
