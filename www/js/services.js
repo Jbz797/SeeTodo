@@ -99,11 +99,11 @@ angular.module('seetodo')
 				title: todo.title
 			};
 			deferred.resolve(
-				$localForage.setItem(todo.title, this_todo)
+				$localForage.setItem(todo.id, this_todo)
 				.then(function () {
-					console.log('SeeTodo -> Tâche "' + todo.title + '" inversée');
+					console.log('SeeTodo -> Tâche "' + todo.id + '" inversée');
 					for(var i in todos) {
-						if(todos[i].title === todo.title) {
+						if(todos[i].id === todo.id) {
 							todos[i].activate = !todo.activate;
 						}
 					}
