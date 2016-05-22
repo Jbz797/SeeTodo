@@ -59,6 +59,7 @@ angular.module('seetodo')
 							if(data.activate !== todo.activate) {
 								console.log('SeeTodo -> Tâche "' + todo.title + '" inversée');
 								for(var i in todos) {
+									console.log(i.title);
 									if(i.title === todo.title) {
 										i.activate = !todo.activate;
 									}
