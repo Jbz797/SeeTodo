@@ -41,6 +41,7 @@ angular.module('seetodo')
 		},
 
 		get_todos: function () {
+			$localForage.clear();
 			return todos;
 		}
 
