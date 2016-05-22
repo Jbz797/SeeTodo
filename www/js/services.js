@@ -32,7 +32,7 @@ angular.module('seetodo')
 				activate: todo.activate,
 				delete: true,
 				description: todo.description,
-				id: this_todo.id,
+				id: todo.id,
 				title: todo.title
 			};
 			deferred.resolve(
@@ -54,7 +54,7 @@ angular.module('seetodo')
 				activate: todo.activate,
 				delete: todo.delete,
 				description: todo.description,
-				id: this_todo.id,
+				id: todo.id,
 				title: todo.title
 			};
 			deferred.resolve(
@@ -95,7 +95,7 @@ angular.module('seetodo')
 				activate: !todo.activate,
 				delete: todo.delete,
 				description: todo.description,
-				id: this_todo.id,
+				id: todo.id,
 				title: todo.title
 			};
 			deferred.resolve(
