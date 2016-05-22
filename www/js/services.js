@@ -23,7 +23,7 @@ angular.module('seetodo')
 			return deferred.promise;
 		},
 
-		switch: function (todo) {
+		delete: function (todo) {
 			var that = this;
 			var deferred = $q.defer();
 			deferred.resolve(
