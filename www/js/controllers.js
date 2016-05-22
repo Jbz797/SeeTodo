@@ -12,7 +12,7 @@ angular.module('seetodo')
 	};
 })
 
-.controller('MainCtrl', function (ionicMaterialInk, $scope, storage) {
+.controller('MainCtrl', function (ionicMaterialInk, $ionicPopup, $scope, storage) {
 
 	var fab_seemy = document.getElementById('fab_seemy');
 	fab_seemy.addEventListener('click', function () {
@@ -48,5 +48,29 @@ angular.module('seetodo')
 		if(todo.title.length > 0) {
 			storage.delete(todo);
 		}
+	};
+
+	$scope.showPopup = function () {
+		var myPopup = $ionicPopup.show({
+			templateUrl: '../templates/popup_edit.html',
+			title: 'Modifier la tâche',
+			buttons: [{
+				text: 'Annuler'
+			}, {
+				text: 'Sauvegarder',
+				type: 'button-balanced',
+				onTap: function (e) {
+					if(!$scope.data.wifi) {
+						//don't allow the user to close unless he enters wifi password
+						e.preventDefault();
+					} else {
+						return $scope.data.wifi;
+					}
+				}
+			}]
+		});
+		myPopup.then(function (res) {
+			console.log('Tapped!', res);
+		});
 	};
 });
