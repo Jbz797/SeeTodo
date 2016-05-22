@@ -75,9 +75,7 @@ angular.module('seetodo')
 
 .controller('popup_editCtrl', function ($scope, storage) {
 
-	$scope.newTodo = {};
-	storage.get_database();
-	$scope.todos = storage.get_todos();
+	$scope.todo = storage.get_todo();
 
 	$scope.editTodo = function () {
 		var newTodo = $scope.newTodo;
