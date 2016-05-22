@@ -46,6 +46,7 @@ angular.module('seetodo')
 		},
 
 		switch: function (todo) {
+			var that = this;
 			var deferred = $q.defer();
 			deferred.resolve(
 				$localForage.getItem(todo.title)
