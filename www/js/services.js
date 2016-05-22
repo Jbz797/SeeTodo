@@ -13,6 +13,7 @@ angular.module('seetodo')
 			var this_todo = {
 				activate: true,
 				delete: false,
+				description: '',
 				title: todo.title
 			};
 			deferred.resolve(
@@ -29,6 +30,7 @@ angular.module('seetodo')
 			var this_todo = {
 				activate: todo.activate,
 				delete: true,
+				description: todo.description,
 				title: todo.title
 			};
 			deferred.resolve(
