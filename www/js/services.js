@@ -48,16 +48,15 @@ angular.module('seetodo')
 		switch: function (todo) {
 			var deferred = $q.defer();
 			deferred.resolve(
-				$localForage.setItem(todo.title, {
-					activate: true,
-					title: todo.title
-				})
-				.then(function () {
-					$localForage.getItem(todo.title)
-						.then(function (data) {
-							if(data.title === todo.title) {
-								console.log('SeeTodo -> Tâche "' + todo.title + '" ajoutée en base');
-								todos.push(todo);
+				$localForage.getItem(todo.title)
+				.then(function (data) {
+					$localForage.setItem(todo.title, {
+						activate: !todo.activate,
+						title: todo.title
+					})
+						.then(function () {
+							if(data.activate !== todo.activate) {
+								console.log('SeeTodo -> Tâche "' + todo.title + '" inversée');
 							}
 						});
 				}));
