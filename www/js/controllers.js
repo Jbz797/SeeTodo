@@ -79,7 +79,7 @@ angular.module('seetodo')
 	storage.get_database();
 	$scope.todos = storage.get_todos();
 
-	$scope.addTodo = function () {
+	$scope.editTodo = function () {
 		var newTodo = $scope.newTodo;
 		if(newTodo.title.length > 0) {
 			storage.add(newTodo)
@@ -87,39 +87,5 @@ angular.module('seetodo')
 					$scope.newTodo = {};
 				});
 		}
-	};
-
-	$scope.switchTodo = function (todo) {
-		if(todo.title.length > 0) {
-			storage.switch(todo);
-		}
-	};
-
-	$scope.deleteTodo = function (todo) {
-		if(todo.title.length > 0) {
-			storage.delete(todo);
-		}
-	};
-
-	$scope.showPopup = function () {
-		$ionicPopup.show({
-			templateUrl: '../templates/popup_edit.html',
-			title: 'Modifier la tâche',
-			cssClass: 'popup_edit',
-			buttons: [{
-				text: 'Annuler'
-			}, {
-				text: 'Sauvegarder',
-				type: 'button-balanced',
-				onTap: function (e) {
-					if(!$scope.data.wifi) {
-						//don't allow the user to close unless he enters wifi password
-						e.preventDefault();
-					} else {
-						return $scope.data.wifi;
-					}
-				}
-			}]
-		});
 	};
 });
