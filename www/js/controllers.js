@@ -40,7 +40,7 @@ angular.module('seetodo')
 
 	$scope.switchTodo = function (todo) {
 		if(todo.title.length > 0) {
-			storage.swtch(todo);
+			storage.switch(todo);
 		}
 	};
 });

@@ -51,9 +51,9 @@ angular.module('seetodo')
 				$localForage.getItem(todo.title)
 				.then(function (data) {
 					$localForage.setItem(todo.title, {
-						activate: !todo.activate,
-						title: todo.title
-					})
+							activate: !todo.activate,
+							title: todo.title
+						})
 						.then(function () {
 							if(data.activate !== todo.activate) {
 								console.log('SeeTodo -> Tâche "' + todo.title + '" inversée');
