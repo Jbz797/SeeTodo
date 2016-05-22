@@ -10,14 +10,15 @@ angular.module('seetodo')
 
 		add: function (todo) {
 			var deferred = $q.defer();
+			var this_todo = {
+				activate: true,
+				title: todo.title
+			};
 			deferred.resolve(
-				$localForage.setItem(todo.title, {
-					activate: true,
-					title: todo.title
-				})
+				$localForage.setItem(todo.title, this_todo)
 				.then(function () {
 					console.log('SeeTodo -> Tâche "' + todo.title + '" ajoutée en base');
-					todos.push(todo);
+					todos.push(this_todo);
 				}));
 			return deferred.promise;
 		},
