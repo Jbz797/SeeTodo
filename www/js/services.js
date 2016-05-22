@@ -43,6 +43,25 @@ angular.module('seetodo')
 
 		get_todos: function () {
 			return todos;
+		},
+
+		switch: function (todo) {
+			var deferred = $q.defer();
+			deferred.resolve(
+				$localForage.setItem(todo.title, {
+					activate: true,
+					title: todo.title
+				})
+				.then(function () {
+					$localForage.getItem(todo.title)
+						.then(function (data) {
+							if(data.title === todo.title) {
+								console.log('SeeTodo -> Tâche "' + todo.title + '" ajoutée en base');
+								todos.push(todo);
+							}
+						});
+				}));
+			return deferred.promise;
 		}
 
 	};
