@@ -31,7 +31,6 @@ angular.module('seetodo')
 			deferred.resolve(
 				$localForage.iterate(function (value, key) {
 					if(angular.isString(value)) {
-						console.log(value.title);
 						todos.push(value.title);
 					}
 				})
