@@ -56,7 +56,7 @@ angular.module('seetodo')
 		}
 	};
 
-	$scope.showPopup = function (todo) {
+	$scope.showEditPopup = function (todo) {
 		$scope.todo = todo;
 		$ionicPopup.show({
 			templateUrl: '../templates/popup_edit.html',
