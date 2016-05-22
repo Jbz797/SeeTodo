@@ -5,6 +5,12 @@
   align-items: $value;
 }
 
+@mixin justify-content($value) {
+  -webkit-box-pack: $value;
+  -ms-flex-pack: $value;
+  justify-content: $value;
+}
+
 body {
   .bar,
   .bar .buttons {
@@ -12,9 +18,7 @@ body {
   }
   ion-header-bar {
     @include align-items(center);
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    @include justify-content(center);
   }
   .button {
     img {
