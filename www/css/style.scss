@@ -51,7 +51,9 @@ body {
       width: 36px;
     }
     .buttons_list .active {
-      border: 3px 0 solid black;
+      border-width: 3px 0;
+      border-style: solid;
+      border-color: black;
     }
     width: auto;
   }
