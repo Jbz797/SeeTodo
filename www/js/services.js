@@ -17,6 +17,7 @@ angular.module('seetodo')
 				})
 				.then(function () {
 					console.log('SeeTodo -> Tâche "' + todo.title + '" ajoutée en base');
+					todos.push(todo);
 				}));
 			return deferred.promise;
 		},
@@ -43,22 +44,17 @@ angular.module('seetodo')
 			var that = this;
 			var deferred = $q.defer();
 			deferred.resolve(
-				$localForage.getItem(todo.title)
-				.then(function (data) {
-					$localForage.setItem(todo.title, {
-							activate: !todo.activate,
-							title: todo.title
-						})
-						.then(function () {
-							if(data.activate !== todo.activate) {
-								console.log('SeeTodo -> Tâche "' + todo.title + '" inversée');
-								for(var i in todos) {
-									if(todos[i].title === todo.title) {
-										todos[i].activate = !todo.activate;
-									}
-								}
-							}
-						});
+				$localForage.setItem(todo.title, {
+					activate: !todo.activate,
+					title: todo.title
+				})
+				.then(function () {
+					console.log('SeeTodo -> Tâche "' + todo.title + '" inversée');
+					for(var i in todos) {
+						if(todos[i].title === todo.title) {
+							todos[i].activate = !todo.activate;
+						}
+					}
 				}));
 			return deferred.promise;
 		}
