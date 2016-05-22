@@ -17,7 +17,7 @@ angular.module('seetodo')
 				.then(function () {
 					$localForage.getItem(todo.title)
 						.then(function (data) {
-							if(data.title === 'test') {
+							if(data.title === todo.title) {
 								console.log('SeeTodo -> Tâche "' + todo.title + '" ajoutée en base');
 								todos.push(todo);
 							}
