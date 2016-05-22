@@ -61,6 +61,9 @@ body {
     text-overflow: ellipsis;
     white-space: nowrap;
   }
+  .edit-slide {
+    @include justify-content(space-around);
+  }
   .swiper-slide {
     p {
       font-size: 20px;

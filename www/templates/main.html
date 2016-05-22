@@ -5,12 +5,16 @@
         <input type="text" placeholder="Ce qui est à faire" ng-model="newTodo.title">
       </label>
     </form>
-    <ks-swiper-container ng-repeat="todo in todos track by $index">
-        <ks-swiper-slide class="swiper-slide">
+    <ks-swiper-container ng-repeat="todo in todos track by $index" loop="true">
+        <ks-swiper-slide class="swiper-slide main-slide">
           <button class="button button-small ion-checkmark" ng-class="{'button-balanced': todo.activate, 'button-balanced-100': !todo.activate}" ng-click="switchTodo(todo)"></button>
           <p ng-class="{'inactive': !todo.activate}">{{todo.title}}</p>
         </ks-swiper-slide>
-        <ks-swiper-slide class="swiper-slide">test</ks-swiper-slide>
+        <ks-swiper-slide class="swiper-slide edit-slide">
+          <button class="button button-small button-positive">Détails</button>
+          <button class="button button-small button-royal">Editer</button>
+          <button class="button button-small button-assertive">Archiver</button>
+        </ks-swiper-slide>
     </ks-swiper-container>
   </ion-content>
 </ion-view>
