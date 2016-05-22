@@ -73,7 +73,7 @@ angular.module('seetodo')
 	};
 })
 
-.controller('popup_editCtrl', function (ionicMaterialInk, $ionicPopup, $scope, storage) {
+.controller('popup_editCtrl', function ($scope, storage) {
 
 	$scope.newTodo = {};
 	storage.get_database();
