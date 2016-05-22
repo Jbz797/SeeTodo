@@ -48,18 +48,19 @@ angular.module('seetodo')
 
 		edit: function (todo) {
 			var deferred = $q.defer();
-			$localForage.removeItem(todo.title);
-			for(var i in todos) {
-				if(todos[i].title === todo.title) {
-					todos.splice(i,1);
-				}
-			}
 			var this_todo = {
 				activate: todo.activate,
 				delete: todo.delete,
 				description: todo.description,
 				title: todo.title
 			};
+			for(var i in todos) {
+				if(todos[i].title !== todo.title) {
+					todos.splice(i, 1);
+					$localForage.removeItem(todo.title);
+					todos.push(this_todo);
+				}
+			}
 			deferred.resolve(
 				$localForage.setItem(todo.title, this_todo)
 				.then(function () {
