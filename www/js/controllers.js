@@ -51,11 +51,12 @@ angular.module('seetodo')
 	};
 
 	$scope.showPopup = function (todo) {
+		$scope.todo = todo;
 		$ionicPopup.show({
 			templateUrl: '../templates/popup_edit.html',
 			title: 'Modifier la tâche',
 			cssClass: 'popup_edit',
-			scope: $scope,
+			scope: $scope.todo,
 			buttons: [{
 				text: 'Annuler'
 			}, {
