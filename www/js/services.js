@@ -58,7 +58,7 @@ angular.module('seetodo')
 						.then(function () {
 							if(data.activate !== todo.activate) {
 								console.log('SeeTodo -> Tâche "' + todo.title + '" inversée');
-								that.get_database();
+								todos = that.get_todos();
 							}
 						});
 				}));
