@@ -73,12 +73,12 @@ angular.module('seetodo')
 	};
 
 	$scope.editTodo = function (todo) {
-		var newTodo = $scope.newTodo;
+		/*var newTodo = $scope.newTodo;
 		if(newTodo.title.length > 0) {
 			storage.add(newTodo)
 				.then(function success(response) {
 					$scope.newTodo = {};
 				});
-		}
+		}*/
 	};
 });
