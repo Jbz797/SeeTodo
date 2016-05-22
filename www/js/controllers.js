@@ -82,4 +82,4 @@ angular.module('seetodo')
 				});
 		}
 	};
-})
+});
