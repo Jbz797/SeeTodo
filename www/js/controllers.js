@@ -43,4 +43,10 @@ angular.module('seetodo')
 			storage.switch(todo);
 		}
 	};
+
+	$scope.deleteTodo = function (todo) {
+		if(todo.title.length > 0) {
+			storage.switch(todo);
+		}
+	};
 });
