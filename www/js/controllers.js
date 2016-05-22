@@ -52,6 +52,57 @@ angular.module('seetodo')
 
 	$scope.showPopup = function () {
 		$ionicPopup.show({
+			templateUrl: '../templates/popup_edit.html/'+todo.title,
+			title: 'Modifier la tâche',
+			cssClass: 'popup_edit',
+			buttons: [{
+				text: 'Annuler'
+			}, {
+				text: 'Sauvegarder',
+				type: 'button-balanced',
+				onTap: function (e) {
+					if(!$scope.data.wifi) {
+						//don't allow the user to close unless he enters wifi password
+						e.preventDefault();
+					} else {
+						return $scope.data.wifi;
+					}
+				}
+			}]
+		});
+	};
+})
+
+.controller('popup_editCtrl', function (ionicMaterialInk, $ionicPopup, $scope, storage) {
+
+	$scope.newTodo = {};
+	storage.get_database();
+	$scope.todos = storage.get_todos();
+
+	$scope.addTodo = function () {
+		var newTodo = $scope.newTodo;
+		if(newTodo.title.length > 0) {
+			storage.add(newTodo)
+				.then(function success(response) {
+					$scope.newTodo = {};
+				});
+		}
+	};
+
+	$scope.switchTodo = function (todo) {
+		if(todo.title.length > 0) {
+			storage.switch(todo);
+		}
+	};
+
+	$scope.deleteTodo = function (todo) {
+		if(todo.title.length > 0) {
+			storage.delete(todo);
+		}
+	};
+
+	$scope.showPopup = function () {
+		$ionicPopup.show({
 			templateUrl: '../templates/popup_edit.html',
 			title: 'Modifier la tâche',
 			cssClass: 'popup_edit',
