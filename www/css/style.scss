@@ -50,6 +50,9 @@ body {
       margin: 10px 2px 0;
       width: 36px;
     }
+    .buttons_list .active {
+      border: 3px solid black;
+    }
     width: auto;
   }
 }
