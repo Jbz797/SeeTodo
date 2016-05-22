@@ -65,8 +65,8 @@ body {
     p {
       font-size: 20px;
       margin: 0 0 0 10px;
+      overflow: hidden;
       text-overflow: ellipsis;
-overflow: hidden;
     }
     button {
       height: 30px;
