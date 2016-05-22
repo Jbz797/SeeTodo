@@ -63,14 +63,9 @@ angular.module('seetodo')
 				$localForage.setItem(this_todo.id, this_todo)
 				.then(function () {
 					console.log('SeeTodo -> Tâche "' + this_todo.id + '" modifiée');
-					for(var i in todos) {
-						if(todos[i].id === this_todo.id) {
-							todos[i].color = todo.color;
-							todos[i].date = todo.date;
-							todos[i].description = todo.description;
-							todos[i].title = todo.title;
-						}
-					}
+					todos[todos.indexOf(todo)].color = todo.color;
+					todos[todos.indexOf(todo)].description = todo.description;
+					todos[todos.indexOf(todo)].title = todo.title;
 				}));
 			return deferred.promise;
 		},
@@ -108,11 +103,7 @@ angular.module('seetodo')
 				$localForage.setItem(this_todo.id, this_todo)
 				.then(function () {
 					console.log('SeeTodo -> Tâche "' + this_todo.id + '" inversée');
-					for(var i in todos) {
-						if(todos[i].id === this_todo.id) {
-							todos[i].activate = !todo.activate;
-						}
-					}
+					todos[todos.indexOf(todo)].activate = !todo.activate;
 				}));
 			return deferred.promise;
 		}
