@@ -63,9 +63,9 @@ angular.module('seetodo')
 				$localForage.setItem(this_todo.id, this_todo)
 				.then(function () {
 					console.log('SeeTodo -> Tâche "' + this_todo.id + '" modifiée');
-					todos[todos.indexOf(todo)].color = todo.color;
-					todos[todos.indexOf(todo)].description = todo.description;
-					todos[todos.indexOf(todo)].title = todo.title;
+					todos[todos.indexOf(todo)].color = this_todo.color;
+					todos[todos.indexOf(todo)].description = this_todo.description;
+					todos[todos.indexOf(todo)].title = this_todo.title;
 				}));
 			return deferred.promise;
 		},
