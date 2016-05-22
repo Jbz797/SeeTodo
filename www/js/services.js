@@ -43,11 +43,7 @@ angular.module('seetodo')
 				$localForage.setItem(this_todo.id, this_todo)
 				.then(function () {
 					console.log('SeeTodo -> Tâche "' + this_todo.id + '" archivée');
-					for(var i in todos) {
-						if(todos[i].id === this_todo.id) {
-							todos[i].delete = true;
-						}
-					}
+					todos[todos.indexOf(todo)].delete = true;
 				}));
 			return deferred.promise;
 		},
