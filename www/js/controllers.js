@@ -2,12 +2,8 @@
 
 angular.module('seetodo')
 
-.controller('AppCtrl', function (ionicMaterialInk, $ionicSideMenuDelegate, $scope) {
+.controller('AppCtrl', function (ionicMaterialInk) {
 	ionicMaterialInk.displayEffect();
-
-	$scope.toggleLeft = function () {
-		$ionicSideMenuDelegate.toggleLeft();
-	};
 })
 
 .controller('MainCtrl', function (ionicMaterialInk, $scope, storage) {
