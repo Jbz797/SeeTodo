@@ -50,7 +50,7 @@ angular.module('seetodo')
 		}
 	};
 
-	$scope.showPopup = function () {
+	$scope.showPopup = function (todo) {
 		$ionicPopup.show({
 			templateUrl: '../templates/popup_edit.html',
 			title: 'Modifier la tâche',
