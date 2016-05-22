@@ -54,7 +54,6 @@ angular.module('seetodo')
 
 		edit: function (todo) {
 			var deferred = $q.defer();
-			var that = this;
 			var this_todo = {
 				activate: todo.activate,
 				color: todo.color,
