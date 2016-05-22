@@ -64,7 +64,7 @@ angular.module('seetodo')
 			cssClass: 'popup_details',
 			scope: $scope,
 			buttons: [{
-				text: 'Ok'
+				text: 'OK'
 			}]
 		});
 	};
