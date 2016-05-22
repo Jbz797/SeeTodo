@@ -19,7 +19,7 @@ var paths = {
 var libs = {
 	ionic: './scss/ionic.app.scss',
 	ionic_material: './www/lib/ionic-material/src/scss/index.scss',
-	swiper: './www/lib/Swiper/dist/css/swiper.min.css'
+	swiper: './www/lib/swiper/dist/css/swiper.min.css'
 };
 
 var getPackageJson = function () {

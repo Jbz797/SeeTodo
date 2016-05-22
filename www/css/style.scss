@@ -25,6 +25,11 @@ body {
 
 .SeeTodo {
   .item-input,
+  .item {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
   .list {
     display: block;
     margin-top: 10%;
