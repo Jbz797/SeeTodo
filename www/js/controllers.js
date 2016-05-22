@@ -62,7 +62,10 @@ angular.module('seetodo')
 			templateUrl: '../templates/popup_details.html',
 			title: 'Details',
 			cssClass: 'popup_details',
-			scope: $scope
+			scope: $scope,
+			buttons: {
+				text: 'Ok'
+			}
 		});
 	};
 
