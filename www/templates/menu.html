@@ -1,11 +1,11 @@
 <ion-side-menus>
-  <ion-side-menu-content>
+  <ion-side-menu-content ng-controller="NavCtrl" edge-drag-threshold="25">
 
     <!--HEADER-->
     <ion-nav-bar class="bar bar-header bar-balanced">
       <div class="buttons buttons-left header-item">
         <span class="left-buttons">
-          <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+          <button class="button button-icon button-clear ion-navicon" ng-click="showMenu()"></button>
         </span>
       </div>
     </ion-nav-bar>
@@ -29,28 +29,25 @@
 
   <!--MENU-->
   <ion-side-menu side="left">
-    <ion-side-menu-content ng-controller="NavCtrl" drag-content="true"
-        edge-drag-threshold="25">
-      <ion-header-bar class="expanded bar bar-header">
-        <h2>Filtres</h2>
-      </ion-header-bar>
-      <ion-content class="has-expanded-header">
-        <ion-list>
-          <ion-item menu-close href="#/app/main">
-            Tous
-          </ion-item>
-          <ion-item menu-close href="#/app/main">
-            Actifs
-          </ion-item>
-          <ion-item menu-close href="#/app/main">
-            Effectués
-          </ion-item>
-          <ion-item menu-close href="#/app/main">
-            Suprimés
-          </ion-item>
-        </ion-list>
-      </ion-content>
-    </ion-side-menu-content>
+    <ion-header-bar class="expanded bar bar-header">
+      <h2>Filtres</h2>
+    </ion-header-bar>
+    <ion-content class="has-expanded-header">
+      <ion-list>
+        <ion-item menu-close href="#/app/main">
+          Tous
+        </ion-item>
+        <ion-item menu-close href="#/app/main">
+          Actifs
+        </ion-item>
+        <ion-item menu-close href="#/app/main">
+          Effectués
+        </ion-item>
+        <ion-item menu-close href="#/app/main">
+          Suprimés
+        </ion-item>
+      </ion-list>
+    </ion-content>
   </ion-side-menu>
 
 </ion-side-menus>
