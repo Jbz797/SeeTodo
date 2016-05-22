@@ -12,10 +12,14 @@
 }
 
 body {
+  .bar,
+  .bar .buttons {
+    position: initial;
+    z-index: 11;
+  }
   .bar-header,
   .bar-header .buttons {
     position: initial;
-    z-index: 11;
   }
   ion-header-bar {
     @include align-items(center);
