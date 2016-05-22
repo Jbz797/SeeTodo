@@ -11,7 +11,9 @@ angular.module('seetodo')
 		add: function (todo) {
 			var deferred = $q.defer();
 			deferred.resolve(
-				$localForage.setItem(todo.title, {title: todo.title})
+				$localForage.setItem(todo.title, {
+					title: todo.title
+				})
 				.then(function () {
 					$localForage.getItem(todo.title)
 						.then(function (data) {
@@ -29,8 +31,8 @@ angular.module('seetodo')
 			deferred.resolve(
 				$localForage.iterate(function (value, key) {
 					if(angular.isString(value)) {
-						console.log(value);
-						todos.push(value);
+						console.log(value.title);
+						todos.push(value.title);
 					}
 				})
 				.then(function (data) {
