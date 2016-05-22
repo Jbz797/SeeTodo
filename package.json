@@ -1,6 +1,6 @@
 {
   "name": "seetodo",
-  "version": "0.5.26",
+  "version": "0.5.27",
   "description": "SeeTodo: Une application simple de gestion de liste des tâches pour apareils android et ios",
   "dependencies": {
     "fs": "0.0.2",

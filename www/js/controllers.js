@@ -51,7 +51,7 @@ angular.module('seetodo')
 	};
 
 	$scope.showPopup = function () {
-		var myPopup = $ionicPopup.show({
+		$ionicPopup.show({
 			templateUrl: '../templates/popup_edit.html',
 			title: 'Modifier la tâche',
 			buttons: [{
@@ -68,9 +68,6 @@ angular.module('seetodo')
 					}
 				}
 			}]
-		});
-		myPopup.then(function (res) {
-			console.log('Tapped!', res);
 		});
 	};
 });
