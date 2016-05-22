@@ -76,6 +76,8 @@ angular.module('seetodo')
 							todos[i].title = todo.title;
 						}
 					}
+					that.get_database();
+					that.get_todos();
 				}));
 			return deferred.promise;
 		},
