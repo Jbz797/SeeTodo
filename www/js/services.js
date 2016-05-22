@@ -24,7 +24,6 @@ angular.module('seetodo')
 		},
 
 		delete: function (todo) {
-			var that = this;
 			var deferred = $q.defer();
 			deferred.resolve(
 				$localForage.removeItem(todo.title)
