@@ -103,7 +103,7 @@ angular.module('seetodo')
 				$localForage.setItem(this_todo.id, this_todo)
 				.then(function () {
 					console.log('SeeTodo -> Tâche "' + this_todo.id + '" inversée');
-					todos[todos.indexOf(todo)].activate = !todo.activate;
+					todos[todos.indexOf(todo)].activate = todo.activate;
 				}));
 			return deferred.promise;
 		}
