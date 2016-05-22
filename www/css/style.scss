@@ -25,7 +25,7 @@ body {
 
 .SeeTodo {
   .item-input,
-  .list {
+  ks-swiper-container:first-child {
     display: block;
     margin-top: 10%;
   }
