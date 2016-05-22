@@ -33,11 +33,15 @@ body {
     border-top-width: 1px;
   }
   .swiper-slide {
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     border-color: #ddd;
     border-style: solid;
     border-bottom-width: 1px;
     color: #444;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     overflow: hidden;
     padding: 16px;
