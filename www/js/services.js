@@ -18,9 +18,9 @@ angular.module('seetodo')
 				title: todo.title
 			};
 			deferred.resolve(
-				$localForage.setItem(todo.id, this_todo)
+				$localForage.setItem(this_todo.id, this_todo)
 				.then(function () {
-					console.log('SeeTodo -> Tâche "' + todo.id + '" ajoutée en base');
+					console.log('SeeTodo -> Tâche "' + this_todo.id + '" ajoutée en base');
 					todos.push(this_todo);
 				}));
 			return deferred.promise;
@@ -32,15 +32,15 @@ angular.module('seetodo')
 				activate: todo.activate,
 				delete: true,
 				description: todo.description,
-				id: todo.id,
+				id: this_todo.id,
 				title: todo.title
 			};
 			deferred.resolve(
-				$localForage.setItem(todo.id, this_todo)
+				$localForage.setItem(this_todo.id, this_todo)
 				.then(function () {
-					console.log('SeeTodo -> Tâche "' + todo.id + '" archivée');
+					console.log('SeeTodo -> Tâche "' + this_todo.id + '" archivée');
 					for(var i in todos) {
-						if(todos[i].id === todo.id) {
+						if(todos[i].id === this_todo.id) {
 							todos[i].delete = true;
 						}
 					}
@@ -54,15 +54,15 @@ angular.module('seetodo')
 				activate: todo.activate,
 				delete: todo.delete,
 				description: todo.description,
-				id: todo.id,
+				id: this_todo.id,
 				title: todo.title
 			};
 			deferred.resolve(
-				$localForage.setItem(todo.id, this_todo)
+				$localForage.setItem(this_todo.id, this_todo)
 				.then(function () {
-					console.log('SeeTodo -> Tâche "' + todo.id + '" modifiée');
+					console.log('SeeTodo -> Tâche "' + this_todo.id + '" modifiée');
 					for(var i in todos) {
-						if(todos[i].id === todo.id) {
+						if(todos[i].id === this_todo.id) {
 							todos[i].title = todo.title;
 							todos[i].description = todo.description;
 						}
@@ -95,15 +95,15 @@ angular.module('seetodo')
 				activate: !todo.activate,
 				delete: todo.delete,
 				description: todo.description,
-				id: todo.id,
+				id: this_todo.id,
 				title: todo.title
 			};
 			deferred.resolve(
-				$localForage.setItem(todo.id, this_todo)
+				$localForage.setItem(this_todo.id, this_todo)
 				.then(function () {
-					console.log('SeeTodo -> Tâche "' + todo.id + '" inversée');
+					console.log('SeeTodo -> Tâche "' + this_todo.id + '" inversée');
 					for(var i in todos) {
-						if(todos[i].id === todo.id) {
+						if(todos[i].id === this_todo.id) {
 							todos[i].activate = !todo.activate;
 						}
 					}
