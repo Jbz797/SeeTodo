@@ -26,20 +26,20 @@ body {
 .SeeTodo {
   .item-input,
   .item {
+    background-color: #fff;
     border-color: #ddd;
+    border-style: solid;
+    border-width: 1px;
+    color: #444;
+    display: block;
+    font-size: 16px;
+    margin: -1px;
     overflow: hidden;
+    padding: 16px;
+    position: relative;
     text-overflow: ellipsis;
     white-space: nowrap;
-background-color: #fff;
-border-style: solid;
-border-width: 1px;
-color: #444;
-display: block;
-font-size: 16px;
-margin: -1px;
-padding: 16px;
-position: relative;
-z-index: 2;
+    z-index: 2;
   }
   .list {
     display: block;
