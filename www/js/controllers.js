@@ -6,13 +6,10 @@ angular.module('seetodo')
 	ionicMaterialInk.displayEffect();
 })
 
-.controller('NavCtrl', function($scope, $ionicSideMenuDelegate) {
-  $scope.showMenu = function () {
-    $ionicSideMenuDelegate.toggleLeft();
-  };
-  $scope.showRightMenu = function () {
-    $ionicSideMenuDelegate.toggleRight();
-  };
+.controller('NavCtrl', function ($scope, $ionicSideMenuDelegate) {
+	$scope.showMenu = function () {
+		$ionicSideMenuDelegate.toggleLeft();
+	};
 })
 
 .controller('MainCtrl', function (ionicMaterialInk, $scope, storage) {
