@@ -56,6 +56,23 @@ angular.module('seetodo')
 		}
 	};
 
+	$scope.showDetailsPopup = function (todo) {
+		$scope.todo = todo;
+		$ionicPopup.show({
+			templateUrl: '../templates/popup_edit.html',
+			title: 'Modifier la tâche',
+			cssClass: 'popup_edit',
+			scope: $scope,
+			buttons: [{
+				text: 'Annuler'
+			}, {
+				text: 'Sauvegarder',
+				type: 'button-balanced',
+				onTap: $scope.editTodo(todo)
+			}]
+		});
+	};
+
 	$scope.showEditPopup = function (todo) {
 		$scope.todo = todo;
 		$ionicPopup.show({
