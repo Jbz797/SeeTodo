@@ -29,7 +29,8 @@
 
   <!--MENU-->
   <ion-side-menu side="left">
-    <ion-side-menu-content drag-content="false">
+    <ion-side-menu-content ng-controller="NavCtrl" drag-content="true"
+        edge-drag-threshold="25">
       <ion-header-bar class="expanded bar bar-header">
         <h2>Filtres</h2>
       </ion-header-bar>

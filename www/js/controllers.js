@@ -6,6 +6,15 @@ angular.module('seetodo')
 	ionicMaterialInk.displayEffect();
 })
 
+.controller('NavCtrl', function($scope, $ionicSideMenuDelegate) {
+  $scope.showMenu = function () {
+    $ionicSideMenuDelegate.toggleLeft();
+  };
+  $scope.showRightMenu = function () {
+    $ionicSideMenuDelegate.toggleRight();
+  };
+})
+
 .controller('MainCtrl', function (ionicMaterialInk, $scope, storage) {
 
 	var fab_seemy = document.getElementById('fab_seemy');
