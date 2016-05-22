@@ -32,6 +32,7 @@ angular.module('seetodo')
 				activate: todo.activate,
 				delete: true,
 				description: todo.description,
+				id: todo.id,
 				title: todo.title
 			};
 			deferred.resolve(
