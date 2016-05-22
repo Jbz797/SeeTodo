@@ -7,7 +7,7 @@
     </form>
     <ks-swiper-container ng-repeat="todo in todos track by $index">
         <ks-swiper-slide class="swiper-slide">
-          <button class="button button-small ion-checkmark" ng-class="{button-balanced: todo.activate, button-balanced-100: !todo.activate}"></button>
+          <button class="button button-small ion-checkmark" ng-class="{'button-balanced': todo.activate, 'button-balanced-100': !todo.activate}" ng-click="switchTodo()"></button>
           <p>{{todo.title}}</p>
         </ks-swiper-slide>
         <ks-swiper-slide class="swiper-slide">test</ks-swiper-slide>

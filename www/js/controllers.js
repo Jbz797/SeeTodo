@@ -37,4 +37,14 @@ angular.module('seetodo')
 				});
 		}
 	};
+
+	$scope.switchTodo = function () {
+		var newTodo = $scope.newTodo;
+		if(newTodo.title.length > 0) {
+			storage.add(newTodo)
+				.then(function success(response) {
+					$scope.newTodo = {};
+				});
+		}
+	};
 });
