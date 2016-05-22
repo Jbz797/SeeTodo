@@ -61,10 +61,7 @@ body {
     text-overflow: ellipsis;
     white-space: nowrap;
   }
-  .edit-slide {
-    @include justify-content(space-around);
-  }
-  .swiper-slide {
+  .main-slide {
     p {
       font-size: 20px;
       line-height: 1.1;
@@ -82,6 +79,9 @@ body {
       right: 0;
       top: 28%;
     }
+  }
+  .edit-slide {
+    @include justify-content(space-around);
   }
   .inactive {
     color: #d9d9d9;
