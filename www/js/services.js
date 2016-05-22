@@ -12,6 +12,7 @@ angular.module('seetodo')
 			var deferred = $q.defer();
 			var this_todo = {
 				activate: true,
+				date: new Date(),
 				delete: false,
 				description: '',
 				id: Math.floor(Math.random() * 100000) + 1,
@@ -30,6 +31,7 @@ angular.module('seetodo')
 			var deferred = $q.defer();
 			var this_todo = {
 				activate: todo.activate,
+				date: new Date(),
 				delete: true,
 				description: todo.description,
 				id: todo.id,
@@ -52,6 +54,7 @@ angular.module('seetodo')
 			var deferred = $q.defer();
 			var this_todo = {
 				activate: todo.activate,
+				date: new Date(),
 				delete: todo.delete,
 				description: todo.description,
 				id: todo.id,
@@ -93,6 +96,7 @@ angular.module('seetodo')
 			var deferred = $q.defer();
 			var this_todo = {
 				activate: !todo.activate,
+				date: new Date(),
 				delete: todo.delete,
 				description: todo.description,
 				id: todo.id,
