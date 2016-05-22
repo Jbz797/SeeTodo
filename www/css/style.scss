@@ -1,13 +1,17 @@
+@mixin align-items($value) {
+  -webkit-box-align: $value;
+  -ms-flex-align: $value;
+  -ms-grid-row-align: $value;
+  align-items: $value;
+}
+
 body {
   .bar,
   .bar .buttons {
     z-index: 11;
   }
   ion-header-bar {
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-                -ms-grid-row-align: center;
-            align-items: center;
+    @include align-items(center);
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
@@ -33,9 +37,7 @@ body {
     border-top-width: 1px;
   }
   .swiper-slide {
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
+    @include align-items(center);
     border-color: #ddd;
     border-style: solid;
     border-bottom-width: 1px;
