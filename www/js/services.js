@@ -40,7 +40,7 @@ angular.module('seetodo')
 				.then(function () {
 					console.log('SeeTodo -> Tâche "' + todo.id + '" archivée');
 					for(var i in todos) {
-						if(todos[i].title === todo.title) {
+						if(todos[i].id === todo.id) {
 							todos[i].delete = true;
 						}
 					}
