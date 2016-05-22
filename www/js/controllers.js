@@ -39,6 +39,8 @@ angular.module('seetodo')
 	};
 
 	$scope.switchTodo = function (todo) {
-		console.log(todo);
+		if(todo.title.length > 0) {
+			storage.swtch(todo);
+		}
 	};
 });
