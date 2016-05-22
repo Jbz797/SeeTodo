@@ -72,7 +72,7 @@ angular.module('seetodo')
 		});
 	};
 
-	$scope.editTodo = function () {
+	$scope.editTodo = function (todo) {
 		$scope.todo = storage.get_todo();
 		var newTodo = $scope.newTodo;
 		if(newTodo.title.length > 0) {
