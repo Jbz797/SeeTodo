@@ -69,6 +69,7 @@ angular.module('seetodo')
 			var this_todo = {
 				activate: !todo.activate,
 				delete: todo.delete,
+				description: todo.description,
 				title: todo.title
 			};
 			deferred.resolve(
