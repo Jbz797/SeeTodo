@@ -12,6 +12,7 @@ angular.module('seetodo')
 			var deferred = $q.defer();
 			deferred.resolve(
 				$localForage.setItem(todo.title, {
+					activate: true,
 					title: todo.title
 				})
 				.then(function () {
