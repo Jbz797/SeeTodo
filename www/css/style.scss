@@ -40,8 +40,11 @@ body {
     button {
       margin: 10px;
     }
+    .buttons_list {
+      display: flex;
+    }
     .buttons_list button {
-      margin: 5px;
+      margin: 0;
       width: 36px;
     }
     width: auto;
