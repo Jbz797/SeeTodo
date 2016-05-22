@@ -46,7 +46,7 @@ angular.module('seetodo')
 
 	$scope.deleteTodo = function (todo) {
 		if(todo.title.length > 0) {
-			storage.switch(todo);
+			storage.delete(todo);
 		}
 	};
 });
