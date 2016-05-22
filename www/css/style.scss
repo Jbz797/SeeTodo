@@ -41,6 +41,9 @@ body {
       margin: 10px;
     }
     .buttons_list {
+      @include align-items(center);
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
     }
     .buttons_list button {
