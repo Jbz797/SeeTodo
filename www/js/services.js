@@ -36,7 +36,7 @@ angular.module('seetodo')
 				title: todo.title
 			};
 			deferred.resolve(
-				$localForage.setItem(todo.title, this_todo)
+				$localForage.setItem(todo.id, this_todo)
 				.then(function () {
 					console.log('SeeTodo -> Tâche "' + todo.title + '" archivée');
 					for(var i in todos) {
