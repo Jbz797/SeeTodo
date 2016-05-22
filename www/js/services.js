@@ -46,6 +46,28 @@ angular.module('seetodo')
 			return deferred.promise;
 		},
 
+		editTodo: function (todo) {
+			var deferred = $q.defer();
+			var this_todo = {
+				activate: todo.activate,
+				delete: todo.delete,
+				description: todo.description,
+				title: todo.title
+			};
+			deferred.resolve(
+				$localForage.setItem(todo.title, this_todo)
+				.then(function () {
+					console.log('SeeTodo -> Tâche "' + todo.title + '" modifiée');
+					for(var i in todos) {
+						if(todos[i].title === todo.title) {
+							todos[i].title = todo.title;
+							todos[i].description = todo.description;
+						}
+					}
+				}));
+			return deferred.promise;
+		},
+
 		get_database: function () {
 			var deferred = $q.defer();
 			deferred.resolve(
