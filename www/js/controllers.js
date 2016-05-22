@@ -61,7 +61,6 @@ angular.module('seetodo')
 		$ionicPopup.show({
 			templateUrl: '../templates/popup_details.html',
 			title: 'Details',
-			cssClass: 'popup_details',
 			scope: $scope,
 			buttons: [{
 				text: 'OK'
@@ -74,7 +73,6 @@ angular.module('seetodo')
 		$ionicPopup.show({
 			templateUrl: '../templates/popup_edit.html',
 			title: 'Modifier',
-			cssClass: 'popup_edit',
 			scope: $scope,
 			buttons: [{
 				text: 'Annuler'
