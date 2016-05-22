@@ -60,7 +60,7 @@ angular.module('seetodo')
 		$scope.todo = todo;
 		$ionicPopup.show({
 			templateUrl: '../templates/popup_details.html',
-			title: 'Details de la tâche',
+			title: 'Details',
 			cssClass: 'popup_details',
 			scope: $scope
 		});
