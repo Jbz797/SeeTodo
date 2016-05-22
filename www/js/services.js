@@ -66,8 +66,9 @@ angular.module('seetodo')
 					console.log('SeeTodo -> Tâche "' + this_todo.id + '" modifiée');
 					for(var i in todos) {
 						if(todos[i].id === this_todo.id) {
-							todos[i].title = todo.title;
+							todos[i].date = todo.date;
 							todos[i].description = todo.description;
+							todos[i].title = todo.title;
 						}
 					}
 				}));
