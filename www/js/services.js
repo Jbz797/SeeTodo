@@ -87,17 +87,17 @@ angular.module('seetodo')
 
 		get_database: function () {
 			if(todos.length === 0) {
-				var deferred = $q.defer();
-				deferred.resolve(
+				var q = $q.defer();
 					forage.iterate(function (value, key) {
 						if(angular.isString(value.title)) {
 							todos.push(value);
 						}
 					})
-					.then(function () {
+					.then(function (result) {
 						console.log('SeeTodo -> Base de donnée chargée correctement');
-					}));
-				return deferred.promise;
+						q.resolve(result);
+					});
+				return q.promise;
 			}
 		},
 
