@@ -106,7 +106,7 @@ angular.module('seetodo')
 			var q = $q.defer();
 			forage.getItem(todo.id)
 				.then(function (result) {
-					this_todo = data;
+					this_todo = result;
 					q.resolve(result);
 				});
 			return q.promise;
