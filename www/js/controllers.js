@@ -87,7 +87,7 @@ angular.module('seetodo')
 	$scope.showConfirm = function () {
 		var confirmPopup = $ionicPopup.confirm({
 			title: 'Tout supprimer',
-			template: 'Êtes-vous sûr de vouloir tout supprimer ?',
+			template: 'Êtes-vous sûr de vouloir tout supprimer ? (Supprimera même les tâches actives)',
 			okType: 'button button-small button-balanced'
 		});
 
