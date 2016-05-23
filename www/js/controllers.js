@@ -25,7 +25,9 @@ angular.module('seetodo')
 	});
 
 	$scope.newTodo = {};
-	storage.get_database();
+	if(todos.length === 0) {
+		storage.get_database();
+	}
 	$scope.todos = storage.get_todos();
 
 	$scope.addTodo = function () {
