@@ -33,18 +33,17 @@ angular.module('seetodo')
 		clearAll: function (todo) {
 			var q = $q.defer();
 			forage.clear()
-			.then(function (result) {
-				console.log('SeeTodo -> Toutes les tâches ont bien été supprimées');
-				for(var variable in todos) {
-					todos[variable] = {};
-				}
-				q.resolve(result);
-			});
+				.then(function (result) {
+					console.log('SeeTodo -> Toutes les tâches ont bien été supprimées');
+					for(var variable in todos) {
+						todos[variable] = {};
+					}
+					q.resolve(result);
+				});
 			return q.promise;
 		},
 
 		delete: function (todo) {
-			var deferred = $q.defer();
 			var this_todo = {
 				activate: todo.activate,
 				color: todo.color,
@@ -54,13 +53,14 @@ angular.module('seetodo')
 				id: todo.id,
 				title: todo.title
 			};
-			deferred.resolve(
+			var q = $q.defer();
 				forage.setItem(this_todo.id, this_todo)
-				.then(function () {
+				.then(function (result) {
 					console.log('SeeTodo -> Tâche "' + this_todo.id + '" archivée');
 					todos[todos.indexOf(todo)].delete = true;
-				}));
-			return deferred.promise;
+					q.resolve(result);
+				});
+			return q.promise;
 		},
 
 		edit: function (todo) {
