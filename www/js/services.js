@@ -83,6 +83,7 @@ angular.module('seetodo')
 		},
 
 		get_database: function () {
+			if(todos.length === 0) {
 			var deferred = $q.defer();
 			deferred.resolve(
 				$localForage.iterate(function (value, key) {
@@ -94,6 +95,7 @@ angular.module('seetodo')
 					console.log('SeeTodo -> Base de donnée chargée correctement');
 				}));
 			return deferred.promise;
+		}
 		},
 
 		get_todos: function () {
