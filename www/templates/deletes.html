@@ -1,22 +1,16 @@
-<ion-view view-title="SeeTodo">
-  <ion-content class="SeeTodo">
+<ion-view view-title="Tâches supprimées">
+  <ion-content class="SeeTodo SeeTodo_deletes">
     <form ng-submit="addTodo()">
       <label class="item item-input item-floating-label">
         <input type="text" placeholder="Ce qui est à faire" ng-model="newTodo.title">
       </label>
     </form>
-    <ks-swiper-container class="animate-ripple" ng-repeat="todo in todos | orderBy : '-date' | filter: { delete: true }" loop="true" swiper="swiper" on-ready="onReadySwiper(swiper)">
-        <ks-swiper-slide class="swiper-slide main-slide">
-          <button class="button button-small ion-checkmark" ng-class="{'button-balanced': todo.activate, 'button-balanced-100': !todo.activate}" ng-click="switchTodo(todo)"></button>
-          <p ng-class="{'inactive': !todo.activate}">{{todo.title}}</p>
-          <div class="div_color button-{{todo.color}}"></div>
-        </ks-swiper-slide>
-        <ks-swiper-slide class="swiper-slide edit-slide">
-          <button class="button button-small button-positive" ng-click="showDetailsPopup(todo)">Détails</button>
-          <button class="button button-small button-calm" ng-click="showEditPopup(todo)">Editer</button>
-          <button class="button button-small button-assertive" ng-click="deleteTodo(todo)">Archiver</button>
-        </ks-swiper-slide>
-    </ks-swiper-container>
-    <button class="button button-small button-assrtive" ng-click="clearAll(todo)">Tout supprimer</button>
+    <button class="button button-small button-assertive" ng-click="clearAll(todo)">Tout supprimer</button>
+    <div class="list">
+      <div class="item" ng-repeat="todo in todos | orderBy : '-date' | filter: { delete: true }">
+        <p>{{todo.title}}</p>
+        <div class="div_color button-{{todo.color}}"></div>
+      </div>
+    </div>
   </ion-content>
 </ion-view>
