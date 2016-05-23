@@ -1,4 +1,4 @@
-'use strict';
+/*jshint -W020 */
 
 describe('Services', function () {
 
@@ -31,14 +31,20 @@ describe('Services', function () {
 
 	it('La méthode "add" doit enregistrer une todo en base', function () {
 		mock = sinon.mock(storage);
-		storage.add(todo_test)
+		var deferred = $q.defer();
+		mock.expects('add')
+			.once()
+			.returns(deferred.promise);
+		deferred.resolve(todo_test);
+
+		/*storage.add(todo_test)
 			.then(function success(response) {
 				console.log('test');
 			});
 		var result = storage.get_todo(todo_test);
 		console.log(result);
 		expect(result.title.to.be.equal(todo_test.title));
-		expect(result.description.to.be.equal(todo_test.description));
+		expect(result.description.to.be.equal(todo_test.description));*/
 	});
 
 

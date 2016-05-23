@@ -11,7 +11,6 @@ angular.module('seetodo')
 	return {
 
 		add: function (todo) {
-			var deferred = $q.defer();
 			var this_todo = {
 				activate: true,
 				color: false,
@@ -21,27 +20,27 @@ angular.module('seetodo')
 				id: todo.id ? todo.id : Math.floor(Math.random() * 100000) + 1,
 				title: todo.title
 			};
-			deferred.resolve(
-				forage.setItem(this_todo.id, this_todo)
-				.then(function () {
+			var q = $q.defer();
+			forage.setItem(this_todo.id, this_todo)
+				.then(function (result) {
 					console.log('SeeTodo -> Tâche "' + this_todo.id + '" ajoutée en base');
 					todos.push(this_todo);
-				}));
-			return deferred.promise;
+					q.resolve(result);
+				});
+			return q.promise;
 		},
 
 		clearAll: function (todo) {
-			var deferred = $q.defer();
-			deferred.resolve(
-				forage.clear()
-				.then(function () {
-					console.log('SeeTodo -> Toutes les tâches ont bien été supprimées');
-					for(var variable in todos) {
-						todos[variable] = {};
-					}
-				})
-			);
-			return deferred.promise;
+			var q = $q.defer();
+			forage.clear()
+			.then(function (result) {
+				console.log('SeeTodo -> Toutes les tâches ont bien été supprimées');
+				for(var variable in todos) {
+					todos[variable] = {};
+				}
+				q.resolve(result);
+			});
+			return q.promise;
 		},
 
 		delete: function (todo) {

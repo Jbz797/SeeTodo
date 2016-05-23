@@ -18,13 +18,12 @@ module.exports = function (config) {
 			'www/js/*.js',
 			'test/unit/**/*.js'
 		],
-		frameworks: ['mocha', 'chai', 'sinon'],
+		frameworks: ['mocha', 'chai-sinon'],
 		plugins: [
-			'karma-chai',
-			'karma-mocha',
+			'karma-chai-sinon',
 			'karma-mocha-reporter',
-			'karma-phantomjs-launcher',
-			'karma-sinon'
+			'karma-mocha',
+			'karma-phantomjs-launcher'
 		],
 		reporters: ['mocha'],
 		singleRun: false
