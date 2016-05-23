@@ -1,5 +1,5 @@
 # SeeTodo
-Une application simple de gestion de liste des tâches pour appareils android et ios.
+Gestionnaire de liste des tâches pour appareils android et ios.
 
 
 ## Réalisé avec les technologies suivantes
