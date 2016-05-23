@@ -8,6 +8,7 @@ Une application simple de gestion de liste des tâches pour appareils android et
 - [Gulp](http://gulpjs.com/)
 - [Ionic](http://ionicframework.com/)
 - [IonicMaterial](http://http://ionicmaterial.com/)
+- [Karma](http://karma-runner.github.io)
 - [Sass](http://sass-lang.com/)
 
 
@@ -41,4 +42,10 @@ npm install
 ```
 npm install -g ripple-emulator
 ripple emulate
+```
+
+### Test unitaires
+
+```
+$ npm test
 ```

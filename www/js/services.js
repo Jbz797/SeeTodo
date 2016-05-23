@@ -6,6 +6,8 @@ angular.module('seetodo')
 
 .factory('storage', function ($localForage, $q) {
 
+	var forage = $localForage;
+
 	return {
 
 		add: function (todo) {
@@ -20,7 +22,7 @@ angular.module('seetodo')
 				title: todo.title
 			};
 			deferred.resolve(
-				$localForage.setItem(this_todo.id, this_todo)
+				forage.setItem(this_todo.id, this_todo)
 				.then(function () {
 					console.log('SeeTodo -> Tâche "' + this_todo.id + '" ajoutée en base');
 					todos.push(this_todo);
@@ -31,7 +33,7 @@ angular.module('seetodo')
 		clearAll: function (todo) {
 			var deferred = $q.defer();
 			deferred.resolve(
-				$localForage.clear()
+				forage.clear()
 				.then(function () {
 					console.log('SeeTodo -> Toutes les tâches ont bien été supprimées');
 					for(var variable in todos) {
@@ -54,7 +56,7 @@ angular.module('seetodo')
 				title: todo.title
 			};
 			deferred.resolve(
-				$localForage.setItem(this_todo.id, this_todo)
+				forage.setItem(this_todo.id, this_todo)
 				.then(function () {
 					console.log('SeeTodo -> Tâche "' + this_todo.id + '" archivée');
 					todos[todos.indexOf(todo)].delete = true;
@@ -74,7 +76,7 @@ angular.module('seetodo')
 				title: todo.title
 			};
 			deferred.resolve(
-				$localForage.setItem(this_todo.id, this_todo)
+				forage.setItem(this_todo.id, this_todo)
 				.then(function () {
 					console.log('SeeTodo -> Tâche "' + this_todo.id + '" modifiée');
 					todos[todos.indexOf(todo)].color = this_todo.color;
@@ -88,7 +90,7 @@ angular.module('seetodo')
 			if(todos.length === 0) {
 				var deferred = $q.defer();
 				deferred.resolve(
-					$localForage.iterate(function (value, key) {
+					forage.iterate(function (value, key) {
 						if(angular.isString(value.title)) {
 							todos.push(value);
 						}
@@ -116,7 +118,7 @@ angular.module('seetodo')
 				title: todo.title
 			};
 			deferred.resolve(
-				$localForage.setItem(this_todo.id, this_todo)
+				forage.setItem(this_todo.id, this_todo)
 				.then(function () {
 					console.log('SeeTodo -> Tâche "' + this_todo.id + '" inversée');
 					todos[todos.indexOf(todo)].activate = this_todo.activate;
