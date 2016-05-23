@@ -48,6 +48,15 @@ angular.module('seetodo', ['ionic', 'ionic-material', 'ksSwiper', 'LocalForageMo
 					controller: 'MainCtrl'
 				}
 			}
+		})
+		.state('app.dones', {
+			url: '/main/dones',
+			views: {
+				'menuContent': {
+					templateUrl: 'templates/dones.html',
+					controller: 'MainCtrl'
+				}
+			}
 		});
 	$urlRouterProvider.otherwise('/app/main');
 });
