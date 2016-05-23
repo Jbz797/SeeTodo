@@ -18,7 +18,7 @@ angular.module('seetodo')
 				date: new Date(),
 				delete: false,
 				description: '',
-				id: Math.floor(Math.random() * 100000) + 1,
+				id: todo.id ? todo.id : Math.floor(Math.random() * 100000) + 1,
 				title: todo.title
 			};
 			deferred.resolve(
@@ -95,11 +95,20 @@ angular.module('seetodo')
 							todos.push(value);
 						}
 					})
-					.then(function (data) {
+					.then(function () {
 						console.log('SeeTodo -> Base de donnée chargée correctement');
 					}));
 				return deferred.promise;
 			}
+		},
+
+		get_todo: function (todo) {
+			var this_todo = {};
+			forage.getItem(todo.id)
+				.then(function (data) {
+					this_todo = data;
+				});
+			return this_todo;
 		},
 
 		get_todos: function () {

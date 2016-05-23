@@ -9,8 +9,11 @@
     "angular": false,
     "cordova": false,
     "document": false,
+    "inject": false,
     "expect": false,
     "location": false,
+    "mock": false,
+    "sinon": false,
     "StatusBar": false,
     "window": false
   },
