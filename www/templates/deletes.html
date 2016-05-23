@@ -1,11 +1,6 @@
 <ion-view view-title="Tâches supprimées">
   <ion-content class="SeeTodo SeeTodo_deletes">
-    <form ng-submit="addTodo()">
-      <label class="item item-input item-floating-label">
-        <input type="text" placeholder="Ce qui est à faire" ng-model="newTodo.title">
-      </label>
-    </form>
-    <button class="button button-small button-assertive" ng-click="clearAll(todo)">Tout supprimer</button>
+    <button class="button button-small button-block button-assertive" ng-click="showConfirm()">Tout supprimer</button>
     <div class="list">
       <div class="item" ng-repeat="todo in todos | orderBy : '-date' | filter: { delete: true }">
         <p>{{todo.title}}</p>
