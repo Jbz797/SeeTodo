@@ -108,7 +108,7 @@ angular.module('seetodo')
 				.then(function (data) {
 					this_todo = data;
 				});
-			return this_todo;
+			return q.promise;
 		},
 
 		get_todos: function () {
