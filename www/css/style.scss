@@ -120,10 +120,10 @@ body {
     @include justify-content(space-around);
     padding: 16px 0;
     button {
+      font-size: 4vmin;
       height: 30px;
-font-size: 4vmin;
-margin: 1px;
-padding: 0 1rem;
+      margin: 1px;
+      padding: 0 1rem;
     }
   }
   .inactive {
