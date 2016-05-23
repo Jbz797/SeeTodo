@@ -39,6 +39,15 @@ angular.module('seetodo', ['ionic', 'ionic-material', 'ksSwiper', 'LocalForageMo
 					controller: 'MainCtrl'
 				}
 			}
+		})
+		.state('app.active', {
+			url: '/main/active',
+			views: {
+				'menuContent': {
+					templateUrl: 'templates/active.html',
+					controller: 'MainCtrl'
+				}
+			}
 		});
 	$urlRouterProvider.otherwise('/app/main');
 });

@@ -1,7 +1,7 @@
 {
   "name": "seetodo",
-  "version": "0.6.35",
-  "description": "SeeTodo: Une application simple de gestion de liste des tâches pour apareils android et ios",
+  "version": "0.6.36",
+  "description": "SeeTodo: Une application simple de gestion de liste des tâches pour appareils android et ios",
   "dependencies": {
     "fs": "0.0.2",
     "gulp": "^3.5.6",
