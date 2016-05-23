@@ -31,7 +31,9 @@ angular.module('seetodo')
 		clearAll: function (todo) {
 			var deferred = $q.defer();
 			deferred.resolve(
-				$localForage.clear()
+				$localForage.clear().then(function() {
+					todos = [];
+				})
 			);
 			return deferred.promise;
 		},
