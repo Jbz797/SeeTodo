@@ -34,6 +34,9 @@ angular.module('seetodo')
 				$localForage.clear()
 				.then(function () {
 					console.log('SeeTodo -> Toutes les tâches ont bien été supprimées');
+					for(var variable in todos) {
+						todos[variable] = {};
+					}
 					todos = [];
 				})
 			);
