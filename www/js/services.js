@@ -28,6 +28,13 @@ angular.module('seetodo')
 			return deferred.promise;
 		},
 
+		clearAll: function (todo) {
+			var deferred = $q.defer();
+			deferred.resolve(
+				$localForage.clear());
+			return deferred.promise;
+		},
+
 		delete: function (todo) {
 			var deferred = $q.defer();
 			var this_todo = {
