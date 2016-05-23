@@ -10,7 +10,6 @@
     "cordova": false,
     "document": false,
     "expect": false,
-    "inject": false,
     "location": false,
     "StatusBar": false,
     "window": false
