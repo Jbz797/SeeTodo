@@ -44,7 +44,7 @@ npm install -g ripple-emulator
 ripple emulate
 ```
 
-### Test unitaires
+## Test unitaires
 
 ```
 $ npm test
