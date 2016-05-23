@@ -54,7 +54,7 @@ angular.module('seetodo')
 				title: todo.title
 			};
 			var q = $q.defer();
-				forage.setItem(this_todo.id, this_todo)
+			forage.setItem(this_todo.id, this_todo)
 				.then(function (result) {
 					console.log('SeeTodo -> Tâche "' + this_todo.id + '" archivée');
 					todos[todos.indexOf(todo)].delete = true;
@@ -64,7 +64,6 @@ angular.module('seetodo')
 		},
 
 		edit: function (todo) {
-			var deferred = $q.defer();
 			var this_todo = {
 				activate: todo.activate,
 				color: todo.color,
@@ -74,15 +73,16 @@ angular.module('seetodo')
 				id: todo.id,
 				title: todo.title
 			};
-			deferred.resolve(
-				forage.setItem(this_todo.id, this_todo)
-				.then(function () {
+			var q = $q.defer();
+			forage.setItem(this_todo.id, this_todo)
+				.then(function (result) {
 					console.log('SeeTodo -> Tâche "' + this_todo.id + '" modifiée');
 					todos[todos.indexOf(todo)].color = this_todo.color;
 					todos[todos.indexOf(todo)].description = this_todo.description;
 					todos[todos.indexOf(todo)].title = this_todo.title;
-				}));
-			return deferred.promise;
+					q.resolve(result);
+				});
+			return q.promise;
 		},
 
 		get_database: function () {
