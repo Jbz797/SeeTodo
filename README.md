@@ -47,5 +47,5 @@ ripple emulate
 ## Test unitaires
 
 ```
-$ npm test
+npm test
 ```
