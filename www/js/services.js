@@ -37,7 +37,6 @@ angular.module('seetodo')
 					for(var variable in todos) {
 						todos[variable] = {};
 					}
-					todos = [];
 				})
 			);
 			return deferred.promise;
