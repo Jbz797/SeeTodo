@@ -14,12 +14,12 @@ Une application simple de gestion de liste des tâches pour appareils android et
 
 ## Installation
 
-#### L'installation requiert les outils `gulp`, `ionic` et `cordova`:
+#### Installer les outils `gulp`, `ionic` et `cordova` :
 ```
 npm install -g gulp ionic cordova
 ```
 
-#### Clonage du projet:
+#### Cloner le projet :
 ```
 git clone https://github.com/Jbz797/SeeTodo.git
 ```
@@ -27,18 +27,18 @@ git clone https://github.com/Jbz797/SeeTodo.git
 
 ## Emulation
 
-#### Aller dans le projet:
+#### Aller dans le projet :
 ```
 cd SeeTodo
 ```
 
-#### Construire les plateformes et modules:
+#### Construire les plateformes et modules :
 ```
 ionic platform add ios
 ionic platform add android
 npm install
 ```
-#### Pour tester l'application dans votre navigateur:
+#### Tester l'application dans son navigateur :
 ```
 npm install -g ripple-emulator
 ripple emulate
