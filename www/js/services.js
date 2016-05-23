@@ -31,7 +31,9 @@ angular.module('seetodo')
 		clearAll: function (todo) {
 			var deferred = $q.defer();
 			deferred.resolve(
-				$localForage.clear().then(function() {
+				$localForage.clear()
+				.then(function () {
+					console.log('SeeTodo -> Toutes les tâches ont bien été supprimées');
 					todos = [];
 				})
 			);
