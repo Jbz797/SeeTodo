@@ -118,6 +118,7 @@ body {
   }
   .edit-slide {
     @include justify-content(space-around);
+    padding: 16px 0;
   }
   .inactive {
     color: #d9d9d9;
