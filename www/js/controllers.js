@@ -94,7 +94,6 @@ angular.module('seetodo')
 		confirmPopup.then(function (res) {
 			if(res) {
 				storage.clearAll();
-				$scope.todos = storage.get_todos();
 			}
 		});
 	};
