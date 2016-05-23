@@ -84,18 +84,18 @@ angular.module('seetodo')
 
 		get_database: function () {
 			if(todos.length === 0) {
-			var deferred = $q.defer();
-			deferred.resolve(
-				$localForage.iterate(function (value, key) {
-					if(angular.isString(value.title)) {
-						todos.push(value);
-					}
-				})
-				.then(function (data) {
-					console.log('SeeTodo -> Base de donnée chargée correctement');
-				}));
-			return deferred.promise;
-		}
+				var deferred = $q.defer();
+				deferred.resolve(
+					$localForage.iterate(function (value, key) {
+						if(angular.isString(value.title)) {
+							todos.push(value);
+						}
+					})
+					.then(function (data) {
+						console.log('SeeTodo -> Base de donnée chargée correctement');
+					}));
+				return deferred.promise;
+			}
 		},
 
 		get_todos: function () {
