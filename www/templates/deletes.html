@@ -5,7 +5,7 @@
         <input type="text" placeholder="Ce qui est à faire" ng-model="newTodo.title">
       </label>
     </form>
-    <ks-swiper-container class="animate-ripple" ng-repeat="todo in todos | orderBy : '-date' | filter: { delete: false }" loop="true" swiper="swiper" on-ready="onReadySwiper(swiper)">
+    <ks-swiper-container class="animate-ripple" ng-repeat="todo in todos | orderBy : '-date' | filter: { delete: true }" loop="true" swiper="swiper" on-ready="onReadySwiper(swiper)">
         <ks-swiper-slide class="swiper-slide main-slide">
           <button class="button button-small ion-checkmark" ng-class="{'button-balanced': todo.activate, 'button-balanced-100': !todo.activate}" ng-click="switchTodo(todo)"></button>
           <p ng-class="{'inactive': !todo.activate}">{{todo.title}}</p>
@@ -17,5 +17,6 @@
           <button class="button button-small button-assertive" ng-click="deleteTodo(todo)">Archiver</button>
         </ks-swiper-slide>
     </ks-swiper-container>
+    <button class="button button-small button-assrtive" ng-click="clearAll(todo)">Tout supprimer</button>
   </ion-content>
 </ion-view>

@@ -83,4 +83,17 @@ angular.module('seetodo')
 			}]
 		});
 	};
+
+	$scope.showConfirm = function() {
+    var confirmPopup = $ionicPopup.confirm({
+      title: 'Tout supprimer',
+      template: 'Êtes-vous sûr de vouloir tout supprimer ?'
+    });
+
+    confirmPopup.then(function(res) {
+      if(res) {
+        $scope.clearAll();
+      }
+    });
+  };
 });
