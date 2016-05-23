@@ -57,6 +57,15 @@ angular.module('seetodo', ['ionic', 'ionic-material', 'ksSwiper', 'LocalForageMo
 					controller: 'MainCtrl'
 				}
 			}
+		})
+		.state('app.deletes', {
+			url: '/main/deletes',
+			views: {
+				'menuContent': {
+					templateUrl: 'templates/deletes.html',
+					controller: 'MainCtrl'
+				}
+			}
 		});
 	$urlRouterProvider.otherwise('/app/main');
 });
