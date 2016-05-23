@@ -28,24 +28,12 @@ describe('Services', function () {
 		expect(storage.add)
 			.to.be.a('function');
 	});
-
 	it('La méthode "add" doit enregistrer une todo en base', function () {
-		mock = sinon.mock(storage);
-		var deferred = $q.defer();
-		mock.expects('add')
-			.once()
-			.returns(deferred.promise);
-		deferred.resolve(todo_test);
-
-		/*storage.add(todo_test)
-			.then(function success(response) {
-				console.log('test');
-			});
-		var result = storage.get_todo(todo_test);
-		console.log(result);
-		expect(result.title.to.be.equal(todo_test.title));
-		expect(result.description.to.be.equal(todo_test.description));*/
+		var q = $q.defer();
+		storage.add(todo_test)
+			.then(function (result) {
+				q.resolve(result);
+			})
+		console.log(q.promise);
 	});
-
-
 });
