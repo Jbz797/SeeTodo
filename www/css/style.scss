@@ -6,8 +6,8 @@
 }
 
 @mixin flex-wrap($value) {
-  -ms-flex-wrap: $value;
-  flex-wrap: $value;
+-ms-flex-wrap: $value;
+flex-wrap: $value;
 }
 
 @mixin justify-content($value) {
