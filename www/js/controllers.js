@@ -6,15 +6,16 @@ angular.module('seetodo')
 	ionicMaterialInk.displayEffect();
 })
 
-.controller('NavCtrl', function ($scope, $ionicSideMenuDelegate) {
+.controller('NavCtrl', function ($scope, $ionicSideMenuDelegate, $state) {
 	$scope.showMenu = function () {
 		$ionicSideMenuDelegate.toggleLeft();
 	};
+	$scope.url = $state.current.url;
+	console.log($scope.url);
 })
 
 .controller('MainCtrl', function (ionicMaterialInk, $ionicPopup, $scope, storage) {
 
-	console.log($scope.page);
 
 	var fab_seemy = document.getElementById('fab_seemy');
 	fab_seemy.addEventListener('click', function () {
