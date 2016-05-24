@@ -117,7 +117,7 @@ angular.module('seetodo')
 		refresh: function (todo) {
 			for(var i in todos) {
 				todos[todos.indexOf(todo)].delete = true;
-				todos[todos.indexOf(todo)].delete = false;
+				$timeout(todos[todos.indexOf(todo)].delete = false, 500);
 			}
 		},
 
