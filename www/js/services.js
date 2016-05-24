@@ -82,7 +82,7 @@ angular.module('seetodo')
 					todos[todos.indexOf(todo)].description = this_todo.description;
 					todos[todos.indexOf(todo)].title = this_todo.title;
 					that.refresh(todo)
-						.then(function () {
+						.then(function success(response) {
 							$timeout(that.refresh(todo), 500);
 						});
 					q.resolve(result);
