@@ -1,7 +1,6 @@
 # SeeTodo
 Gestionnaire de liste des tâches pour appareils android et ios.
 
-
 ## Réalisé avec les technologies suivantes
 - [AngularJS](https://angularjs.org/)
 - [Bower](http://bower.io/)
@@ -11,27 +10,21 @@ Gestionnaire de liste des tâches pour appareils android et ios.
 - [Karma](http://karma-runner.github.io)
 - [Sass](http://sass-lang.com/)
 
-
 ## Installation
-
 #### Installer les outils `gulp`, `ionic` et `cordova` :
 ```
 npm install -g gulp ionic cordova
 ```
-
 #### Cloner le projet :
 ```
 git clone https://github.com/Jbz797/SeeTodo.git
 ```
 
-
 ## Emulation
-
 #### Aller dans le projet :
 ```
 cd SeeTodo
 ```
-
 #### Construire les plateformes et modules :
 ```
 ionic platform add ios
@@ -43,9 +36,12 @@ npm install
 npm install -g ripple-emulator
 ripple emulate
 ```
+### Tester l'application avec son appareil Android :
+```
+ionic run android
+```
 
 ## Test unitaires
-
 ```
 npm test
 ```
