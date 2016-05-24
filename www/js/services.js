@@ -81,7 +81,10 @@ angular.module('seetodo')
 					todos[todos.indexOf(todo)].color = this_todo.color;
 					todos[todos.indexOf(todo)].description = this_todo.description;
 					todos[todos.indexOf(todo)].title = this_todo.title;
-					that.refresh(todo);
+					that.refresh(todo)
+						.then(function () {
+							$timeout(that.refresh(todo), 500);
+						});
 					q.resolve(result);
 				});
 			return q.promise;
