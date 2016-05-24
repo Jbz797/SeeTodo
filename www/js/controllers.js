@@ -11,6 +11,7 @@ angular.module('seetodo')
 		$ionicSideMenuDelegate.toggleLeft();
 	};
 	$scope.url = $state.current.url;
+	console.log($scope.url);
 })
 
 .controller('MainCtrl', function (ionicMaterialInk, $ionicPopup, $scope, storage) {
