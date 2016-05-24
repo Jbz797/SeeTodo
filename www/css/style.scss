@@ -28,7 +28,7 @@ body {
   }
   ion-side-menu {
     ion-header-bar {
-      @include justify-content(center);
+      @include align-items(center);
     }
     h2 {
       margin: 0;
