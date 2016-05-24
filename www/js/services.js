@@ -117,10 +117,12 @@ angular.module('seetodo')
 		},
 
 		refresh: function (todo) {
-			for(var i in todos) {
-				todos[todos.indexOf(todo)].delete = true;
-				$timeout(todos[todos.indexOf(todo)].delete = false, 500);
+			function refresh_this_todo(todo) {
+				todos[todos.indexOf(todo)].delete = !todos.delete;
 			}
+			refresh_this_todo(todo).then(function(){
+				$timeout(refresh_this_todo(todo), 500);
+			});
 		},
 
 		switch: function (todo) {
