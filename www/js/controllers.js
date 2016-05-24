@@ -12,7 +12,7 @@ angular.module('seetodo')
 	};
 	var url = $state;
 	$scope.$watch('url.current', function () {
-		console.log($state.current.url);
+		console.log('test');
 		$scope.url = $state.current.url;
 	});
 })
