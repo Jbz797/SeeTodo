@@ -114,7 +114,7 @@ angular.module('seetodo')
 			return todos;
 		},
 
-		refresh: function () {
+		refresh: function (todo) {
 			for(var i in todos) {
 				todos[i].delete = !todos[i].delete;
 			}
