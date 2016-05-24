@@ -13,10 +13,11 @@ angular.module('seetodo')
 	/*$scope.$watch($ionicSideMenuDelegate.isOpen(), function () {
 		$scope.is_open = $ionicSideMenuDelegate.isOpen();
 	});*/
-	var url = location.hash;
-	$scope.$watch(location.hash, function (hash) {
-		$scope.url = hash;
-	});
+	$scope.$watch(function() { 
+  return location.hash;
+}, function(value) {
+  $scope.url = location.hash;
+});
 })
 
 .controller('MainCtrl', function (ionicMaterialInk, $ionicPopup, $scope, storage) {
