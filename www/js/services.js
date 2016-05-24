@@ -116,7 +116,7 @@ angular.module('seetodo')
 		},
 
 		refresh: function (todo) {
-			todos[todos.indexOf(todo)].delete = !todos.delete;
+			todos[todos.indexOf(todo.id)].delete = !todos.delete;
 			return todo;
 		},
 
