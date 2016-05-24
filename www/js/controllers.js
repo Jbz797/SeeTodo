@@ -2,9 +2,8 @@
 
 angular.module('seetodo')
 
-.controller('AppCtrl', function (ionicMaterialInk, $location) {
+.controller('AppCtrl', function (ionicMaterialInk) {
 	ionicMaterialInk.displayEffect();
-	console.log($location.href);
 })
 
 .controller('NavCtrl', function ($scope, $ionicSideMenuDelegate) {
