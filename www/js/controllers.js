@@ -13,7 +13,7 @@ angular.module('seetodo')
 	};
 	$scope.$watch(function () {
 		$scope.url = location.hash;
-		console.log($ionicSideMenuDelegate.toggleLeft());
+		console.log($ionicSideMenuDelegate.isOpen());
 	});
 })
 
