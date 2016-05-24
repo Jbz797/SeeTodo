@@ -1,4 +1,4 @@
-/*@mixin align-items($value) {
+@mixin align-items($value) {
   -webkit-box-align: $value;
   -ms-flex-align: $value;
   -ms-grid-row-align: $value;
@@ -142,4 +142,4 @@ body {
   .scroll {
     text-align: center;
   }
-}*/
+}
