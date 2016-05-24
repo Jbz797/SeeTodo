@@ -41,7 +41,7 @@ ripple emulate
 ionic run android
 ```
 
-## Test unitaires
+## Tests unitaires
 ```
 npm test
 ```
