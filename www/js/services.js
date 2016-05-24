@@ -77,11 +77,9 @@ angular.module('seetodo')
 			forage.setItem(this_todo.id, this_todo)
 				.then(function (result) {
 					console.log('SeeTodo -> Tâche "' + this_todo.id + '" modifiée');
-					todos[todos.indexOf(todo)].delete = true;
 					todos[todos.indexOf(todo)].color = this_todo.color;
 					todos[todos.indexOf(todo)].description = this_todo.description;
 					todos[todos.indexOf(todo)].title = this_todo.title;
-					todos[todos.indexOf(todo)].delete = false;
 					q.resolve(result);
 				});
 			return q.promise;
