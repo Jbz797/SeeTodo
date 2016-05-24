@@ -1,5 +1,5 @@
-<ion-side-menus>
-  <ion-side-menu-content ng-controller="NavCtrl" edge-drag-threshold="25">
+<ion-side-menus ng-controller="NavCtrl">
+  <ion-side-menu-content edge-drag-threshold="25">
 
     <!--HEADER-->
     <ion-nav-bar class="bar bar-header bar-balanced">
@@ -35,7 +35,7 @@
     <ion-content class="has-expanded-header">
       <ion-list>
         <ion-item menu-close href="#/app/main" ng-class="{'bold': url === '/main'}">
-          Toutes
+          {{url}}
         </ion-item>
         <ion-item menu-close href="#/app/main/active">
           Actives
