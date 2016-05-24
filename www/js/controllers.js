@@ -2,15 +2,15 @@
 
 angular.module('seetodo')
 
-.controller('AppCtrl', function (ionicMaterialInk) {
+.controller('AppCtrl', function (ionicMaterialInk, $state) {
 	ionicMaterialInk.displayEffect();
+	$scope.url = $state.current.url;
 })
 
-.controller('NavCtrl', function ($scope, $ionicSideMenuDelegate, $state) {
+.controller('NavCtrl', function ($scope, $ionicSideMenuDelegate) {
 	$scope.showMenu = function () {
 		$ionicSideMenuDelegate.toggleLeft();
 	};
-	$scope.url = $state.current.url;
 })
 
 .controller('MainCtrl', function (ionicMaterialInk, $ionicPopup, $scope, storage) {
