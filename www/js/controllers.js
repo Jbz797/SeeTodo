@@ -55,7 +55,7 @@ angular.module('seetodo')
 			storage.refresh(todo);
 			storage.edit(todo)
 				.then(function success(response) {
-					$timeout(storage.refresh(todo), 500);
+					$timeout(storage.refresh(response), 500);
 				});
 		}
 	};
