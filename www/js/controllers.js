@@ -10,14 +10,16 @@ angular.module('seetodo')
 	$scope.showMenu = function () {
 		$ionicSideMenuDelegate.toggleLeft();
 	};
-	/*$scope.$watch($ionicSideMenuDelegate.isOpen(), function () {
-		$scope.is_open = $ionicSideMenuDelegate.isOpen();
-	});*/
-	$scope.$watch(function() { 
-  return location.hash;
-}, function(value) {
-  $scope.url = location.hash;
-});
+	$scope.$watch(function () {
+		return $ionicSideMenuDelegate.isOpen();
+	}, function (value) {
+		$scope.is_open = value;
+	});
+	$scope.$watch(function () {
+		return location.hash;
+	}, function (value) {
+		$scope.url = value;
+	});
 })
 
 .controller('MainCtrl', function (ionicMaterialInk, $ionicPopup, $scope, storage) {
