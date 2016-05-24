@@ -4,7 +4,7 @@ var todos = [];
 
 angular.module('seetodo')
 
-.factory('storage', function ($localForage, $q) {
+.factory('storage', function ($localForage, $q, $timeout) {
 
 	var forage = $localForage;
 
@@ -116,7 +116,8 @@ angular.module('seetodo')
 
 		refresh: function (todo) {
 			for(var i in todos) {
-				todos[i].delete = !todos[i].delete;
+				todos[todos.indexOf(todo)].delete = true;
+				todos[todos.indexOf(todo)].delete = false;
 			}
 		},
 
