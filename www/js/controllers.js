@@ -4,10 +4,7 @@ angular.module('seetodo')
 
 .controller('AppCtrl', function (ionicMaterialInk, $location) {
 	ionicMaterialInk.displayEffect();
-	angular.forEach($location.search, function(value, key) {
-	  console.log(value);
-		console.log(key);
-	});
+	console.log($location.href);
 })
 
 .controller('NavCtrl', function ($scope, $ionicSideMenuDelegate) {
