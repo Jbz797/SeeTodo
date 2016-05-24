@@ -13,6 +13,10 @@ angular.module('seetodo')
 	$scope.$watch(function () {
 		$scope.url = location.hash;
 	});
+	$scope.is_open = $ionicSideMenuDelegate.isOpen();
+	$scope.$watch(function () {
+		console.log($scope.is_open);
+	});
 })
 
 .controller('MainCtrl', function (ionicMaterialInk, $ionicPopup, $scope, storage) {
@@ -29,8 +33,8 @@ angular.module('seetodo')
 	});
 
 	$scope.newTodo = {};
-	storage.get_database();
 	$scope.todos = storage.get_todos();
+	storage.get_database();
 
 	$scope.addTodo = function () {
 		var newTodo = $scope.newTodo;
