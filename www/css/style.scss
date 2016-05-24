@@ -30,6 +30,7 @@ body {
     ion-header-bar {
       @include align-items(center);
       @include justify-content(center);
+      background-image: none;
     }
     h2 {
       color: white;
@@ -37,7 +38,6 @@ body {
     }
     .has-expanded-header {
       background-color: #e0e0e0;
-      background-image: none;
     }
     .item-content .bold {
       font-weight: bold;
