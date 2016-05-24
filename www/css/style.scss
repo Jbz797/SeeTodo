@@ -26,15 +26,18 @@ body {
   .bar-header .buttons {
     position: initial;
   }
-  ion-side-menu{
-  ion-header-bar {
-    @include align-items(center);
-    @include justify-content(center);
+  ion-side-menu {
+    ion-header-bar {
+      @include align-items(center);
+      @include justify-content(center);
+    }
+    .has-expanded-header {
+      background-color: #e0e0e0;
+    }
+    .item-content {
+      font-size: bold;
+    }
   }
-  .has-expanded-header {
-    background-color: #E0E0E0;
-  }
-}
   .button {
     img {
       vertical-align: middle;
