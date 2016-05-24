@@ -10,8 +10,8 @@ angular.module('seetodo')
 	$scope.showMenu = function () {
 		$ionicSideMenuDelegate.toggleLeft();
 	};
-	var url = $state.current.url;
-	$scope.$watch('url', function () {
+	var url = $state;
+	$scope.$watch('url.current', function () {
 		console.log($state.current.url);
 		$scope.url = $state.current.url;
 	});
