@@ -27,7 +27,7 @@ body {
     position: initial;
   }
   ion-side-menu {
-    ion-header-bar {
+    .bar {
       @include align-items(center);
       @include justify-content(center);
       background-image: none;
