@@ -26,10 +26,15 @@ body {
   .bar-header .buttons {
     position: initial;
   }
+  ion-side-menu{
   ion-header-bar {
     @include align-items(center);
     @include justify-content(center);
   }
+  .has-expanded-header {
+    background-color: #E0E0E0;
+  }
+}
   .button {
     img {
       vertical-align: middle;
@@ -67,6 +72,11 @@ body {
       padding-left: 60px;
     }
     width: auto;
+  }
+
+  .blank {
+    height: 10%;
+    margin-bottom: 10px;
   }
 }
 
