@@ -120,9 +120,10 @@ angular.module('seetodo')
 			function refresh_this_todo(todo) {
 				todos[todos.indexOf(todo)].delete = !todos.delete;
 			}
-			refresh_this_todo(todo).then(function(){
-				$timeout(refresh_this_todo(todo), 500);
-			});
+			refresh_this_todo(todo)
+				.then(function () {
+					$timeout(todos[todos.indexOf(todo)].delete = !todos.delete, 500);
+				});
 		},
 
 		switch: function (todo) {
