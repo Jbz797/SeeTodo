@@ -7,7 +7,9 @@ angular.module('seetodo')
 })
 
 .controller('NavCtrl', function ($scope, $ionicSideMenuDelegate) {
-	$scope.is_open = $ionicSideMenuDelegate.isOpen();
+	$scope.is_open = function() {
+		return $ionicSideMenuDelegate.isOpen();
+	};
 	$scope.showMenu = function () {
 		$ionicSideMenuDelegate.toggleLeft();
 	};
