@@ -7,15 +7,14 @@ angular.module('seetodo')
 })
 
 .controller('NavCtrl', function ($scope, $ionicSideMenuDelegate) {
-	$scope.is_open = function () {
-		return $ionicSideMenuDelegate.isOpen();
-	};
 	$scope.showMenu = function () {
 		$ionicSideMenuDelegate.toggleLeft();
 	};
-	$scope.$watch(function () {
+	$scope.$watch($ionicSideMenuDelegate.isOpen(),function () {
+		$scope.is_open = $ionicSideMenuDelegate.isOpen();
+	});
+	$scope.$watch(location.hash,function () {
 		$scope.url = location.hash;
-		console.log($scope.is_open);
 	});
 })
 
