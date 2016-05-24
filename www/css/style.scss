@@ -31,6 +31,9 @@ body {
       @include align-items(center);
       @include justify-content(center);
     }
+    h2 {
+      margin: 0;
+    }
     .has-expanded-header {
       background-color: #e0e0e0;
     }
