@@ -12,7 +12,7 @@ angular.module('seetodo')
 	};
 })
 
-.controller('MainCtrl', function (ionicMaterialInk, $ionicPopup, $scope, storage, $timeout) {
+.controller('MainCtrl', function (ionicMaterialInk, $ionicPopup, $scope, storage) {
 
 	var fab_seemy = document.getElementById('fab_seemy');
 	fab_seemy.addEventListener('click', function () {
@@ -52,11 +52,7 @@ angular.module('seetodo')
 
 	$scope.editTodo = function (todo) {
 		if(todo.title.length > 0) {
-			storage.refresh(todo);
-			storage.edit(todo)
-				.then(function success(response) {
-					$timeout(storage.refresh(response), 500);
-				});
+			storage.edit(todo);
 		}
 	};
 
@@ -83,16 +79,19 @@ angular.module('seetodo')
 			}, {
 				text: 'Sauvegarder',
 				type: 'button-balanced',
-				onTap: $scope.editTodo(todo)
+				onTap: function () {
+					$scope.editTodo(todo);
+				}
 			}]
 		});
 	};
 
 	$scope.showConfirm = function () {
 		var confirmPopup = $ionicPopup.confirm({
-			title: 'Tout supprimer',
+			cancelText: 'Annuler',
+			okType: 'button button-small button-balanced',
 			template: 'Êtes-vous sûr de vouloir tout supprimer ? (Supprimera même les tâches actives)',
-			okType: 'button button-small button-balanced'
+			title: 'Tout supprimer'
 		});
 
 		confirmPopup.then(function (res) {

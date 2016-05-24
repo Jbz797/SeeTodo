@@ -64,23 +64,12 @@ angular.module('seetodo')
 		},
 
 		edit: function (todo) {
-			var this_todo = {
-				activate: todo.activate,
-				color: todo.color,
-				date: todo.date,
-				delete: todo.delete,
-				description: todo.description,
-				id: todo.id,
-				title: todo.title
-			};
 			var q = $q.defer();
 			var that = this;
-			forage.setItem(this_todo.id, this_todo)
+			forage.setItem(todo.id, todo)
 				.then(function (result) {
-					console.log('SeeTodo -> Tâche "' + this_todo.id + '" modifiée');
-					todos[todos.indexOf(todo)].color = this_todo.color;
-					todos[todos.indexOf(todo)].description = this_todo.description;
-					todos[todos.indexOf(todo)].title = this_todo.title;
+					console.log('SeeTodo -> Tâche "' + todo.id + '" modifiée');
+					that.refresh(todo);
 					q.resolve(result);
 				});
 			return q.promise;
@@ -116,8 +105,11 @@ angular.module('seetodo')
 		},
 
 		refresh: function (todo) {
-			todos[todos[todo.id]].delete = !todos.delete;
-			return todo;
+			var todo_to_refresh = todos[todos.indexOf(todo)];
+			todo_to_refresh.delete = !todo_to_refresh.delete;
+			$timeout(function () {
+				todo_to_refresh.delete = !todo_to_refresh.delete;
+			}, 0);
 		},
 
 		switch: function (todo) {
