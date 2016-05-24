@@ -36,7 +36,7 @@ npm install
 npm install -g ripple-emulator
 ripple emulate
 ```
-#### Tester l'application avec son appareil Android :
+#### Tester l'application depuis son appareil Android :
 ```
 ionic run android
 ```
