@@ -41,6 +41,9 @@ angular.module('seetodo', ['ionic', 'ionic-material', 'ksSwiper', 'LocalForageMo
 				'menuContent': {
 					templateUrl: 'templates/main.html',
 					controller: 'MainCtrl'
+				},
+				data: {
+					page: 'main'
 				}
 			}
 		})
