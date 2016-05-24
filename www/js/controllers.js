@@ -52,11 +52,7 @@ angular.module('seetodo')
 
 	$scope.editTodo = function (todo) {
 		if(todo.title.length > 0) {
-			storage.refresh();
-			storage.edit(todo)
-				.then(function success(response) {
-					$timeout(storage.refresh, 500);
-				});
+			storage.edit(todo);
 		}
 	};
 
