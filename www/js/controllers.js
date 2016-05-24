@@ -14,6 +14,8 @@ angular.module('seetodo')
 
 .controller('MainCtrl', function (ionicMaterialInk, $ionicPopup, $scope, storage) {
 
+	console.log($scope.page);
+
 	var fab_seemy = document.getElementById('fab_seemy');
 	fab_seemy.addEventListener('click', function () {
 		location.href = 'https://twitter.com/ZachFitzgerald';
