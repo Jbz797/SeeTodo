@@ -2,7 +2,7 @@
 
 angular.module('seetodo')
 
-.controller('AppCtrl', function (ionicMaterialInk, $state) {
+.controller('AppCtrl', function (ionicMaterialInk, $scope,$state) {
 	ionicMaterialInk.displayEffect();
 	$scope.url = $state.current.url;
 })
