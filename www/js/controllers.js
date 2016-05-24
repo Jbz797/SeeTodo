@@ -11,7 +11,7 @@ angular.module('seetodo')
 		$ionicSideMenuDelegate.toggleLeft();
 	};
 	$scope.$watch(function () {
-	    console.log(location.hash);
+	    $scope.url = location.hash;
 	});
 })
 
