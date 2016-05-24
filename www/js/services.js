@@ -81,9 +81,9 @@ angular.module('seetodo')
 					todos[todos.indexOf(todo)].color = this_todo.color;
 					todos[todos.indexOf(todo)].description = this_todo.description;
 					todos[todos.indexOf(todo)].title = this_todo.title;
-					todos[todos.indexOf(todo)].delete = false;
 					q.resolve(result);
 				});
+				todos[todos.indexOf(todo)].delete = false;
 			return q.promise;
 		},
 
