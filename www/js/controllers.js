@@ -12,7 +12,7 @@ angular.module('seetodo')
 	};
 })
 
-.controller('MainCtrl', function (ionicMaterialInk, $ionicPopup, $scope, storage) {
+.controller('MainCtrl', function (ionicMaterialInk, $ionicPopup, $scope, storage, $timeout) {
 
 	var fab_seemy = document.getElementById('fab_seemy');
 	fab_seemy.addEventListener('click', function () {
@@ -52,7 +52,11 @@ angular.module('seetodo')
 
 	$scope.editTodo = function (todo) {
 		if(todo.title.length > 0) {
-			storage.edit(todo);
+			storage.refresh(todo);
+			storage.edit(todo)
+				.then(function success(response) {
+					$timeout(storage.refresh(todo), 500);
+				});
 		}
 	};
 
