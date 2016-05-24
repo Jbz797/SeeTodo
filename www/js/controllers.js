@@ -12,7 +12,7 @@ angular.module('seetodo')
 	};
 })
 
-.controller('MainCtrl', function (ionicMaterialInk, $ionicPopup, $scope, storage) {
+.controller('MainCtrl', function (ionicMaterialInk, $ionicPopup, $scope, storage, $timeout) {
 
 	var fab_seemy = document.getElementById('fab_seemy');
 	fab_seemy.addEventListener('click', function () {
