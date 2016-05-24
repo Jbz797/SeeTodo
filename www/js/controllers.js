@@ -7,7 +7,7 @@ angular.module('seetodo')
 })
 
 .controller('NavCtrl', function ($scope, $ionicSideMenuDelegate) {
-	$scope.is_open = function() {
+	$scope.is_open = function () {
 		return $ionicSideMenuDelegate.isOpen();
 	};
 	$scope.showMenu = function () {
@@ -15,6 +15,7 @@ angular.module('seetodo')
 	};
 	$scope.$watch(function () {
 		$scope.url = location.hash;
+		console.log($scope.is_open);
 	});
 })
 
