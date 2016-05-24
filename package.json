@@ -1,6 +1,6 @@
 {
   "name": "seetodo",
-  "version": "0.7.53",
+  "version": "0.7.54",
   "description": "SeeTodo: gestionnaire de liste des tâches pour appareils android et ios.",
   "scripts": {
     "test": "karma start test/config/karma.conf.js"

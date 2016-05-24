@@ -13,6 +13,7 @@ angular.module('seetodo')
 	};
 	$scope.$watch(function () {
 		$scope.url = location.hash;
+		console.log($scope.is_open);
 	});
 })
 
