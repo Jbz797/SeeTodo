@@ -6,13 +6,11 @@ angular.module('seetodo')
 	ionicMaterialInk.displayEffect();
 })
 
-.controller('NavCtrl', function ($scope, $ionicSideMenuDelegate, $state) {
+.controller('NavCtrl', function ($scope, $ionicSideMenuDelegate) {
 	$scope.showMenu = function () {
 		$ionicSideMenuDelegate.toggleLeft();
 	};
-	$scope.$watch(function () {
-	    $scope.url = location.hash;
-	});
+	$scope.url = location.hash;
 })
 
 .controller('MainCtrl', function (ionicMaterialInk, $ionicPopup, $scope, storage) {
