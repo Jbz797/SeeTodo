@@ -59,7 +59,7 @@ angular.module('seetodo')
 	$scope.showDetailsPopup = function (todo) {
 		$scope.todo = todo;
 		$ionicPopup.show({
-			templateUrl: '../templates/popup_details.html',
+			templateUrl: 'templates/popup_details.html',
 			title: 'Details',
 			scope: $scope,
 			buttons: [{
@@ -71,7 +71,7 @@ angular.module('seetodo')
 	$scope.showEditPopup = function (todo) {
 		$scope.todo = todo;
 		$ionicPopup.show({
-			templateUrl: '../templates/popup_edit.html',
+			templateUrl: 'templates/popup_edit.html',
 			title: 'Modifier',
 			scope: $scope,
 			buttons: [{
