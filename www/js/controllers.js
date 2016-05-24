@@ -14,8 +14,8 @@ angular.module('seetodo')
 		$scope.is_open = $ionicSideMenuDelegate.isOpen();
 	});*/
 	var url = location.hash;
-	$scope.$watch('url', function () {
-		$scope.url = location.hash;
+	$scope.$watch(location.hash, function (hash) {
+		$scope.url = hash;
 	});
 })
 
