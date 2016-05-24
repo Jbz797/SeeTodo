@@ -117,6 +117,7 @@ angular.module('seetodo')
 
 		refresh: function (todo) {
 			todos[todos.indexOf(todo)].delete = !todos.delete;
+			return todo;
 		},
 
 		switch: function (todo) {
