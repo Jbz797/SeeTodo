@@ -14,7 +14,11 @@ angular.module('seetodo', ['ionic', 'ionic-material', 'ksSwiper', 'LocalForageMo
 	});
 })
 
-.config(function ($localForageProvider, $stateProvider, $urlRouterProvider) {
+.config(function ($ionicConfigProvider, $localForageProvider, $stateProvider, $urlRouterProvider) {
+
+	if(ionic.Platform.isAndroid()) {
+		$ionicConfigProvider.scrolling.jsScrolling(false);
+	}
 
 	$localForageProvider.config({
 		driver: 'localStorageWrapper',

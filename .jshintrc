@@ -9,6 +9,7 @@
     "angular": false,
     "cordova": false,
     "document": false,
+    "ionic": false,
     "location": false,
     "StatusBar": false,
     "window": false
