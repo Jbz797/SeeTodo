@@ -70,7 +70,7 @@ angular.module('seetodo')
 	};
 
 	/**
-	 * @name SwithTodo
+	 * @name DeleteTodo
 	 * @desc Supprime une tâche
 	 * @param {Object} la tâche à supprimer
 	 */
