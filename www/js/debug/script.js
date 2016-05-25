@@ -7663,11 +7663,13 @@ else if (typeof define === 'function' && define.amd) {
 
 	.controller('NavCtrl', function ($scope, $ionicSideMenuDelegate) {
 
+		var vm_nav = this;
+
 		/**
 		 * @name ShowMenu
 		 * @desc Affiche le slide munu de gauche
 		 */
-		$scope.showMenu = function () {
+		vm_nav.showMenu = function () {
 			$ionicSideMenuDelegate.toggleLeft();
 		};
 
