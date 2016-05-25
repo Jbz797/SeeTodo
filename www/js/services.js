@@ -145,6 +145,12 @@ angular.module('seetodo')
 			}, 0);
 		},
 
+		/**
+		 * @name Swith
+		 * @desc Modifie une tâche en base et met à jour le scope
+		 * @param {Object} la tâche à modifier
+		 * @returns {Object} une promesse
+		 */
 		switch: function (todo) {
 			var this_todo = {
 				activate: !todo.activate,
