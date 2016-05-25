@@ -4,58 +4,62 @@
 
 	angular.module('seetodo')
 
-	.controller('AppCtrl', function (ionicMaterialInk, $scope) {
+	.controller('AppCtrl', function (ionicMaterialInk) {
 		ionicMaterialInk.displayEffect(); // Actionne les effets de vague sur certains éléments
 		if(ionic.Platform.isIOS()) { // Vérifie si l'on se trouve sur une plateforme ios
-			$scope.is_ios = true;
+			vm.is_ios = true;
 		}
 	})
 
-	.controller('NavCtrl', function ($scope, $ionicSideMenuDelegate) {
+	.controller('NavCtrl', function ($ionicSideMenuDelegate) {
+
+		var vm = this;
 
 		/**
 		 * @name ShowMenu
 		 * @desc Affiche le slide munu de gauche
 		 */
-		$scope.showMenu = function () {
+		vm.showMenu = function () {
 			$ionicSideMenuDelegate.toggleLeft();
 		};
 
 		/**
 		 * @desc Vérifie si le menu est ouvert
 		 */
-		$scope.$watch(function () {
+		vm.$watch(function () {
 			return $ionicSideMenuDelegate.isOpen();
 		}, function (value) {
-			$scope.is_open = value;
+			vm.is_open = value;
 		});
 
 		/**
 		 * @desc Vérifie l'url actuelle
 		 */
-		$scope.$watch(function () {
+		vm.$watch(function () {
 			return location.hash;
 		}, function (value) {
-			$scope.url = value;
+			vm.url = value;
 		});
 	})
 
-	.controller('MainCtrl', function (ionicMaterialInk, $ionicPopup, $scope, storage) {
+	.controller('MainCtrl', function (ionicMaterialInk, $ionicPopup, storage) {
 
-		$scope.newTodo = {};
-		$scope.todos = storage.get_todos();
+		var vm = this;
+
+		vm.newTodo = {};
+		vm.todos = storage.get_todos();
 		storage.get_database(); // On charge la base de donnée
 
 		/**
 		 * @name AddTodo
 		 * @desc Ajoute une tâche
 		 */
-		$scope.addTodo = function () {
-			var newTodo = $scope.newTodo;
+		vm.addTodo = function () {
+			var newTodo = vm.newTodo;
 			if(newTodo.title.length > 0) {
 				storage.add(newTodo)
 					.then(function success(response) {
-						$scope.newTodo = {};
+						vm.newTodo = {};
 					});
 			}
 		};
@@ -65,7 +69,7 @@
 		 * @desc Inverse l'état d'activation d'une tâche
 		 * @param {Object} la tâche à inverser
 		 */
-		$scope.switchTodo = function (todo) {
+		vm.switchTodo = function (todo) {
 			if(todo.title.length > 0) {
 				storage.switch(todo);
 			}
@@ -76,7 +80,7 @@
 		 * @desc Supprime une tâche
 		 * @param {Object} la tâche à supprimer
 		 */
-		$scope.deleteTodo = function (todo) {
+		vm.deleteTodo = function (todo) {
 			if(todo.title.length > 0) {
 				storage.delete(todo);
 			}
@@ -87,7 +91,7 @@
 		 * @desc Modifie une tâche
 		 * @param {Object} la tâche à modifier
 		 */
-		$scope.editTodo = function (todo) {
+		vm.editTodo = function (todo) {
 			if(todo.title.length > 0) {
 				storage.edit(todo);
 			}
@@ -98,12 +102,12 @@
 		 * @desc Affiche les details d'une tâche
 		 * @param {Object} la tâche concernée
 		 */
-		$scope.showDetailsPopup = function (todo) {
-			$scope.todo = todo;
+		vm.showDetailsPopup = function (todo) {
+			vm.todo = todo;
 			$ionicPopup.show({
 				templateUrl: 'templates/popup_details.html',
 				title: 'Details',
-				scope: $scope,
+				scope: vm,
 				buttons: [{
 					text: 'OK'
 				}]
@@ -115,19 +119,19 @@
 		 * @desc Affiche la popup d'édition d'une tâche
 		 * @param {Object} la tâche concernée
 		 */
-		$scope.showEditPopup = function (todo) {
-			$scope.todo = todo;
+		vm.showEditPopup = function (todo) {
+			vm.todo = todo;
 			$ionicPopup.show({
 				templateUrl: 'templates/popup_edit.html',
 				title: 'Modifier',
-				scope: $scope,
+				scope: vm,
 				buttons: [{
 					text: 'Annuler'
 				}, {
 					text: 'Sauvegarder',
 					type: 'button-balanced',
 					onTap: function () {
-						$scope.editTodo(todo);
+						vm.editTodo(todo);
 					}
 				}]
 			});
@@ -137,7 +141,7 @@
 		 * @name ShowConfirm
 		 * @desc Popup de confirmation avant suppression de la base
 		 */
-		$scope.showConfirm = function () {
+		vm.showConfirm = function () {
 			var confirmPopup = $ionicPopup.confirm({
 				cancelText: 'Annuler',
 				okType: 'button button-small button-balanced',

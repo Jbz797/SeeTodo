@@ -7651,58 +7651,62 @@ else if (typeof define === 'function' && define.amd) {
 
 	angular.module('seetodo')
 
-	.controller('AppCtrl', function (ionicMaterialInk, $scope) {
+	.controller('AppCtrl', function (ionicMaterialInk) {
 		ionicMaterialInk.displayEffect(); // Actionne les effets de vague sur certains éléments
 		if(ionic.Platform.isIOS()) { // Vérifie si l'on se trouve sur une plateforme ios
-			$scope.is_ios = true;
+			vm.is_ios = true;
 		}
 	})
 
-	.controller('NavCtrl', function ($scope, $ionicSideMenuDelegate) {
+	.controller('NavCtrl', function ($ionicSideMenuDelegate) {
+
+		var vm = this;
 
 		/**
 		 * @name ShowMenu
 		 * @desc Affiche le slide munu de gauche
 		 */
-		$scope.showMenu = function () {
+		vm.showMenu = function () {
 			$ionicSideMenuDelegate.toggleLeft();
 		};
 
 		/**
 		 * @desc Vérifie si le menu est ouvert
 		 */
-		$scope.$watch(function () {
+		vm.$watch(function () {
 			return $ionicSideMenuDelegate.isOpen();
 		}, function (value) {
-			$scope.is_open = value;
+			vm.is_open = value;
 		});
 
 		/**
 		 * @desc Vérifie l'url actuelle
 		 */
-		$scope.$watch(function () {
+		vm.$watch(function () {
 			return location.hash;
 		}, function (value) {
-			$scope.url = value;
+			vm.url = value;
 		});
 	})
 
-	.controller('MainCtrl', function (ionicMaterialInk, $ionicPopup, $scope, storage) {
+	.controller('MainCtrl', function (ionicMaterialInk, $ionicPopup, storage) {
 
-		$scope.newTodo = {};
-		$scope.todos = storage.get_todos();
+		var vm = this;
+
+		vm.newTodo = {};
+		vm.todos = storage.get_todos();
 		storage.get_database(); // On charge la base de donnée
 
 		/**
 		 * @name AddTodo
 		 * @desc Ajoute une tâche
 		 */
-		$scope.addTodo = function () {
-			var newTodo = $scope.newTodo;
+		vm.addTodo = function () {
+			var newTodo = vm.newTodo;
 			if(newTodo.title.length > 0) {
 				storage.add(newTodo)
 					.then(function success(response) {
-						$scope.newTodo = {};
+						vm.newTodo = {};
 					});
 			}
 		};
@@ -7712,7 +7716,7 @@ else if (typeof define === 'function' && define.amd) {
 		 * @desc Inverse l'état d'activation d'une tâche
 		 * @param {Object} la tâche à inverser
 		 */
-		$scope.switchTodo = function (todo) {
+		vm.switchTodo = function (todo) {
 			if(todo.title.length > 0) {
 				storage.switch(todo);
 			}
@@ -7723,7 +7727,7 @@ else if (typeof define === 'function' && define.amd) {
 		 * @desc Supprime une tâche
 		 * @param {Object} la tâche à supprimer
 		 */
-		$scope.deleteTodo = function (todo) {
+		vm.deleteTodo = function (todo) {
 			if(todo.title.length > 0) {
 				storage.delete(todo);
 			}
@@ -7734,7 +7738,7 @@ else if (typeof define === 'function' && define.amd) {
 		 * @desc Modifie une tâche
 		 * @param {Object} la tâche à modifier
 		 */
-		$scope.editTodo = function (todo) {
+		vm.editTodo = function (todo) {
 			if(todo.title.length > 0) {
 				storage.edit(todo);
 			}
@@ -7745,12 +7749,12 @@ else if (typeof define === 'function' && define.amd) {
 		 * @desc Affiche les details d'une tâche
 		 * @param {Object} la tâche concernée
 		 */
-		$scope.showDetailsPopup = function (todo) {
-			$scope.todo = todo;
+		vm.showDetailsPopup = function (todo) {
+			vm.todo = todo;
 			$ionicPopup.show({
 				templateUrl: 'templates/popup_details.html',
 				title: 'Details',
-				scope: $scope,
+				scope: vm,
 				buttons: [{
 					text: 'OK'
 				}]
@@ -7762,19 +7766,19 @@ else if (typeof define === 'function' && define.amd) {
 		 * @desc Affiche la popup d'édition d'une tâche
 		 * @param {Object} la tâche concernée
 		 */
-		$scope.showEditPopup = function (todo) {
-			$scope.todo = todo;
+		vm.showEditPopup = function (todo) {
+			vm.todo = todo;
 			$ionicPopup.show({
 				templateUrl: 'templates/popup_edit.html',
 				title: 'Modifier',
-				scope: $scope,
+				scope: vm,
 				buttons: [{
 					text: 'Annuler'
 				}, {
 					text: 'Sauvegarder',
 					type: 'button-balanced',
 					onTap: function () {
-						$scope.editTodo(todo);
+						vm.editTodo(todo);
 					}
 				}]
 			});
@@ -7784,7 +7788,7 @@ else if (typeof define === 'function' && define.amd) {
 		 * @name ShowConfirm
 		 * @desc Popup de confirmation avant suppression de la base
 		 */
-		$scope.showConfirm = function () {
+		vm.showConfirm = function () {
 			var confirmPopup = $ionicPopup.confirm({
 				cancelText: 'Annuler',
 				okType: 'button button-small button-balanced',
@@ -7803,189 +7807,189 @@ else if (typeof define === 'function' && define.amd) {
 
 (function () {
 
-"use strict";
+	"use strict";
 
-angular.module('seetodo')
+	angular.module('seetodo')
 
-.factory('storage', function ($localForage, $q, $timeout) {
+	.factory('storage', function ($localForage, $q, $timeout) {
 
-	var forage = $localForage;
-	var todos = [];
+		var forage = $localForage;
+		var todos = [];
 
-	return {
+		return {
 
-		/**
-		 * @name Add
-		 * @desc Ajoute une tâche en base et met à jour le scope
-		 * @param {Object} la tâche à ajouter
-		 * @returns {Object} une promesse
-		 */
-		add: function (todo) {
-			var this_todo = {
-				activate: true,
-				color: false,
-				date: new Date(),
-				delete: false,
-				description: '',
-				id: todo.id ? todo.id : Math.floor(Math.random() * 100000) + 1,
-				title: todo.title
-			};
-			var q = $q.defer();
-			forage.setItem(this_todo.id, this_todo)
-				.then(function (result) {
-					console.log('SeeTodo -> Tâche "' + this_todo.id + '" ajoutée en base');
-					todos.push(this_todo);
-					q.resolve(result);
-				});
-			return q.promise;
-		},
-
-		/**
-		 * @name ClearAll
-		 * @desc Supprime la base dans sa totalité et met à jour le scope
-		 * @returns {Object} une promesse
-		 */
-		clearAll: function () {
-			var q = $q.defer();
-			forage.clear()
-				.then(function (result) {
-					console.log('SeeTodo -> Toutes les tâches ont bien été supprimées');
-					for(var variable in todos) {
-						todos[variable] = {};
-					}
-					q.resolve(result);
-				});
-			return q.promise;
-		},
-
-		/**
-		 * @name Delete
-		 * @desc Supprime une tâche en base et met à jour le scope
-		 * @param {Object} la tâche à supprimer
-		 * @returns {Object} une promesse
-		 */
-		delete: function (todo) {
-			var this_todo = {
-				activate: todo.activate,
-				color: todo.color,
-				date: todo.date,
-				delete: true,
-				description: todo.description,
-				id: todo.id,
-				title: todo.title
-			};
-			var q = $q.defer();
-			forage.setItem(this_todo.id, this_todo)
-				.then(function (result) {
-					console.log('SeeTodo -> Tâche "' + this_todo.id + '" archivée');
-					todos[todos.indexOf(todo)].delete = true;
-					q.resolve(result);
-				});
-			return q.promise;
-		},
-
-		/**
-		 * @name Edit
-		 * @desc Modifie une tâche en base et met à jour le scope
-		 * @param {Object} la tâche à modifier
-		 * @returns {Object} une promesse
-		 */
-		edit: function (todo) {
-			var q = $q.defer();
-			var that = this;
-			forage.setItem(todo.id, todo)
-				.then(function (result) {
-					console.log('SeeTodo -> Tâche "' + todo.id + '" modifiée');
-					that.refresh(todo);
-					q.resolve(result);
-				});
-			return q.promise;
-		},
-
-		/**
-		 * @name Get_Database
-		 * @desc Charge la base de données
-		 * @returns {Object} une promesse
-		 */
-		get_database: function () {
-			if(todos.length === 0) {
+			/**
+			 * @name Add
+			 * @desc Ajoute une tâche en base et met à jour le scope
+			 * @param {Object} la tâche à ajouter
+			 * @returns {Object} une promesse
+			 */
+			add: function (todo) {
+				var this_todo = {
+					activate: true,
+					color: false,
+					date: new Date(),
+					delete: false,
+					description: '',
+					id: todo.id ? todo.id : Math.floor(Math.random() * 100000) + 1,
+					title: todo.title
+				};
 				var q = $q.defer();
-				forage.iterate(function (value, key) {
-						if(angular.isString(value.title)) {
-							todos.push(value);
-						}
-					})
+				forage.setItem(this_todo.id, this_todo)
 					.then(function (result) {
-						console.log('SeeTodo -> Base de donnée chargée correctement');
+						console.log('SeeTodo -> Tâche "' + this_todo.id + '" ajoutée en base');
+						todos.push(this_todo);
+						q.resolve(result);
+					});
+				return q.promise;
+			},
+
+			/**
+			 * @name ClearAll
+			 * @desc Supprime la base dans sa totalité et met à jour le scope
+			 * @returns {Object} une promesse
+			 */
+			clearAll: function () {
+				var q = $q.defer();
+				forage.clear()
+					.then(function (result) {
+						console.log('SeeTodo -> Toutes les tâches ont bien été supprimées');
+						for(var variable in todos) {
+							todos[variable] = {};
+						}
+						q.resolve(result);
+					});
+				return q.promise;
+			},
+
+			/**
+			 * @name Delete
+			 * @desc Supprime une tâche en base et met à jour le scope
+			 * @param {Object} la tâche à supprimer
+			 * @returns {Object} une promesse
+			 */
+			delete: function (todo) {
+				var this_todo = {
+					activate: todo.activate,
+					color: todo.color,
+					date: todo.date,
+					delete: true,
+					description: todo.description,
+					id: todo.id,
+					title: todo.title
+				};
+				var q = $q.defer();
+				forage.setItem(this_todo.id, this_todo)
+					.then(function (result) {
+						console.log('SeeTodo -> Tâche "' + this_todo.id + '" archivée');
+						todos[todos.indexOf(todo)].delete = true;
+						q.resolve(result);
+					});
+				return q.promise;
+			},
+
+			/**
+			 * @name Edit
+			 * @desc Modifie une tâche en base et met à jour le scope
+			 * @param {Object} la tâche à modifier
+			 * @returns {Object} une promesse
+			 */
+			edit: function (todo) {
+				var q = $q.defer();
+				var that = this;
+				forage.setItem(todo.id, todo)
+					.then(function (result) {
+						console.log('SeeTodo -> Tâche "' + todo.id + '" modifiée');
+						that.refresh(todo);
+						q.resolve(result);
+					});
+				return q.promise;
+			},
+
+			/**
+			 * @name Get_Database
+			 * @desc Charge la base de données
+			 * @returns {Object} une promesse
+			 */
+			get_database: function () {
+				if(todos.length === 0) {
+					var q = $q.defer();
+					forage.iterate(function (value, key) {
+							if(angular.isString(value.title)) {
+								todos.push(value);
+							}
+						})
+						.then(function (result) {
+							console.log('SeeTodo -> Base de donnée chargée correctement');
+							q.resolve(result);
+						});
+					return q.promise;
+				}
+			},
+
+			/**
+			 * @name Get_Todo
+			 * @desc Récupère une tâche en base
+			 * @param {Object} la tâche à récupérer
+			 * @returns {Object} une promesse
+			 */
+			get_todo: function (todo) {
+				var q = $q.defer();
+				forage.getItem(todo.id)
+					.then(function (result) {
+						q.resolve(result);
+					});
+				return q.promise;
+			},
+
+			/**
+			 * @name Get_Todos
+			 * @desc Renvoi la liste des tâches
+			 * @returns {Object} la liste des tâches
+			 */
+			get_todos: function () {
+				return todos;
+			},
+
+			/**
+			 * @name Refresh
+			 * @desc Désactive puis re-active une tâche afin de rénitialiser le swipe
+			 * @param {Object} la tâche à actualiser
+			 */
+			refresh: function (todo) {
+				var todo_to_refresh = todos[todos.indexOf(todo)];
+				todo_to_refresh.delete = !todo_to_refresh.delete;
+				$timeout(function () {
+					todo_to_refresh.delete = !todo_to_refresh.delete;
+				}, 0);
+			},
+
+			/**
+			 * @name Swith
+			 * @desc Inverse l'état d'activation d'une tâche en base et met à jour le scope
+			 * @param {Object} la tâche à inverser
+			 * @returns {Object} une promesse
+			 */
+			switch: function (todo) {
+				var this_todo = {
+					activate: !todo.activate,
+					color: todo.color,
+					date: todo.date,
+					delete: todo.delete,
+					description: todo.description,
+					id: todo.id,
+					title: todo.title
+				};
+				var q = $q.defer();
+				forage.setItem(this_todo.id, this_todo)
+					.then(function (result) {
+						console.log('SeeTodo -> Tâche "' + this_todo.id + '" inversée');
+						todos[todos.indexOf(todo)].activate = this_todo.activate;
 						q.resolve(result);
 					});
 				return q.promise;
 			}
-		},
 
-		/**
-		 * @name Get_Todo
-		 * @desc Récupère une tâche en base
-		 * @param {Object} la tâche à récupérer
-		 * @returns {Object} une promesse
-		 */
-		get_todo: function (todo) {
-			var q = $q.defer();
-			forage.getItem(todo.id)
-				.then(function (result) {
-					q.resolve(result);
-				});
-			return q.promise;
-		},
-
-		/**
-		 * @name Get_Todos
-		 * @desc Renvoi la liste des tâches
-		 * @returns {Object} la liste des tâches
-		 */
-		get_todos: function () {
-			return todos;
-		},
-
-		/**
-		 * @name Refresh
-		 * @desc Désactive puis re-active une tâche afin de rénitialiser le swipe
-		 * @param {Object} la tâche à actualiser
-		 */
-		refresh: function (todo) {
-			var todo_to_refresh = todos[todos.indexOf(todo)];
-			todo_to_refresh.delete = !todo_to_refresh.delete;
-			$timeout(function () {
-				todo_to_refresh.delete = !todo_to_refresh.delete;
-			}, 0);
-		},
-
-		/**
-		 * @name Swith
-		 * @desc Inverse l'état d'activation d'une tâche en base et met à jour le scope
-		 * @param {Object} la tâche à inverser
-		 * @returns {Object} une promesse
-		 */
-		switch: function (todo) {
-			var this_todo = {
-				activate: !todo.activate,
-				color: todo.color,
-				date: todo.date,
-				delete: todo.delete,
-				description: todo.description,
-				id: todo.id,
-				title: todo.title
-			};
-			var q = $q.defer();
-			forage.setItem(this_todo.id, this_todo)
-				.then(function (result) {
-					console.log('SeeTodo -> Tâche "' + this_todo.id + '" inversée');
-					todos[todos.indexOf(todo)].activate = this_todo.activate;
-					q.resolve(result);
-				});
-			return q.promise;
-		}
-
-	};
-});
+		};
+	});
 })();
