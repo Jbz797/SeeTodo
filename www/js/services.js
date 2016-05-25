@@ -45,6 +45,7 @@
 				var q = $q.defer();
 				forage.clear()
 					.then(function (result) {
+						console.log('SeeTodo -> Toutes les tâches ont bien été supprimées');
 						for(var variable in todos) {
 							todos[variable] = {};
 						}
