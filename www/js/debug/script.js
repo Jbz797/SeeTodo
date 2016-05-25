@@ -7715,7 +7715,10 @@ else if (typeof define === 'function' && define.amd) {
 		 */
 		$scope.deleteTodo = function (todo) {
 			if(todo.title.length > 0) {
-				storage.delete(todo);
+				storage.delete(todo)
+					.then(function success(response) {
+						console.log('SeeTodo -> Tâche "' + response.id + '" archivée');
+					});
 			}
 		};
 
