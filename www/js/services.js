@@ -99,7 +99,7 @@ angular.module('seetodo')
 
 		/**
 		 * @name Get_Database
-		 * @desc Charle la base de données
+		 * @desc Charge la base de données
 		 * @returns {Object} une promesse
 		 */
 		get_database: function () {
@@ -118,6 +118,12 @@ angular.module('seetodo')
 			}
 		},
 
+		/**
+		 * @name Get_Todo
+		 * @desc Récupère une tâche en base
+		 * @param {Object} la tâche à modifier
+		 * @returns {Object} une promesse
+		 */
 		get_todo: function (todo) {
 			var q = $q.defer();
 			forage.getItem(todo.id)
