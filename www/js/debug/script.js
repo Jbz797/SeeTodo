@@ -7582,7 +7582,7 @@ angular.module('seetodo', ['ionic', 'ionic-material', 'ksSwiper', 'LocalForageMo
 
 .config(["$ionicConfigProvider", "$localForageProvider", "$stateProvider", "$urlRouterProvider", function ($ionicConfigProvider, $localForageProvider, $stateProvider, $urlRouterProvider) {
 
-	if(ionic.Platform.isAndroid()) {
+	if(ionic.Platform.isAndroid()) { // Vérifie si l'on se trouve sur une plateforme android
 		$ionicConfigProvider.scrolling.jsScrolling(false);
 	}
 
