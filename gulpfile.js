@@ -17,9 +17,26 @@ var paths = {
 };
 
 var libs = {
-	ionic: './scss/ionic.app.scss',
-	ionic_material: './www/lib/ionic-material/src/scss/index.scss',
-	swiper: './www/lib/swiper/dist/css/swiper.min.css'
+	angular_localForage: {
+		js: './www/lib/angular-localforage/dist/angular-localForage.js'
+	},
+	angular_swiper: {
+		js: './www/lib/angular-swiper/dist/angular-swiper.js'
+	},
+	ionic: {
+		css: './scss/ionic.app.scss'
+	},
+	ionic_material: {
+		css: './www/lib/ionic-material/src/scss/index.scss',
+		js: './www/lib/ionic-material/dist/ionic.material.js'
+	},
+	localforage: {
+		js: './www/lib/localforage/dist/localforage.js'
+	},
+	swiper: {
+		css: './www/lib/swiper/dist/css/swiper.css',
+		js: './www/lib/swiper/dist/js/swiper.js'
+	}
 };
 
 var getPackageJson = function () {
@@ -29,7 +46,7 @@ var getPackageJson = function () {
 gulp.task('default', ['material-sass', 'sass', 'js', 'watch']);
 
 gulp.task('material-sass', function (done) {
-	gulp.src(libs.ionic_material)
+	gulp.src(libs.ionic_material.css)
 		.pipe(sass())
 		.on('error', sass.logError)
 		.pipe(minifyCss({
@@ -43,7 +60,7 @@ gulp.task('material-sass', function (done) {
 });
 
 gulp.task('sass', function (done) {
-	gulp.src([libs.ionic, libs.swiper, paths.sass])
+	gulp.src([libs.ionic.css, libs.swiper.css, paths.sass])
 		.pipe(concat('style.css'))
 		.pipe(sass())
 		.on('error', sass.logError)
@@ -58,7 +75,7 @@ gulp.task('sass', function (done) {
 });
 
 gulp.task('js', function (done) {
-	gulp.src(paths.js)
+	gulp.src([libs.localforage.js, libs.angular_localForage.js, libs.ionic_material.js, libs.swiper.js, libs.angular_swiper.js, paths.js])
 		.pipe(ngAnnotate())
 		.pipe(concat('script.js'))
 		.pipe(minify({

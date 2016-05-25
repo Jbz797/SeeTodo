@@ -132,6 +132,7 @@ body {
     }
   }
   .main-slide {
+    min-height: 66px;
     p {
       font-size: 4.5vmin;
       line-height: 1.1;
@@ -158,6 +159,7 @@ body {
     }
   }
   .edit-slide {
+    max-height: 66px;
     @include justify-content(space-around);
     padding: 16px 0;
     button {
