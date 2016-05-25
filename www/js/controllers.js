@@ -4,25 +4,20 @@
 
 	angular.module('seetodo')
 
-	.controller('AppCtrl', function (ionicMaterialInk) {
-
-		var vm = this;
-
+	.controller('AppCtrl', function (ionicMaterialInk, $scope) {
 		ionicMaterialInk.displayEffect(); // Actionne les effets de vague sur certains éléments
 		if(ionic.Platform.isIOS()) { // Vérifie si l'on se trouve sur une plateforme ios
-			vm.is_ios = true;
+			$scope.is_ios = true;
 		}
 	})
 
 	.controller('NavCtrl', function ($scope, $ionicSideMenuDelegate) {
 
-		var vm_nav = this;
-
 		/**
 		 * @name ShowMenu
 		 * @desc Affiche le slide munu de gauche
 		 */
-		vm_nav.showMenu = function () {
+		$scope.showMenu = function () {
 			$ionicSideMenuDelegate.toggleLeft();
 		};
 
