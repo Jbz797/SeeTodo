@@ -13,6 +13,13 @@ angular.module('seetodo')
 
 	return {
 
+		/**
+		 * @name Add
+		 * @desc Ajoute une tâche en base
+		 * @param {Object} la tâche à ajouter
+		 * @returns {Object} une promesse
+		 * @memberOf Factories.add
+		 */
 		add: function (todo) {
 			var this_todo = {
 				activate: true,
