@@ -1,10 +1,10 @@
 "use strict";
 
+angular.module('seetodo')
+
 /**
  * Storage Factory
  */
-angular.module('seetodo')
-
 .factory('storage', function ($localForage, $q, $timeout) {
 
 	var forage = $localForage;
