@@ -14,14 +14,14 @@ angular.module('seetodo')
 	/**
 	 * @name ShowMenu
 	 * @desc Affiche le slide munu de gauche
-	 * @param {Object} la tâche à ajouter
-	 * @returns {Object} une promesse
 	 */
 	$scope.showMenu = function () {
 		$ionicSideMenuDelegate.toggleLeft();
 	};
 
-	// Vérifie si le menu est ouvert
+	/**
+	 * @desc Vérifie si le menu est ouvert
+	 */
 	$scope.$watch(function () {
 		return $ionicSideMenuDelegate.isOpen();
 	}, function (value) {
