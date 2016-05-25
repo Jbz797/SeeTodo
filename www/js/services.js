@@ -121,7 +121,7 @@ angular.module('seetodo')
 		/**
 		 * @name Get_Todo
 		 * @desc Récupère une tâche en base
-		 * @param {Object} la tâche à modifier
+		 * @param {Object} la tâche à récupérer
 		 * @returns {Object} une promesse
 		 */
 		get_todo: function (todo) {
