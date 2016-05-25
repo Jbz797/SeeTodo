@@ -100,6 +100,9 @@ body {
   .ios .swiper-button-prev {
     left: 0;
   }
+  .ios .swiper-slide {
+    padding: 0 20px;
+  }
   .item-input,
   ks-swiper-container:nth-child(2) {
     display: block;
