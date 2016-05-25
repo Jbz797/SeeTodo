@@ -30,6 +30,7 @@ angular.module('seetodo', ['ionic', 'ionic-material', 'ksSwiper', 'LocalForageMo
 		description: 'todos list for SeeTodo app'
 	});
 
+	// Routage
 	$stateProvider
 		.state('app', {
 			url: '/app',
