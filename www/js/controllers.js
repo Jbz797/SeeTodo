@@ -82,7 +82,7 @@ angular.module('seetodo')
 
 	/**
 	 * @name EditTodo
-	 * @desc Mdofie une tâche
+	 * @desc Modifie une tâche
 	 * @param {Object} la tâche à modifier
 	 */
 	$scope.editTodo = function (todo) {
@@ -91,6 +91,11 @@ angular.module('seetodo')
 		}
 	};
 
+	/**
+	 * @name ShowDetailsPopup
+	 * @desc Affiche les details d'une tâche
+	 * @param {Object} la tâche concernée
+	 */
 	$scope.showDetailsPopup = function (todo) {
 		$scope.todo = todo;
 		$ionicPopup.show({
@@ -103,6 +108,11 @@ angular.module('seetodo')
 		});
 	};
 
+	/**
+	 * @name ShowEditPopup
+	 * @desc Affiche la popup d'édition d'une tâche
+	 * @param {Object} la tâche concernée
+	 */
 	$scope.showEditPopup = function (todo) {
 		$scope.todo = todo;
 		$ionicPopup.show({
