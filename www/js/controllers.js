@@ -95,6 +95,25 @@
 		};
 
 		/**
+		 * @name ShowConfirm
+		 * @desc Popup de confirmation avant suppression de la base
+		 */
+		$scope.showConfirm = function () {
+			var confirmPopup = $ionicPopup.confirm({
+				cancelText: 'Annuler',
+				okType: 'button button-small button-balanced',
+				template: 'Êtes-vous sûr de vouloir tout supprimer ? (Supprimera même les tâches actives)',
+				title: 'Tout supprimer'
+			});
+
+			confirmPopup.then(function (res) {
+				if(res) {
+					storage.clearAll();
+				}
+			});
+		};
+
+		/**
 		 * @name ShowDetailsPopup
 		 * @desc Affiche les details d'une tâche
 		 * @param {Object} la tâche concernée
@@ -131,25 +150,6 @@
 						$scope.editTodo(todo);
 					}
 				}]
-			});
-		};
-
-		/**
-		 * @name ShowConfirm
-		 * @desc Popup de confirmation avant suppression de la base
-		 */
-		$scope.showConfirm = function () {
-			var confirmPopup = $ionicPopup.confirm({
-				cancelText: 'Annuler',
-				okType: 'button button-small button-balanced',
-				template: 'Êtes-vous sûr de vouloir tout supprimer ? (Supprimera même les tâches actives)',
-				title: 'Tout supprimer'
-			});
-
-			confirmPopup.then(function (res) {
-				if(res) {
-					storage.clearAll();
-				}
 			});
 		};
 	});
