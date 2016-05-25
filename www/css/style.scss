@@ -94,6 +94,12 @@ body {
   .ios .swiper-button-prev {
     display: block;
   }
+  .ios .swiper-button-next{
+    right: 0;
+  }
+  .ios .swiper-button-prev{
+    left: 0;
+  }
   .item-input,
   ks-swiper-container:nth-child(2) {
     display: block;
