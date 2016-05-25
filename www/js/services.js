@@ -73,7 +73,6 @@
 				var q = $q.defer();
 				forage.setItem(this_todo.id, this_todo)
 					.then(function (result) {
-						console.log('SeeTodo -> Tâche "' + this_todo.id + '" archivée');
 						todos[todos.indexOf(todo)].delete = true;
 						q.resolve(result);
 					});
