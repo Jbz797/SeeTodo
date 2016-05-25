@@ -35,7 +35,13 @@ angular.module('seetodo')
 			return q.promise;
 		},
 
-		clearAll: function (todo) {
+		/**
+		 * @name ClearAll
+		 * @desc Supprime la base
+		 * @param {Object} la tâche à ajouter
+		 * @returns {Object} une promesse
+		 */
+		clearAll: function () {
 			var q = $q.defer();
 			forage.clear()
 				.then(function (result) {
