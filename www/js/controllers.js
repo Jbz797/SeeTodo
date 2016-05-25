@@ -42,7 +42,7 @@ angular.module('seetodo')
 
 	$scope.newTodo = {};
 	$scope.todos = storage.get_todos();
-	storage.get_database();
+	storage.get_database(); // On charge la base de donnée
 
 	/**
 	 * @name AddTodo

@@ -7645,7 +7645,7 @@ angular.module('seetodo')
 
 .controller('AppCtrl', ["ionicMaterialInk", "$scope", function (ionicMaterialInk, $scope) {
 	ionicMaterialInk.displayEffect(); // Actionne les effets de vague sur certains éléments
-	if(ionic.Platform.isIOS()) {
+	if(ionic.Platform.isIOS()) { // Vérifie si l'on se trouve sur une plateforme ios
 		$scope.is_ios = true;
 	}
 }])
@@ -7683,7 +7683,7 @@ angular.module('seetodo')
 
 	$scope.newTodo = {};
 	$scope.todos = storage.get_todos();
-	storage.get_database();
+	storage.get_database(); // On charge la base de donnée
 
 	/**
 	 * @name AddTodo
