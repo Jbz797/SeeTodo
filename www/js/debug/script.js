@@ -7567,7 +7567,7 @@ else if (typeof define === 'function' && define.amd) {
 
 angular.module('seetodo', ['ionic', 'ionic-material', 'ksSwiper', 'LocalForageModule'])
 
-.run(["$ionicPlatform", function ($ionicPlatform) {
+.run(function ($ionicPlatform) {
 	// Configuration par défault de Ionic
 	$ionicPlatform.ready(function () {
 		if(window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
@@ -7578,9 +7578,9 @@ angular.module('seetodo', ['ionic', 'ionic-material', 'ksSwiper', 'LocalForageMo
 			StatusBar.styleDefault();
 		}
 	});
-}])
+})
 
-.config(["$ionicConfigProvider", "$localForageProvider", "$stateProvider", "$urlRouterProvider", function ($ionicConfigProvider, $localForageProvider, $stateProvider, $urlRouterProvider) {
+.config(function ($ionicConfigProvider, $localForageProvider, $stateProvider, $urlRouterProvider) {
 
 	if(ionic.Platform.isAndroid()) { // Vérifie si l'on se trouve sur une plateforme android
 		$ionicConfigProvider.scrolling.jsScrolling(false);
@@ -7640,20 +7640,20 @@ angular.module('seetodo', ['ionic', 'ionic-material', 'ksSwiper', 'LocalForageMo
 			}
 		});
 	$urlRouterProvider.otherwise('/app/main');
-}]);
+});
 
 "use strict";
 
 angular.module('seetodo')
 
-.controller('AppCtrl', ["ionicMaterialInk", "$scope", function (ionicMaterialInk, $scope) {
+.controller('AppCtrl', function (ionicMaterialInk, $scope) {
 	ionicMaterialInk.displayEffect(); // Actionne les effets de vague sur certains éléments
 	if(ionic.Platform.isIOS()) { // Vérifie si l'on se trouve sur une plateforme ios
 		$scope.is_ios = true;
 	}
-}])
+})
 
-.controller('NavCtrl', ["$scope", "$ionicSideMenuDelegate", function ($scope, $ionicSideMenuDelegate) {
+.controller('NavCtrl', function ($scope, $ionicSideMenuDelegate) {
 
 	/**
 	 * @name ShowMenu
@@ -7680,9 +7680,9 @@ angular.module('seetodo')
 	}, function (value) {
 		$scope.url = value;
 	});
-}])
+})
 
-.controller('MainCtrl', ["ionicMaterialInk", "$ionicPopup", "$scope", "storage", function (ionicMaterialInk, $ionicPopup, $scope, storage) {
+.controller('MainCtrl', function (ionicMaterialInk, $ionicPopup, $scope, storage) {
 
 	$scope.newTodo = {};
 	$scope.todos = storage.get_todos();
@@ -7793,13 +7793,13 @@ angular.module('seetodo')
 			}
 		});
 	};
-}]);
+});
 
 "use strict";
 
 angular.module('seetodo')
 
-.factory('storage', ["$localForage", "$q", "$timeout", function ($localForage, $q, $timeout) {
+.factory('storage', function ($localForage, $q, $timeout) {
 
 	var forage = $localForage;
 	var todos = [];
@@ -7979,4 +7979,4 @@ angular.module('seetodo')
 		}
 
 	};
-}]);
+});
