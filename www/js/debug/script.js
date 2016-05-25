@@ -7721,6 +7721,11 @@ angular.module('seetodo')
 		}
 	};
 
+	/**
+	 * @name EditTodo
+	 * @desc Mdofie une tâche
+	 * @param {Object} la tâche à modifier
+	 */
 	$scope.editTodo = function (todo) {
 		if(todo.title.length > 0) {
 			storage.edit(todo);
