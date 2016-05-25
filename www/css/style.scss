@@ -159,8 +159,8 @@ body {
     }
   }
   .edit-slide {
-    max-height: 66px;
     @include justify-content(space-around);
+    max-height: 66px;
     padding: 16px 0;
     button {
       font-size: 3.5vmin;
