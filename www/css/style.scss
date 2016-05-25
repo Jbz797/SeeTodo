@@ -86,10 +86,18 @@ body {
 
 .SeeTodo {
   padding: 0 10px;
+  ks-swiper-container .swiper-button-next,
+  ks-swiper-container .swiper-button-prev {
+    display: none;
+  }
+  .ios .swiper-button-next,
+  .ios .swiper-button-prev {
+    display: block;
+  }
   .item-input,
   ks-swiper-container:nth-child(2) {
     display: block;
-    margin-top: 5%;
+    margin-top: 4%;
   }
   ks-swiper-container:nth-child(2) .swiper-slide {
     border-top-width: 1px;

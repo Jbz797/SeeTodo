@@ -79,7 +79,7 @@ gulp.task('bump', function () {
 gulp.task('git', function () {
 	var version = getPackageJson()
 		.version;
-	gulp.src(['./*', '!./node_modules', '!./platforms'])
+	gulp.src(['./*', '!./node_modules', '!./platforms', '!./plugins'])
 		.pipe(git.add({}))
 		.pipe(git.commit('v' + version));
 });
