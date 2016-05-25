@@ -7651,6 +7651,13 @@ angular.module('seetodo')
 }])
 
 .controller('NavCtrl', ["$scope", "$ionicSideMenuDelegate", function ($scope, $ionicSideMenuDelegate) {
+
+	/**
+	 * @name ShowMenu
+	 * @desc Affiche le slide munu de gauche
+	 * @param {Object} la tâche à ajouter
+	 * @returns {Object} une promesse
+	 */
 	$scope.showMenu = function () {
 		$ionicSideMenuDelegate.toggleLeft();
 	};
