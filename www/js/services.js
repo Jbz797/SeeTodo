@@ -133,6 +133,11 @@ angular.module('seetodo')
 			return q.promise;
 		},
 
+		/**
+		 * @name Get_Todos
+		 * @desc Renvoi la liste des tâches
+		 * @returns {Object} la liste des tâches
+		 */
 		get_todos: function () {
 			return todos;
 		},
