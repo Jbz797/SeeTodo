@@ -95,10 +95,10 @@ body {
     display: block;
   }
   .ios .swiper-button-next {
-    right: 0;
+    right: 10px;
   }
   .ios .swiper-button-prev {
-    left: 0;
+    left: -10px;
   }
   .item-input,
   ks-swiper-container:nth-child(2) {
