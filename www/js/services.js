@@ -1,12 +1,15 @@
 "use strict";
 
-var todos = [];
-
+/**
+ * Storage Factory
+ * @namespace Factories
+ */
 angular.module('seetodo')
 
 .factory('storage', function ($localForage, $q, $timeout) {
 
 	var forage = $localForage;
+	var todos = [];
 
 	return {
 
