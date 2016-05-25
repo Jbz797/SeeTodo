@@ -129,6 +129,9 @@ ion-side-menu {
       text-overflow: ellipsis;
       width: 75%;
     }
+    button {
+      width: 40px;
+    }
     button::before {
       left: 0;
       position: absolute;
