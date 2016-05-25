@@ -7685,6 +7685,10 @@ angular.module('seetodo')
 	$scope.todos = storage.get_todos();
 	storage.get_database();
 
+	/**
+	 * @name AddTodo
+	 * @desc Ajoute une tâche en base
+	 */
 	$scope.addTodo = function () {
 		var newTodo = $scope.newTodo;
 		if(newTodo.title.length > 0) {
