@@ -10,12 +10,15 @@ angular.module('seetodo')
 	$scope.showMenu = function () {
 		$ionicSideMenuDelegate.toggleLeft();
 	};
+
+	// Vérifie si le menu est ouvert
 	$scope.$watch(function () {
 		return $ionicSideMenuDelegate.isOpen();
 	}, function (value) {
 		$scope.is_open = value;
-		console.log(value);
 	});
+
+	// Vérifie l'url coutante
 	$scope.$watch(function () {
 		return location.hash;
 	}, function (value) {
