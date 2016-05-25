@@ -145,6 +145,7 @@ angular.module('seetodo')
 		/**
 		 * @name Refresh
 		 * @desc Désactive puis re-active une tâche afin de rénitialiser le swipe
+		 @param {Object} la tâche à actualiser
 		 */
 		refresh: function (todo) {
 			var todo_to_refresh = todos[todos.indexOf(todo)];
