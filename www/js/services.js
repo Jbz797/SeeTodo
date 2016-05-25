@@ -2,9 +2,6 @@
 
 angular.module('seetodo')
 
-/**
- * Storage Factory
- */
 .factory('storage', function ($localForage, $q, $timeout) {
 
 	var forage = $localForage;
