@@ -7801,6 +7801,8 @@ else if (typeof define === 'function' && define.amd) {
 	});
 })();
 
+(function () {
+
 "use strict";
 
 angular.module('seetodo')
@@ -7986,3 +7988,4 @@ angular.module('seetodo')
 
 	};
 });
+})();
