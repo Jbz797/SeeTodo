@@ -5,11 +5,6 @@
   align-items: $value;
 }
 
-@mixin flex-wrap($value) {
-  -ms-flex-wrap: $value;
-      flex-wrap: $value;
-}
-
 @mixin justify-content($value) {
   -webkit-box-pack: $value;
   -ms-flex-pack: $value;
@@ -43,7 +38,8 @@ body {
   }
   .buttons_list {
     @include align-items(center);
-    @include flex-wrap(wrap);
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
