@@ -26,42 +26,42 @@ body {
     position: initial;
   }
   .button img {
-      width: 90%;
+    width: 90%;
   }
-  .popup-container .popup {
-    label {
-      margin: 10px 0;
-    }
-    button {
-      font-size: 3.5vmin;
-      margin: 10px;
-    }
-    .buttons_list {
-      @include align-items(center);
-      @include flex-wrap(wrap);
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-    }
-    .buttons_list button {
-      margin: 10px 2px 0;
-      width: 36px;
-    }
-    img {
-      border-radius: 0;
-      height: 30px;
-      width: 30px;
-    }
-    .item-avatar {
-      padding-left: 60px;
-    }
-    width: auto;
-  }
-
   .blank {
     height: 10%;
     margin-bottom: 10px;
   }
+}
+
+.popup-container .popup {
+  label {
+    margin: 10px 0;
+  }
+  button {
+    font-size: 3.5vmin;
+    margin: 10px;
+  }
+  .buttons_list {
+    @include align-items(center);
+    @include flex-wrap(wrap);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .buttons_list button {
+    margin: 10px 2px 0;
+    width: 36px;
+  }
+  img {
+    border-radius: 0;
+    height: 30px;
+    width: 30px;
+  }
+  .item-avatar {
+    padding-left: 60px;
+  }
+  width: auto;
 }
 
 ion-side-menu {
