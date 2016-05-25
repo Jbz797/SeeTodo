@@ -7586,6 +7586,7 @@ angular.module('seetodo', ['ionic', 'ionic-material', 'ksSwiper', 'LocalForageMo
 		$ionicConfigProvider.scrolling.jsScrolling(false);
 	}
 
+	// Configuration de la base de donnée
 	$localForageProvider.config({
 		driver: 'localStorageWrapper',
 		name: 'SeeTodo',
