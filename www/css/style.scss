@@ -18,9 +18,12 @@
 
 body {
   .bar,
+  .bar .buttons {
+    z-index: 11;
+  }
+  .bar-header,
   .bar-header .buttons {
     position: initial;
-    z-index: 11;
   }
   .button {
     img {
