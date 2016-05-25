@@ -56,7 +56,7 @@ angular.module('seetodo')
 		/**
 		 * @name Delete
 		 * @desc Supprime une tâche en base et met à jour le scope
-		 * @param {Object} la tâche à ajouter
+		 * @param {Object} la tâche à supprimer
 		 * @returns {Object} une promesse
 		 */
 		delete: function (todo) {
