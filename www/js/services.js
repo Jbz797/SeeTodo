@@ -37,7 +37,7 @@ angular.module('seetodo')
 
 		/**
 		 * @name ClearAll
-		 * @desc Supprime la base
+		 * @desc Supprime la base dans sa totalité
 		 * @returns {Object} une promesse
 		 */
 		clearAll: function () {
