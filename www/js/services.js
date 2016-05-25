@@ -11,7 +11,7 @@ angular.module('seetodo')
 
 		/**
 		 * @name Add
-		 * @desc Ajoute une tâche en base
+		 * @desc Ajoute une tâche en base et met à jour le scope
 		 * @param {Object} la tâche à ajouter
 		 * @returns {Object} une promesse
 		 */
@@ -37,7 +37,7 @@ angular.module('seetodo')
 
 		/**
 		 * @name ClearAll
-		 * @desc Supprime la base dans sa totalité
+		 * @desc Supprime la base dans sa totalité et met à jour le scope
 		 * @returns {Object} une promesse
 		 */
 		clearAll: function () {
@@ -53,6 +53,12 @@ angular.module('seetodo')
 			return q.promise;
 		},
 
+		/**
+		 * @name Delete
+		 * @desc Supprime une tâche en base et met à jour le scope
+		 * @param {Object} la tâche à ajouter
+		 * @returns {Object} une promesse
+		 */
 		delete: function (todo) {
 			var this_todo = {
 				activate: todo.activate,
