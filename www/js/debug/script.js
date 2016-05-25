@@ -7717,7 +7717,7 @@ else if (typeof define === 'function' && define.amd) {
 			if(todo.title.length > 0) {
 				storage.delete(todo)
 					.then(function success(response) {
-						console.log('SeeTodo -> Tâche "' + response.id + '" archivéessss');
+						console.log('SeeTodo -> Tâche "' + response.id + '" archivée');
 					});
 			}
 		};
