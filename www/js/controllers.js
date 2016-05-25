@@ -131,6 +131,10 @@ angular.module('seetodo')
 		});
 	};
 
+	/**
+	 * @name ShowConfirm
+	 * @desc Popup de confirmation avant suppression de la base
+	 */
 	$scope.showConfirm = function () {
 		var confirmPopup = $ionicPopup.confirm({
 			cancelText: 'Annuler',
