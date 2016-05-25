@@ -22,23 +22,6 @@ body {
     position: initial;
     z-index: 11;
   }
-  ion-side-menu {
-    .bar {
-      @include align-items(center);
-      @include justify-content(center);
-      background-image: none;
-    }
-    h2 {
-      color: white;
-      margin: 0;
-    }
-    .has-expanded-header {
-      background-color: #e0e0e0;
-    }
-    .item-content .bold {
-      font-weight: bold;
-    }
-  }
   .button {
     img {
       width: 90%;
@@ -77,6 +60,24 @@ body {
   .blank {
     height: 10%;
     margin-bottom: 10px;
+  }
+}
+
+ion-side-menu {
+  .bar {
+    @include align-items(center);
+    @include justify-content(center);
+    background-image: none;
+  }
+  h2 {
+    color: white;
+    margin: 0;
+  }
+  .has-expanded-header {
+    background-color: #e0e0e0;
+  }
+  .item-content .bold {
+    font-weight: bold;
   }
 }
 
