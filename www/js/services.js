@@ -38,7 +38,6 @@ angular.module('seetodo')
 		/**
 		 * @name ClearAll
 		 * @desc Supprime la base
-		 * @param {Object} la tâche à ajouter
 		 * @returns {Object} une promesse
 		 */
 		clearAll: function () {
