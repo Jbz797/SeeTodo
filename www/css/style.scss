@@ -37,7 +37,7 @@ body {
     margin: 10px;
   }
   .buttons_list {
-    @include align-items(center);
+    @include justify-content(space-around);
     flex-wrap: wrap;
     display: -webkit-box;
     display: -ms-flexbox;
