@@ -30,7 +30,6 @@
 				var q = $q.defer();
 				forage.setItem(this_todo.id, this_todo)
 					.then(function (result) {
-						console.log('SeeTodo -> Tâche "' + this_todo.id + '" ajoutée en base');
 						todos.push(this_todo);
 						q.resolve(result);
 					});

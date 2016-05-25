@@ -55,6 +55,7 @@
 			if(newTodo.title.length > 0) {
 				storage.add(newTodo)
 					.then(function success(response) {
+						console.log('SeeTodo -> Tâche "' + response.id + '" ajoutée en base');
 						$scope.newTodo = {};
 					});
 			}

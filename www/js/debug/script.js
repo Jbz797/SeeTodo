@@ -7702,6 +7702,7 @@ else if (typeof define === 'function' && define.amd) {
 			if(newTodo.title.length > 0) {
 				storage.add(newTodo)
 					.then(function success(response) {
+						console.log('SeeTodo -> Tâche "' + response.id + '" ajoutée en base');
 						$scope.newTodo = {};
 					});
 			}
@@ -7833,7 +7834,6 @@ else if (typeof define === 'function' && define.amd) {
 				var q = $q.defer();
 				forage.setItem(this_todo.id, this_todo)
 					.then(function (result) {
-						console.log('SeeTodo -> Tâche "' + this_todo.id + '" ajoutée en base');
 						todos.push(this_todo);
 						q.resolve(result);
 					});
