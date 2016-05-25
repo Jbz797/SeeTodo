@@ -1,6 +1,6 @@
 {
   "name": "HelloIonic",
-  "version": "0.8.51",
+  "version": "0.8.52",
   "private": "true",
   "devDependencies": {
     "ionic": "driftyco/ionic-bower#latest"
