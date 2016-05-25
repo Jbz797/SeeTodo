@@ -3,7 +3,7 @@
 angular.module('seetodo')
 
 .controller('AppCtrl', function (ionicMaterialInk, $scope) {
-	ionicMaterialInk.displayEffect();
+	ionicMaterialInk.displayEffect(); // Actionne les effets de vague sur certains éléments
 	if(ionic.Platform.isIOS()) {
 		$scope.is_ios = true;
 	}
