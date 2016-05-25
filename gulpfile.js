@@ -79,6 +79,10 @@ gulp.task('js', function (done) {
 	gulp.src([libs.localforage.js, libs.angular_localForage.js, libs.ionic_material.js, libs.swiper.js, libs.angular_swiper.js, paths.js])
 		.pipe(ngAnnotate())
 		.pipe(concat('script.js'))
+		.pipe(gulp.dest('./www/js/debug'));
+	gulp.src([libs.localforage.js, libs.angular_localForage.js, libs.ionic_material.js, libs.swiper.js, libs.angular_swiper.js, paths.js])
+		.pipe(ngAnnotate())
+		.pipe(concat('script.js'))
 		.pipe(minify({
 			noSource: true
 		}))
