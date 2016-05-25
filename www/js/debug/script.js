@@ -7709,17 +7709,6 @@ else if (typeof define === 'function' && define.amd) {
 		};
 
 		/**
-		 * @name SwithTodo
-		 * @desc Inverse l'état d'activation d'une tâche
-		 * @param {Object} la tâche à inverser
-		 */
-		$scope.switchTodo = function (todo) {
-			if(todo.title.length > 0) {
-				storage.switch(todo);
-			}
-		};
-
-		/**
 		 * @name DeleteTodo
 		 * @desc Supprime une tâche
 		 * @param {Object} la tâche à supprimer
@@ -7738,6 +7727,17 @@ else if (typeof define === 'function' && define.amd) {
 		$scope.editTodo = function (todo) {
 			if(todo.title.length > 0) {
 				storage.edit(todo);
+			}
+		};
+
+		/**
+		 * @name SwithTodo
+		 * @desc Inverse l'état d'activation d'une tâche
+		 * @param {Object} la tâche à inverser
+		 */
+		$scope.switchTodo = function (todo) {
+			if(todo.title.length > 0) {
+				storage.switch(todo);
 			}
 		};
 
