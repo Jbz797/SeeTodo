@@ -79,6 +79,12 @@ angular.module('seetodo')
 			return q.promise;
 		},
 
+		/**
+		 * @name Edit
+		 * @desc Modifie une tâche en base et met à jour le scope
+		 * @param {Object} la tâche à modifier
+		 * @returns {Object} une promesse
+		 */
 		edit: function (todo) {
 			var q = $q.defer();
 			var that = this;
@@ -91,6 +97,11 @@ angular.module('seetodo')
 			return q.promise;
 		},
 
+		/**
+		 * @name Get_Database
+		 * @desc Charle la base de données
+		 * @returns {Object} une promesse
+		 */
 		get_database: function () {
 			if(todos.length === 0) {
 				var q = $q.defer();
