@@ -69,6 +69,11 @@ angular.module('seetodo')
 		}
 	};
 
+	/**
+	 * @name SwithTodo
+	 * @desc Supprime une tâche
+	 * @param {Object} la tâche à supprimer
+	 */
 	$scope.deleteTodo = function (todo) {
 		if(todo.title.length > 0) {
 			storage.delete(todo);

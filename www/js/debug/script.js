@@ -7687,7 +7687,7 @@ angular.module('seetodo')
 
 	/**
 	 * @name AddTodo
-	 * @desc Ajoute une tâche en base
+	 * @desc Ajoute une tâche
 	 */
 	$scope.addTodo = function () {
 		var newTodo = $scope.newTodo;
@@ -7699,12 +7699,22 @@ angular.module('seetodo')
 		}
 	};
 
+	/**
+	 * @name SwithTodo
+	 * @desc Inverse l'état d'activation d'une tâche
+	 * @param {Object} la tâche à inverser
+	 */
 	$scope.switchTodo = function (todo) {
 		if(todo.title.length > 0) {
 			storage.switch(todo);
 		}
 	};
 
+	/**
+	 * @name SwithTodo
+	 * @desc Supprime une tâche
+	 * @param {Object} la tâche à supprimer
+	 */
 	$scope.deleteTodo = function (todo) {
 		if(todo.title.length > 0) {
 			storage.delete(todo);
