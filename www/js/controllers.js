@@ -16,11 +16,13 @@
 
 	.controller('NavCtrl', function ($scope, $ionicSideMenuDelegate) {
 
+		var vm = this;
+
 		/**
 		 * @name ShowMenu
 		 * @desc Affiche le slide munu de gauche
 		 */
-		$scope.showMenu = function () {
+		vm.showMenu = function () {
 			$ionicSideMenuDelegate.toggleLeft();
 		};
 
