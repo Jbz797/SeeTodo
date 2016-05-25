@@ -28,7 +28,9 @@ angular.module('seetodo')
 		$scope.is_open = value;
 	});
 
-	// Vérifie l'url coutante
+	/**
+	 * @desc Vérifie l'url actuelle
+	 */
 	$scope.$watch(function () {
 		return location.hash;
 	}, function (value) {
