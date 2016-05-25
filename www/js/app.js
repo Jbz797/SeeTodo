@@ -3,6 +3,7 @@
 angular.module('seetodo', ['ionic', 'ionic-material', 'ksSwiper', 'LocalForageModule'])
 
 .run(function ($ionicPlatform) {
+	// Configuration par défault de Ionic
 	$ionicPlatform.ready(function () {
 		if(window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
 			cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
