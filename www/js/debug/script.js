@@ -7566,7 +7566,6 @@ else if (typeof define === 'function' && define.amd) {
 "use strict";
 
 angular.module('seetodo', ['ionic', 'ionic-material', 'ksSwiper', 'LocalForageModule'])
-	.TEST()
 
 .run(function ($ionicPlatform) {
 	// Configuration par défault de Ionic
