@@ -147,8 +147,8 @@ angular.module('seetodo')
 
 		/**
 		 * @name Swith
-		 * @desc Modifie une tâche en base et met à jour le scope
-		 * @param {Object} la tâche à modifier
+		 * @desc Inverse l'état d'activation d'une tâche en base et met à jour le scope
+		 * @param {Object} la tâche à inverser
 		 * @returns {Object} une promesse
 		 */
 		switch: function (todo) {
