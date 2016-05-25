@@ -82,14 +82,12 @@ ion-side-menu {
   ks-swiper-container .swiper-button-prev {
     display: none;
   }
-  .ios .swiper-button-next,
-  .ios .swiper-button-prev {
-    display: block;
-  }
   .ios .swiper-button-next {
+    display: block;
     right: 0;
   }
   .ios .swiper-button-prev {
+    display: block;
     left: 0;
   }
   .ios .swiper-slide {
