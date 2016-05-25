@@ -94,10 +94,10 @@ body {
   .ios .swiper-button-prev {
     display: block;
   }
-  .ios .swiper-button-next{
+  .ios .swiper-button-next {
     right: 0;
   }
-  .ios .swiper-button-prev{
+  .ios .swiper-button-prev {
     left: 0;
   }
   .item-input,
@@ -107,6 +107,9 @@ body {
   }
   ks-swiper-container:nth-child(2) .swiper-slide {
     border-top-width: 1px;
+  }
+  .ios {
+    width: 90%;
   }
   .swiper-slide {
     @include align-items(center);
