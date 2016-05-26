@@ -3867,7 +3867,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	.controller('MainCtrl', function (ionicMaterialInk, ionicMaterialMotion, $ionicPopup, $ionicSlideBoxDelegate, $scope, storage, $timeout) {
 
-		$scope.animationEnd = true;
+		$scope.animationEnd = false;
 		$scope.newTodo = {};
 		$scope.todos = storage.getTodos();
 
@@ -3881,7 +3881,7 @@ return /******/ (function(modules) { // webpackBootstrap
 				storage.add(newTodo)
 					.then(function success(response) {
 						console.log('SeeTodo -> Tâche "' + response.id + '" ajoutée en base');
-						$scope.animationEnd = false;
+						$scope.animationEnd = true;
 						$scope.newTodo = {};
 
 						// Invitation au swipe
