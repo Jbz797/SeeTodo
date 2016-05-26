@@ -102,6 +102,9 @@
 				storage.edit(todo)
 					.then(function success(response) {
 						console.log('SeeTodo -> Tâche "' + response.id + '" modifiée');
+						$timeout(function () {
+							ionicMaterialMotion.ripple();
+						}, 0);
 					});
 			}
 		};
