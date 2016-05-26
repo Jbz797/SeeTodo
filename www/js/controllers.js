@@ -40,7 +40,7 @@
 		});
 	})
 
-	.controller('MainCtrl', function (ionicMaterialInk, $ionicPopup, $ionicSlides, $scope, storage) {
+	.controller('MainCtrl', function (ionicMaterialInk, $ionicPopup, ionicSlides, $scope, storage) {
 
 		$scope.options = {
 			loop: false,
