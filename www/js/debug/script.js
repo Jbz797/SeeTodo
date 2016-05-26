@@ -4114,6 +4114,7 @@ return /******/ (function(modules) { // webpackBootstrap
 				var that = this;
 				forage.setItem(todo.id, todo)
 					.then(function (result) {
+						that.refresh(todo);
 						q.resolve(result);
 					});
 				return q.promise;
@@ -4161,6 +4162,19 @@ return /******/ (function(modules) { // webpackBootstrap
 			 */
 			getTodos: function () {
 				return todos;
+			},
+
+			/**
+			 * @name Refresh
+			 * @desc Désactive puis re-active une tâche afin de rénitialiser le swipe
+			 * @param {Object} la tâche à actualiser
+			 */
+			refresh: function (todo) {
+				var todoToRefresh = todos[todos.indexOf(todo)];
+				todoToRefresh.delete = !todoToRefresh.delete;
+				$timeout(function () {
+					todoToRefresh.delete = !todoToRefresh.delete;
+				}, 0);
 			},
 
 			/**
