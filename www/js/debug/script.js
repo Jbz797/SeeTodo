@@ -3863,6 +3863,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	.controller('MainCtrl', function (ionicMaterialInk, $ionicPopup, $scope, storage) {
 
+		// Options pour le swipe
+		$scope.options = {
+			loop: false,
+			effect: 'fade',
+			speed: 500,
+		};
+
 		$scope.newTodo = {};
 		$scope.todos = storage.getTodos();
 		storage.getDatabase()

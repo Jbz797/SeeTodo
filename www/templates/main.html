@@ -6,7 +6,7 @@
       </label>
     </form>
     <ion-slide-box ng-repeat="todo in todos | orderBy : '-date' | filter: { delete: false }">
-      <ion-slide class="main-slide">
+      <ion-slide  options="options" class="main-slide">
         <button class="button button-small ion-checkmark" ng-class="{'button-balanced': todo.activate, 'button-balanced-100': !todo.activate}" ng-click="switchTodo(todo)"></button>
         <p ng-class="{'inactive': !todo.activate}">{{todo.title}}</p>
         <div class="div_color button-{{todo.color}}"></div>
