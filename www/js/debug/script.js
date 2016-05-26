@@ -3998,10 +3998,6 @@ return /******/ (function(modules) { // webpackBootstrap
 			});
 		};
 
-		$timeout(function () {
-			ionicMaterialInk.displayEffect();
-			ionicMaterialMotion.ripple();
-		}, 0);
 	});
 })();
 

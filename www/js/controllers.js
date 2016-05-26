@@ -174,9 +174,5 @@
 			});
 		};
 
-		$timeout(function () {
-			ionicMaterialInk.displayEffect();
-			ionicMaterialMotion.ripple();
-		}, 0);
 	});
 })();
