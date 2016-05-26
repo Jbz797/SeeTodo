@@ -3885,7 +3885,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 						// Invitation au swipe
 						if(storage.countTodos() === 1) {
-							var vitesseInvitation = 500;
+							var vitesseInvitation = 600;
 							$timeout(function () {
 									$ionicSlideBoxDelegate.next();
 								}, vitesseInvitation)
