@@ -43,7 +43,7 @@
 
 	.controller('MainCtrl', function (ionicMaterialInk, ionicMaterialMotion, $ionicPopup, $ionicSlideBoxDelegate, $scope, storage, $timeout) {
 
-		$scope.animation.animationEnd = false;
+		$scope.animationEnd = false;
 		$scope.newTodo = {};
 		$scope.todos = storage.getTodos();
 
@@ -57,7 +57,7 @@
 				storage.add(newTodo)
 					.then(function success(response) {
 						console.log('SeeTodo -> Tâche "' + response.id + '" ajoutée en base');
-						$scope.animation.animationEnd = true;
+						$scope.animationEnd = true;
 						$scope.newTodo = {};
 
 						// Invitation au swipe
