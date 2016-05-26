@@ -34,7 +34,6 @@
   "maxcomplexity": 8,
   "maxdepth": 5,
   "maxerr": 50,
-  "maxlen": 150,
   "maxparams": 10,
   "maxstatements": 40,
   "mocha": true,
