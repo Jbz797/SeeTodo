@@ -59,7 +59,7 @@
 				storage.add(newTodo)
 					.then(function success(response) {
 						console.log('SeeTodo -> Tâche "' + response.id + '" ajoutée en base');
-						$scope.next;
+						$scope.swiper.slideNext();
 						$scope.newTodo = {};
 					});
 			}
@@ -91,15 +91,6 @@
 						console.log('SeeTodo -> Tâche "' + response.id + '" modifiée');
 					});
 			}
-		};
-
-		/**
-		 * @name Next
-		 * @desc Modifie une tâche
-		 * @param {Object} la tâche à modifier
-		 */
-		$scope.next = function () {
-			$scope.swiper.slideNext();
 		};
 
 		/**
