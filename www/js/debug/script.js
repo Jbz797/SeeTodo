@@ -3872,8 +3872,8 @@ return /******/ (function(modules) { // webpackBootstrap
 		$scope.todos = storage.getTodos();
 		var configEditTodos = {
 			finishDelayThrottle: 0,
-			finishSpeedPercent: 0.5,
-			leftOffsetPercentage: 0.8,
+			finishSpeedPercent: 0,
+			leftOffsetPercentage: 0,
 			startVelocity: 1100
 		};
 
