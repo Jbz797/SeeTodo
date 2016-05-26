@@ -17,6 +17,7 @@
   "globals": {
     "angular": false,
     "cordova": false,
+    "expect": false,
     "ionic": false,
     "StatusBar": false,
     "$": false
@@ -36,6 +37,7 @@
   "maxlen": 150,
   "maxparams": 10,
   "maxstatements": 40,
+  "mocha": true,
   "moz": false,
   "multistr": false,
   "newcap": true,

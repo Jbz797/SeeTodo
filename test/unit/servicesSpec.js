@@ -5,7 +5,7 @@ describe('Services', function () {
 	var $q;
 	var storage;
 
-	var todo_test = {
+	var todoTest = {
 		activate: true,
 		color: false,
 		date: new Date(),
@@ -30,10 +30,10 @@ describe('Services', function () {
 	});
 	it('La méthode "add" doit enregistrer une todo en base', function () {
 		var q = $q.defer();
-		storage.add(todo_test)
+		storage.add(todoTest)
 			.then(function (result) {
 				q.resolve(result);
-			})
+			});
 		console.log(q.promise);
 	});
 });

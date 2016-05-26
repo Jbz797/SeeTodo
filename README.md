@@ -1,4 +1,4 @@
-# SeeTodo
+# SeeTodo *v1.0*
 Gestionnaire de liste des tâches pour appareils android et ios.
 
 ## Réalisé avec les technologies suivantes
@@ -15,7 +15,7 @@ Gestionnaire de liste des tâches pour appareils android et ios.
 ```
 npm install -g ionic cordova
 ```
-Pour le développement: `npm install -g gulp`
+Pour le développement : `npm install -g gulp`
 #### Cloner le projet :
 ```
 git clone https://github.com/Jbz797/SeeTodo.git
