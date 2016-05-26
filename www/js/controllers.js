@@ -59,9 +59,9 @@
 						console.log('SeeTodo -> Tâche "' + response.id + '" ajoutée en base');
 						$scope.newTodo = {};
 						$timeout(function () {
-							todoToRefresh.delete = !todoToRefresh.delete;
-						}, 0);
-						$ionicSlideBoxDelegate.next();
+							$ionicSlideBoxDelegate.next();
+							$ionicSlideBoxDelegate.previous();
+						}, 1000);
 					});
 			}
 		};

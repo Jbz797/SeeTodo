@@ -33,7 +33,7 @@
   "maxcomplexity": 8,
   "maxdepth": 5,
   "maxerr": 50,
-  "maxlen": 120,
+  "maxlen": 121,
   "maxparams": 10,
   "maxstatements": 40,
   "moz": false,
