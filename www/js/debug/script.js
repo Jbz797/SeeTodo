@@ -3885,6 +3885,9 @@ return /******/ (function(modules) { // webpackBootstrap
 						$timeout(function () {
 							$ionicSlideBoxDelegate.next();
 						}, 500);
+						$timeout(function () {
+							$ionicSlideBoxDelegate.previous();
+						}, 1000);
 					});
 			}
 		};
