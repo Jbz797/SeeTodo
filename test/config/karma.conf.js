@@ -18,7 +18,7 @@ module.exports = function (config) {
 			'www/js/*.js',
 			'test/unit/**/*.js'
 		],
-		frameworks: ['mocha', 'chai-sinon'],
+		frameworks: ['jasmine'],
 		plugins: [
 			'karma-chai-sinon',
 			'karma-mocha-reporter',

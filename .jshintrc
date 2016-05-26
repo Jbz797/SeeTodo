@@ -20,6 +20,7 @@
     "expect": false,
     "inject": false,
     "ionic": false,
+    "runs": false,
     "StatusBar": false,
     "$": false
   },
