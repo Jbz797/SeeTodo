@@ -4050,9 +4050,7 @@ return /******/ (function(modules) { // webpackBootstrap
 				forage.clear()
 					.then(function (result) {
 						console.log('SeeTodo -> Toutes les tâches ont bien été supprimées');
-						for(var variable in todos) {
-							todos[variable] = {};
-						}
+						todos = [];
 						q.resolve(result);
 					});
 				return q.promise;
