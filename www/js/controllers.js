@@ -60,7 +60,7 @@
 						$scope.newTodo = {};
 						$timeout(function () {
 							$ionicSlideBoxDelegate.next();
-						}, 1000);
+						}, 500);
 					});
 			}
 		};
