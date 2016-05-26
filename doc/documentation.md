@@ -18,9 +18,9 @@
 
 ## Le menu
 <p align="center"><img src="menu.jpg"/></p>
-  - Toutes -> Affiche toutes les tâches.
-  - Actives -> N'affiche que les tâches pas encore effectuées.
-  - Effectuées -> N'affiche que les tâches déjà effectuées.
-  - Archivées -> Affiche les tâches supprimées, et permet de supprimer toutes les données.
+- Toutes -> Affiche toutes les tâches.
+- Actives -> N'affiche que les tâches pas encore effectuées.
+- Effectuées -> N'affiche que les tâches déjà effectuées.
+- Archivées -> Affiche les tâches supprimées, et permet de supprimer toutes les données.
 
-<p align="center" style="margin-top: 20px; border-top: 1px dotted black;">**Pour tout problème ou demande n'hésitez pas à me contacter via la [page dédiée](https://github.com/Jbz797/SeeTodo/issues)**</p>
+<p align="center">**Pour tout problème ou demande n'hésitez pas à me contacter via la [page dédiée](https://github.com/Jbz797/SeeTodo/issues)**</p>
