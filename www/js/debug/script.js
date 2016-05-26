@@ -7820,7 +7820,7 @@ else if (typeof define === 'function' && define.amd) {
 
 	angular.module('seetodo')
 
-	.factory('storage', function ($localForage, logger, $q, $timeout) {
+	.factory('storage', function ($localForage, $q, $timeout) {
 
 		var forage = $localForage;
 		var todos = [];
