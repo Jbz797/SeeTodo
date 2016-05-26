@@ -4064,7 +4064,7 @@ return /******/ (function(modules) { // webpackBootstrap
 			 * @returns {Number} le nombre de tâches
 			 */
 			countTodos: function () {
-				console.log('SeeTodo -> Nombre de tâches: '+todos.length);
+				console.log(todos.length);
 				return todos.length;
 			},
 
