@@ -1,6 +1,6 @@
 (function () {
 
-	"use strict";
+	'use strict';
 
 	angular.module('seetodo', ['ionic', 'ionic-material', 'ksSwiper', 'LocalForageModule'])
 

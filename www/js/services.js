@@ -1,10 +1,10 @@
 (function () {
 
-	"use strict";
+	'use strict';
 
 	angular.module('seetodo')
 
-	.factory('storage', function ($localForage, $q, $timeout) {
+	.factory('storage', function ($localForage, logger, $q, $timeout) {
 
 		var forage = $localForage;
 		var todos = [];
@@ -18,7 +18,7 @@
 			 * @returns {Object} une promesse
 			 */
 			add: function (todo) {
-				var this_todo = {
+				var thisTodo = {
 					activate: true,
 					color: false,
 					date: new Date(),
@@ -28,9 +28,9 @@
 					title: todo.title
 				};
 				var q = $q.defer();
-				forage.setItem(this_todo.id, this_todo)
+				forage.setItem(thisTodo.id, thisTodo)
 					.then(function (result) {
-						todos.push(this_todo);
+						todos.push(thisTodo);
 						q.resolve(result);
 					});
 				return q.promise;
@@ -61,7 +61,7 @@
 			 * @returns {Object} une promesse
 			 */
 			delete: function (todo) {
-				var this_todo = {
+				var thisTodo = {
 					activate: todo.activate,
 					color: todo.color,
 					date: todo.date,
@@ -71,7 +71,7 @@
 					title: todo.title
 				};
 				var q = $q.defer();
-				forage.setItem(this_todo.id, this_todo)
+				forage.setItem(thisTodo.id, thisTodo)
 					.then(function (result) {
 						todos[todos.indexOf(todo)].delete = true;
 						q.resolve(result);
@@ -101,7 +101,7 @@
 			 * @desc Charge la base de données
 			 * @returns {Object} une promesse
 			 */
-			get_database: function () {
+			getDatabase: function () {
 				if(todos.length === 0) {
 					var q = $q.defer();
 					forage.iterate(function (value, key) {
@@ -122,7 +122,7 @@
 			 * @param {Object} la tâche à récupérer
 			 * @returns {Object} une promesse
 			 */
-			get_todo: function (todo) {
+			getTodo: function (todo) {
 				var q = $q.defer();
 				forage.getItem(todo.id)
 					.then(function (result) {
@@ -136,7 +136,7 @@
 			 * @desc Renvoi la liste des tâches
 			 * @returns {Object} la liste des tâches
 			 */
-			get_todos: function () {
+			getTodos: function () {
 				return todos;
 			},
 
@@ -146,10 +146,10 @@
 			 * @param {Object} la tâche à actualiser
 			 */
 			refresh: function (todo) {
-				var todo_to_refresh = todos[todos.indexOf(todo)];
-				todo_to_refresh.delete = !todo_to_refresh.delete;
+				var todoToRefresh = todos[todos.indexOf(todo)];
+				todoToRefresh.delete = !todoToRefresh.delete;
 				$timeout(function () {
-					todo_to_refresh.delete = !todo_to_refresh.delete;
+					todoToRefresh.delete = !todoToRefresh.delete;
 				}, 0);
 			},
 
@@ -160,7 +160,7 @@
 			 * @returns {Object} une promesse
 			 */
 			switch: function (todo) {
-				var this_todo = {
+				var thisTodo = {
 					activate: !todo.activate,
 					color: todo.color,
 					date: todo.date,
@@ -170,9 +170,9 @@
 					title: todo.title
 				};
 				var q = $q.defer();
-				forage.setItem(this_todo.id, this_todo)
+				forage.setItem(thisTodo.id, thisTodo)
 					.then(function (result) {
-						todos[todos.indexOf(todo)].activate = this_todo.activate;
+						todos[todos.indexOf(todo)].activate = thisTodo.activate;
 						q.resolve(result);
 					});
 				return q.promise;

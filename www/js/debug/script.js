@@ -7691,6 +7691,10 @@ else if (typeof define === 'function' && define.amd) {
 
 		$scope.newTodo = {};
 		$scope.todos = storage.get_todos();
+		storage.get_database()
+			.then(function succes(response) {
+				console.log('SeeTodo -> Base de donnée chargée correctement');
+			}); // On charge la base de donnée
 
 		/**
 		 * @name AddTodo
@@ -7734,18 +7738,6 @@ else if (typeof define === 'function' && define.amd) {
 					});
 			}
 		};
-
-		/**
-		 * @name GetDatabase
-		 * @desc Charge la base de donnée
-		 */
-		$scope.getDatabase = function () {
-			storage.get_database()
-				.then(function success(response) {
-					console.log('SeeTodo -> Base de donnée chargée correctement');
-				});
-		};
-
 
 		/**
 		 * @name SwithTodo
@@ -7819,7 +7811,6 @@ else if (typeof define === 'function' && define.amd) {
 				}]
 			});
 		};
-		$scope.getDatabase();
 	});
 })();
 

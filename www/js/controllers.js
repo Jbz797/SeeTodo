@@ -1,13 +1,13 @@
 (function () {
 
-	"use strict";
+	'use strict';
 
 	angular.module('seetodo')
 
 	.controller('AppCtrl', function (ionicMaterialInk, $scope) {
 		ionicMaterialInk.displayEffect(); // Actionne les effets de vague sur certains éléments
 		if(ionic.Platform.isIOS()) { // Vérifie si l'on se trouve sur une plateforme ios
-			$scope.is_ios = true;
+			$scope.isIos = true;
 		}
 	})
 
@@ -27,7 +27,7 @@
 		$scope.$watch(function () {
 			return $ionicSideMenuDelegate.isOpen();
 		}, function (value) {
-			$scope.is_open = value;
+			$scope.isOpen = value;
 		});
 
 		/**
@@ -43,7 +43,11 @@
 	.controller('MainCtrl', function (ionicMaterialInk, $ionicPopup, $scope, storage) {
 
 		$scope.newTodo = {};
-		$scope.todos = storage.get_todos();
+		$scope.todos = storage.getTodos();
+		storage.getDatabase()
+			.then(function succes(response) {
+				console.log('SeeTodo -> Base de donnée chargée correctement');
+			}); // On charge la base de donnée
 
 		/**
 		 * @name AddTodo
@@ -87,18 +91,6 @@
 					});
 			}
 		};
-
-		/**
-		 * @name GetDatabase
-		 * @desc Charge la base de donnée
-		 */
-		$scope.getDatabase = function () {
-			storage.get_database()
-				.then(function success(response) {
-					console.log('SeeTodo -> Base de donnée chargée correctement');
-				});
-		};
-
 
 		/**
 		 * @name SwithTodo
@@ -172,6 +164,5 @@
 				}]
 			});
 		};
-		$scope.getDatabase();
 	});
 })();
