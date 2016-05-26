@@ -23,5 +23,4 @@
   - Effectuées -> N'affiche que les tâches déjà effectuées.
   - Archivées -> Affiche les tâches supprimées, et permet de supprimer toutes les données.
 
-<hr></hr>
-**Pour tout problème ou demande n'hésitez pas à me contacter via la [page dédiée](https://github.com/Jbz797/SeeTodo/issues)**
+<p align="center" style="margin-top: 20px; border-top: 1px dotted black;">**Pour tout problème ou demande n'hésitez pas à me contacter via la [page dédiée](https://github.com/Jbz797/SeeTodo/issues)**</p>
