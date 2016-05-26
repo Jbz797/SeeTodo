@@ -43,6 +43,7 @@
 	.controller('MainCtrl', function (ionicMaterialInk, $ionicPopup, $scope, storage) {
 
 		$scope.newTodo = {};
+		$scope.swiper = {};
 		$scope.todos = storage.getTodos();
 		storage.getDatabase()
 			.then(function succes(response) {
