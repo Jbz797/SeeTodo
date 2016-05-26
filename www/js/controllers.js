@@ -87,7 +87,7 @@
 			if(todo.title.length > 0) {
 				storage.edit(todo)
 					.then(function success(response) {
-						console.log('SeeTodo -> Tâche "' + todo.id + '" modifiée');
+						console.log('SeeTodo -> Tâche "' + response.id + '" modifiée');
 					});
 			}
 		};
@@ -99,7 +99,10 @@
 		 */
 		$scope.switchTodo = function (todo) {
 			if(todo.title.length > 0) {
-				storage.switch(todo);
+				storage.switch(todo)
+					.then(function (reponse) {
+						console.log('SeeTodo -> Tâche "' + reponse.id + '" inversée');
+					});
 			}
 		};
 

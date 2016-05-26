@@ -172,7 +172,6 @@
 				var q = $q.defer();
 				forage.setItem(this_todo.id, this_todo)
 					.then(function (result) {
-						console.log('SeeTodo -> Tâche "' + this_todo.id + '" inversée');
 						todos[todos.indexOf(todo)].activate = this_todo.activate;
 						q.resolve(result);
 					});

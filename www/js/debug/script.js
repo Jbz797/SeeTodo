@@ -7691,9 +7691,10 @@ else if (typeof define === 'function' && define.amd) {
 
 		$scope.newTodo = {};
 		$scope.todos = storage.get_todos();
-		storage.get_database().then(function succes(response){
-			console.log('SeeTodo -> Base de donnée chargée correctement');
-		}); // On charge la base de donnée
+		storage.get_database()
+			.then(function succes(response) {
+				console.log('SeeTodo -> Base de donnée chargée correctement');
+			}); // On charge la base de donnée
 
 		/**
 		 * @name AddTodo
@@ -7733,7 +7734,7 @@ else if (typeof define === 'function' && define.amd) {
 			if(todo.title.length > 0) {
 				storage.edit(todo)
 					.then(function success(response) {
-						console.log('SeeTodo -> Tâche "' + todo.id + '" modifiée');
+						console.log('SeeTodo -> Tâche "' + response.id + '" modifiée');
 					});
 			}
 		};
@@ -7745,7 +7746,10 @@ else if (typeof define === 'function' && define.amd) {
 		 */
 		$scope.switchTodo = function (todo) {
 			if(todo.title.length > 0) {
-				storage.switch(todo);
+				storage.switch(todo)
+					.then(function (reponse) {
+						console.log('SeeTodo -> Tâche "' + reponse.id + '" inversée');
+					});
 			}
 		};
 
@@ -7984,7 +7988,6 @@ else if (typeof define === 'function' && define.amd) {
 				var q = $q.defer();
 				forage.setItem(this_todo.id, this_todo)
 					.then(function (result) {
-						console.log('SeeTodo -> Tâche "' + this_todo.id + '" inversée');
 						todos[todos.indexOf(todo)].activate = this_todo.activate;
 						q.resolve(result);
 					});
