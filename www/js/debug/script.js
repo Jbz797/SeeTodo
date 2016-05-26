@@ -3865,7 +3865,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 		// Options pour le swipe
 		$scope.options = {
-			loop: false,
+			loop: true,
 			effect: 'fade',
 			speed: 500,
 		};
