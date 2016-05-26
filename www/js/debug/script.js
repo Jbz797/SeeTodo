@@ -4057,11 +4057,11 @@ return /******/ (function(modules) { // webpackBootstrap
 			},
 
 			/**
-			 * @name countTodos
+			 * @name CountTodos
 			 * @desc Renvoi le nombre de tâches actives
 			 * @returns {Number} le nombre de tâches
 			 */
-			getTodos: function () {
+			countTodos: function () {
 				return todos.length;
 			},
 
