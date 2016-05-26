@@ -42,7 +42,7 @@
 		});
 	})
 
-	.controller('MainCtrl', function (ionicMaterialInk, $ionicPopup, $ionicSlideBoxDelegate, $scope, storage) {
+	.controller('MainCtrl', function (ionicMaterialInk, $ionicPopup, $ionicSlideBoxDelegate, $scope, storage, $timeout) {
 
 		$scope.newTodo = {};
 		$scope.todos = storage.getTodos();
@@ -58,6 +58,9 @@
 					.then(function success(response) {
 						console.log('SeeTodo -> Tâche "' + response.id + '" ajoutée en base');
 						$scope.newTodo = {};
+						$timeout(function () {
+							todoToRefresh.delete = !todoToRefresh.delete;
+						}, 0);
 						$ionicSlideBoxDelegate.next();
 					});
 			}
