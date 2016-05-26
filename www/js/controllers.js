@@ -92,10 +92,6 @@
 			}
 		};
 
-		$scope.next = function () {
-			$scope.swiper.slideNext();
-		};
-
 		/**
 		 * @name SwithTodo
 		 * @desc Inverse l'état d'activation d'une tâche
