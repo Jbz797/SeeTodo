@@ -3871,6 +3871,8 @@ return /******/ (function(modules) { // webpackBootstrap
 		$scope.newTodo = {};
 		$scope.todos = storage.getTodos();
 
+		ionic.material.motion.ripple();
+
 		/**
 		 * @name AddTodo
 		 * @desc Ajoute une tâche
