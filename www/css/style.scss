@@ -79,11 +79,11 @@ ion-side-menu {
 .SeeTodo {
   padding: 0 10px;
   .item-input,
-  ion-slide-box:nth-child(2) {
+  .slider:nth-child(2) {
     display: block;
     margin-top: 20px;
   }
-  ion-slide-box:nth-child(2) .slider {
+  .slider:nth-child(2) .slider {
     border-top-width: 1px;
   }
   .main-slide,

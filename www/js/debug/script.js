@@ -3828,8 +3828,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	angular.module('seetodo')
 
-	.controller('AppCtrl', function (ionicMaterialInk, $scope) {
+	.controller('AppCtrl', function (ionicMaterialInk, $scope, storage) {
 		ionicMaterialInk.displayEffect(); // Actionne les effets de vague sur certains éléments
+
+		storage.getDatabase()
+			.then(function succes(response) {
+				console.log('SeeTodo -> Base de donnée chargée correctement');
+			}); // On charge la base de donnée
 	})
 
 	.controller('NavCtrl', function ($scope, $ionicSideMenuDelegate) {
@@ -3861,14 +3866,10 @@ return /******/ (function(modules) { // webpackBootstrap
 		});
 	})
 
-	.controller('MainCtrl', function (ionicMaterialInk, $ionicPopup, $scope, storage) {
+	.controller('MainCtrl', function (ionicMaterialInk, $ionicPopup, $ionicSlideBoxDelegate, $scope, storage) {
 
 		$scope.newTodo = {};
 		$scope.todos = storage.getTodos();
-		storage.getDatabase()
-			.then(function succes(response) {
-				console.log('SeeTodo -> Base de donnée chargée correctement');
-			}); // On charge la base de donnée
 
 		/**
 		 * @name AddTodo
@@ -3881,6 +3882,7 @@ return /******/ (function(modules) { // webpackBootstrap
 					.then(function success(response) {
 						console.log('SeeTodo -> Tâche "' + response.id + '" ajoutée en base');
 						$scope.newTodo = {};
+						$ionicSlideBoxDelegate.next();
 					});
 			}
 		};
