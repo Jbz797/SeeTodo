@@ -5,18 +5,20 @@
         <input type="text" placeholder="Ce qui est à faire" ng-model="newTodo.title">
       </label>
     </form>
-    <ion-slides options="options" slider="data.slider" ng-repeat="todo in todos | orderBy : '-date' | filter: { delete: false }">
-      <ion-slide-page class="main-slide">
+    <ion-slide-box on-slide-changed="slideChanged(index)" ng-repeat="todo in todos | orderBy : '-date' | filter: { delete: false }">
+    <ion-slides>
+      <ion-slide class="main-slide">
         <button class="button button-small ion-checkmark" ng-class="{'button-balanced': todo.activate, 'button-balanced-100': !todo.activate}" ng-click="switchTodo(todo)"></button>
         <p ng-class="{'inactive': !todo.activate}">{{todo.title}}</p>
         <div class="div_color button-{{todo.color}}"></div>
-      </ion-slide-page>
-      <ion-slide-page class="edit-slide">
+      </ion-slide>
+      <ion-slide class="edit-slide">
         <button class="button button-small button-positive" ng-click="showDetailsPopup(todo)">Détails</button>
         <button class="button button-small button-calm" ng-click="showEditPopup(todo)">Editer</button>
         <button class="button button-small button-assertive" ng-click="deleteTodo(todo)">Archiver</button>
-      </ion-slide-page>
+      </ion-slide>
     </ion-slides>
+  </ion-slide-box>
     <!--<ks-swiper-container class="animate-ripple" ng-repeat="todo in todos | orderBy : '-date' | filter: { delete: false }" loop="true" show-nav-buttons="true" ng-class="{'ios': isIos}" swiper="swiper" on-ready="onReadySwiper(swiper)">
       <ks-swiper-slide class="swiper-slide main-slide">
         <button class="button button-small ion-checkmark" ng-class="{'button-balanced': todo.activate, 'button-balanced-100': !todo.activate}" ng-click="switchTodo(todo)"></button>
