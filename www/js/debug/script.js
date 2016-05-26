@@ -7565,7 +7565,7 @@ else if (typeof define === 'function' && define.amd) {
 !function(e,i,r){"use strict";function t(){for(var e=[],i="0123456789abcdef",r=0;36>r;r++)e[r]=i.substr(Math.floor(16*Math.random()),1);e[14]="4",e[19]=i.substr(3&e[19]|8,1),e[8]=e[13]=e[18]=e[23]="-";var t=e.join("");return t}function a(){return{restrict:"E",transclude:!0,scope:{onReady:"&",slidesPerView:"=",slidesPerColumn:"=",spaceBetween:"=",parallax:"=",parallaxTransition:"@",paginationIsActive:"=",paginationClickable:"=",showNavButtons:"=",showScrollBar:"=",loop:"=",autoplay:"=",initialSlide:"=",containerCls:"@",wrapperCls:"@",paginationCls:"@",slideCls:"@",direction:"@",swiper:"=",overrideParameters:"="},controller:["$scope","$element","$timeout",function(e,r,a){var n=t();e.swiper_uuid=n;var s={slidesPerView:e.slidesPerView||1,slidesPerColumn:e.slidesPerColumn||1,spaceBetween:e.spaceBetween||0,direction:e.direction||"horizontal",loop:e.loop||!1,initialSlide:e.initialSlide||0,showNavButtons:!1};i.isUndefined(e.autoplay)||"number"!=typeof e.autoplay||(s=i.extend({},s,{autoplay:e.autoplay})),e.paginationIsActive===!0&&(s=i.extend({},s,{paginationClickable:e.paginationClickable||!0,pagination:"#paginator-"+e.swiper_uuid})),e.showNavButtons===!0&&(s.nextButton="#nextButton-"+e.swiper_uuid,s.prevButton="#prevButton-"+e.swiper_uuid),e.showScrollBar===!0&&(s.scrollbar="#scrollBar-"+e.swiper_uuid),e.overrideParameters&&(s=i.extend({},s,e.overrideParameters)),a(function(){var t=null;i.isObject(e.swiper)?(e.swiper=new Swiper(r[0].firstChild,s),t=e.swiper):t=new Swiper(r[0].firstChild,s),i.isUndefined(e.onReady)||e.onReady({swiper:t})})}],link:function(e,r){var t=e.swiper_uuid,a="paginator-"+t,n="prevButton-"+t,s="nextButton-"+t,l="scrollBar-"+t,o=r[0];i.element(o.querySelector(".swiper-pagination")).attr("id",a),i.element(o.querySelector(".swiper-button-next")).attr("id",s),i.element(o.querySelector(".swiper-button-prev")).attr("id",n),i.element(r[0].querySelector(".swiper-scrollbar")).attr("id",l)},template:'<div class="swiper-container {{containerCls}}"><div class="parallax-bg" data-swiper-parallax="{{parallaxTransition}}" ng-show="parallax"></div><div class="swiper-wrapper {{wrapperCls}}" ng-transclude></div><div class="swiper-pagination {{paginationCls}}"></div><div class="swiper-button-next" ng-show="showNavButtons"></div><div class="swiper-button-prev" ng-show="showNavButtons"></div><div class="swiper-scrollbar" ng-show="showScrollBar"></div></div>'}}function n(){return{restrict:"E",require:"^ksSwiperContainer",transclude:!0,scope:{sliderCls:"@"},template:'<div class="swiper-slide {{sliderCls}}" ng-transclude></div>',replace:!0}}i.module("ksSwiper",[]).directive("ksSwiperContainer",a).directive("ksSwiperSlide",n)}(window,angular,void 0);
 (function () {
 
-	"use strict";
+	'use strict';
 
 	angular.module('seetodo', ['ionic', 'ionic-material', 'ksSwiper', 'LocalForageModule'])
 
@@ -7647,14 +7647,14 @@ else if (typeof define === 'function' && define.amd) {
 
 (function () {
 
-	"use strict";
+	'use strict';
 
 	angular.module('seetodo')
 
 	.controller('AppCtrl', function (ionicMaterialInk, $scope) {
 		ionicMaterialInk.displayEffect(); // Actionne les effets de vague sur certains éléments
 		if(ionic.Platform.isIOS()) { // Vérifie si l'on se trouve sur une plateforme ios
-			$scope.is_ios = true;
+			$scope.isIos = true;
 		}
 	})
 
@@ -7674,7 +7674,7 @@ else if (typeof define === 'function' && define.amd) {
 		$scope.$watch(function () {
 			return $ionicSideMenuDelegate.isOpen();
 		}, function (value) {
-			$scope.is_open = value;
+			$scope.isOpen = value;
 		});
 
 		/**
@@ -7690,8 +7690,8 @@ else if (typeof define === 'function' && define.amd) {
 	.controller('MainCtrl', function (ionicMaterialInk, $ionicPopup, $scope, storage) {
 
 		$scope.newTodo = {};
-		$scope.todos = storage.get_todos();
-		storage.get_database()
+		$scope.todos = storage.getTodos();
+		storage.getDatabase()
 			.then(function succes(response) {
 				console.log('SeeTodo -> Base de donnée chargée correctement');
 			}); // On charge la base de donnée
@@ -7706,6 +7706,7 @@ else if (typeof define === 'function' && define.amd) {
 				storage.add(newTodo)
 					.then(function success(response) {
 						console.log('SeeTodo -> Tâche "' + response.id + '" ajoutée en base');
+						$scope.next();
 						$scope.newTodo = {};
 					});
 			}
@@ -7737,6 +7738,15 @@ else if (typeof define === 'function' && define.amd) {
 						console.log('SeeTodo -> Tâche "' + response.id + '" modifiée');
 					});
 			}
+		};
+
+		/**
+		 * @name Next
+		 * @desc Modifie une tâche
+		 * @param {Object} la tâche à modifier
+		 */
+		$scope.next = function () {
+			$scope.swiper.slideNext();
 		};
 
 		/**
@@ -7816,11 +7826,11 @@ else if (typeof define === 'function' && define.amd) {
 
 (function () {
 
-	"use strict";
+	'use strict';
 
 	angular.module('seetodo')
 
-	.factory('storage', function ($localForage, $q, $timeout) {
+	.factory('storage', function ($localForage, logger, $q, $timeout) {
 
 		var forage = $localForage;
 		var todos = [];
@@ -7834,7 +7844,7 @@ else if (typeof define === 'function' && define.amd) {
 			 * @returns {Object} une promesse
 			 */
 			add: function (todo) {
-				var this_todo = {
+				var thisTodo = {
 					activate: true,
 					color: false,
 					date: new Date(),
@@ -7844,9 +7854,9 @@ else if (typeof define === 'function' && define.amd) {
 					title: todo.title
 				};
 				var q = $q.defer();
-				forage.setItem(this_todo.id, this_todo)
+				forage.setItem(thisTodo.id, thisTodo)
 					.then(function (result) {
-						todos.push(this_todo);
+						todos.push(thisTodo);
 						q.resolve(result);
 					});
 				return q.promise;
@@ -7877,7 +7887,7 @@ else if (typeof define === 'function' && define.amd) {
 			 * @returns {Object} une promesse
 			 */
 			delete: function (todo) {
-				var this_todo = {
+				var thisTodo = {
 					activate: todo.activate,
 					color: todo.color,
 					date: todo.date,
@@ -7887,7 +7897,7 @@ else if (typeof define === 'function' && define.amd) {
 					title: todo.title
 				};
 				var q = $q.defer();
-				forage.setItem(this_todo.id, this_todo)
+				forage.setItem(thisTodo.id, thisTodo)
 					.then(function (result) {
 						todos[todos.indexOf(todo)].delete = true;
 						q.resolve(result);
@@ -7917,7 +7927,7 @@ else if (typeof define === 'function' && define.amd) {
 			 * @desc Charge la base de données
 			 * @returns {Object} une promesse
 			 */
-			get_database: function () {
+			getDatabase: function () {
 				if(todos.length === 0) {
 					var q = $q.defer();
 					forage.iterate(function (value, key) {
@@ -7938,7 +7948,7 @@ else if (typeof define === 'function' && define.amd) {
 			 * @param {Object} la tâche à récupérer
 			 * @returns {Object} une promesse
 			 */
-			get_todo: function (todo) {
+			getTodo: function (todo) {
 				var q = $q.defer();
 				forage.getItem(todo.id)
 					.then(function (result) {
@@ -7952,7 +7962,7 @@ else if (typeof define === 'function' && define.amd) {
 			 * @desc Renvoi la liste des tâches
 			 * @returns {Object} la liste des tâches
 			 */
-			get_todos: function () {
+			getTodos: function () {
 				return todos;
 			},
 
@@ -7962,10 +7972,10 @@ else if (typeof define === 'function' && define.amd) {
 			 * @param {Object} la tâche à actualiser
 			 */
 			refresh: function (todo) {
-				var todo_to_refresh = todos[todos.indexOf(todo)];
-				todo_to_refresh.delete = !todo_to_refresh.delete;
+				var todoToRefresh = todos[todos.indexOf(todo)];
+				todoToRefresh.delete = !todoToRefresh.delete;
 				$timeout(function () {
-					todo_to_refresh.delete = !todo_to_refresh.delete;
+					todoToRefresh.delete = !todoToRefresh.delete;
 				}, 0);
 			},
 
@@ -7976,7 +7986,7 @@ else if (typeof define === 'function' && define.amd) {
 			 * @returns {Object} une promesse
 			 */
 			switch: function (todo) {
-				var this_todo = {
+				var thisTodo = {
 					activate: !todo.activate,
 					color: todo.color,
 					date: todo.date,
@@ -7986,9 +7996,9 @@ else if (typeof define === 'function' && define.amd) {
 					title: todo.title
 				};
 				var q = $q.defer();
-				forage.setItem(this_todo.id, this_todo)
+				forage.setItem(thisTodo.id, thisTodo)
 					.then(function (result) {
-						todos[todos.indexOf(todo)].activate = this_todo.activate;
+						todos[todos.indexOf(todo)].activate = thisTodo.activate;
 						q.resolve(result);
 					});
 				return q.promise;
