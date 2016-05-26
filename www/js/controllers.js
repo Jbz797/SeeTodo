@@ -4,9 +4,11 @@
 
 	angular.module('seetodo')
 
-	.controller('AppCtrl', function (ionicMaterialInk, ionicMaterialMotion, $scope, storage) {
-		ionicMaterialInk.displayEffect(); // Actionne les effets de vague sur certains éléments
-		ionicMaterialMotion.ripple(); // Annimation de la liste
+	.controller('AppCtrl', function (ionicMaterialInk, ionicMaterialMotion, $scope, storage, $timeout) {
+		$timeout(function () {
+			ionicMaterialInk.displayEffect();
+			ionicMaterialMotion.ripple();
+		}, 0);
 
 		storage.getDatabase()
 			.then(function succes(response) {
