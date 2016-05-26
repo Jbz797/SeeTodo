@@ -1,4 +1,4 @@
 # Documentation utilisateurs
 
 ## L'écran d'acceuil
-<div style="text-align:center"><img src="acceuil.jpg"/></div>
+<p align="center"><img src="acceuil.jpg"/></p>
