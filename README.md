@@ -11,10 +11,11 @@ Gestionnaire de liste des tâches pour appareils android et ios.
 - [Sass](http://sass-lang.com/)
 
 ## Installation
-#### Installer les outils `gulp`, `ionic` et `cordova` :
+#### Installer les outils `ionic` et `cordova` :
 ```
-npm install -g gulp ionic cordova
+npm install -g ionic cordova
 ```
+Pour le développement: `npm install -g gulp`
 #### Cloner le projet :
 ```
 git clone https://github.com/Jbz797/SeeTodo.git

@@ -3830,6 +3830,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	.controller('AppCtrl', function (ionicMaterialInk, $scope, storage) {
 		ionicMaterialInk.displayEffect(); // Actionne les effets de vague sur certains éléments
+
 		storage.getDatabase()
 			.then(function succes(response) {
 				console.log('SeeTodo -> Base de donnée chargée correctement');
@@ -3865,18 +3866,10 @@ return /******/ (function(modules) { // webpackBootstrap
 		});
 	})
 
-	.controller('MainCtrl', function (ionicMaterialInk, ionicMaterialMotion, $ionicPopup, $ionicSlideBoxDelegate, $scope, storage, $timeout) {
+	.controller('MainCtrl', function (ionicMaterialInk, $ionicPopup, $ionicSlideBoxDelegate, $scope, storage, $timeout) {
 
-		$scope.animation = {};
 		$scope.newTodo = {};
 		$scope.todos = storage.getTodos();
-		
-		var configEditTodos = {
-			finishDelayThrottle: 0,
-			finishSpeedPercent: 0,
-			leftOffsetPercentage: 0,
-			startVelocity: 1100
-		};
 
 		/**
 		 * @name AddTodo
@@ -3889,9 +3882,6 @@ return /******/ (function(modules) { // webpackBootstrap
 					.then(function success(response) {
 						console.log('SeeTodo -> Tâche "' + response.id + '" ajoutée en base');
 						$scope.newTodo = {};
-						$timeout(function () {
-							ionicMaterialMotion.ripple();
-						}, 0);
 
 						// Invitation au swipe
 						if(storage.countTodos() === 1) {
@@ -3933,9 +3923,6 @@ return /******/ (function(modules) { // webpackBootstrap
 				storage.edit(todo)
 					.then(function success(response) {
 						console.log('SeeTodo -> Tâche "' + response.id + '" modifiée');
-						$timeout(function () {
-							ionicMaterialMotion.ripple(configEditTodos);
-						}, 0);
 					});
 			}
 		};
@@ -4012,10 +3999,6 @@ return /******/ (function(modules) { // webpackBootstrap
 				}]
 			});
 		};
-
-		$timeout(function () {
-			ionicMaterialMotion.ripple();
-		}, 0);
 	});
 })();
 
