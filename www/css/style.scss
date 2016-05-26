@@ -83,11 +83,10 @@ ion-side-menu {
     display: block;
     margin-top: 20px;
   }
-  .slider:nth-child(2) .slider {
+  .slider:nth-child(2) ion-slide {
     border-top-width: 1px;
   }
-  .main-slide,
-  .edit-slide {
+  ion-slide {
     @include align-items(center);
     border-color: #ddd;
     border-style: solid;
