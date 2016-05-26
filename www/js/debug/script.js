@@ -3828,7 +3828,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	angular.module('seetodo')
 
-	.controller('AppCtrl', function (ionicMaterialInk, $scope, storage) {
+	.controller('AppCtrl', function (ionicMaterialInk, ionicMaterialMotion, $scope, storage) {
 		ionicMaterialInk.displayEffect(); // Actionne les effets de vague sur certains éléments
 		ionicMaterialMotion.ripple(); // Annimation de la liste
 
