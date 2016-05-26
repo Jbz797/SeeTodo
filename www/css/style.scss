@@ -78,30 +78,12 @@ ion-side-menu {
 
 .SeeTodo {
   padding: 0 10px;
-  ks-swiper-container .swiper-button-next,
-  ks-swiper-container .swiper-button-prev {
-    display: none;
-  }
-  .ios .swiper-button-next {
-    display: block;
-    right: 0;
-  }
-  .ios .swiper-button-prev {
-    display: block;
-    left: 0;
-  }
-  .ios .swiper-slide {
-    padding: 16px 32px;
-  }
-  .ios .main-slide .div_color {
-    right: 32px;
-  }
   .item-input,
-  ks-swiper-container:nth-child(2) {
+  ion-slide-box:nth-child(2) {
     display: block;
     margin-top: 20px;
   }
-  ks-swiper-container:nth-child(2) .swiper-slide {
+  ion-slide-box:nth-child(2) .swiper-slide {
     border-top-width: 1px;
   }
   .swiper-slide {
