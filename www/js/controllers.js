@@ -59,6 +59,7 @@
 				storage.add(newTodo)
 					.then(function success(response) {
 						console.log('SeeTodo -> Tâche "' + response.id + '" ajoutée en base');
+						$scope.swiper.slideNext();
 						$scope.newTodo = {};
 					});
 			}
