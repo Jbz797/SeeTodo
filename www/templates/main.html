@@ -5,7 +5,7 @@
         <input type="text" placeholder="Ce qui est à faire" ng-model="newTodo.title">
       </label>
     </form>
-    <ion-list ng-class="{'animate-ripple': animation.animationEnd}">
+    <ion-list class="animate-ripple" ng-class="{'animateEnd': animation.animationEnd}">
       <ion-slide-box class="item" show-pager="false" ng-repeat="todo in todos | orderBy : '-date' | filter: { delete: false }">
         <ion-slide class="main-slide">
           <button class="button button-small ion-checkmark" ng-class="{'button-balanced': todo.activate, 'button-balanced-100': !todo.activate}" ng-click="switchTodo(todo)"></button>

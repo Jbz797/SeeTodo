@@ -3884,6 +3884,9 @@ return /******/ (function(modules) { // webpackBootstrap
 						console.log('SeeTodo -> Tâche "' + response.id + '" ajoutée en base');
 						$scope.animation.animationEnd = true;
 						$scope.newTodo = {};
+						$timeout(function () {
+							ionicMaterialMotion.ripple();
+						}, 0);
 
 						// Invitation au swipe
 						if(storage.countTodos() === 1) {
