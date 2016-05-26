@@ -100,7 +100,6 @@
 				var that = this;
 				forage.setItem(todo.id, todo)
 					.then(function (result) {
-						that.refresh(todo);
 						q.resolve(result);
 					});
 				return q.promise;
