@@ -60,15 +60,17 @@
 						$scope.newTodo = {};
 
 						// Invitation au swipe
-						var vitesseInvitation = 500;
-						$timeout(function () {
-								$ionicSlideBoxDelegate.next();
-							}, vitesseInvitation)
-							.then(function () {
-								$timeout(function () {
-									$ionicSlideBoxDelegate.previous();
-								}, vitesseInvitation);
-							});
+						if(storage.countTodos() === 0) {
+							var vitesseInvitation = 500;
+							$timeout(function () {
+									$ionicSlideBoxDelegate.next();
+								}, vitesseInvitation)
+								.then(function () {
+									$timeout(function () {
+										$ionicSlideBoxDelegate.previous();
+									}, vitesseInvitation);
+								});
+						}
 					});
 			}
 		};
