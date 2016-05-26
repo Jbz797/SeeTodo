@@ -44,7 +44,7 @@
 
 		$scope.newTodo = {};
 		$scope.todos = storage.get_todos();
-		$scope.get_database();
+		$scope.getDatabase();
 
 		storage.get_database()
 			.then(function succes(response) {
@@ -93,6 +93,22 @@
 					});
 			}
 		};
+
+		/**
+		 * @name GetDatabase
+		 * @desc Ajoute une tâche
+		 */
+		$scope.getDatabase = function () {
+			var newTodo = $scope.newTodo;
+			if(newTodo.title.length > 0) {
+				storage.add(newTodo)
+					.then(function success(response) {
+						console.log('SeeTodo -> Tâche "' + response.id + '" ajoutée en base');
+						$scope.newTodo = {};
+					});
+			}
+		};
+
 
 		/**
 		 * @name SwithTodo
