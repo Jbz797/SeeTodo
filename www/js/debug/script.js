@@ -7693,11 +7693,6 @@ else if (typeof define === 'function' && define.amd) {
 		$scope.todos = storage.get_todos();
 		$scope.getDatabase();
 
-		storage.get_database()
-			.then(function succes(response) {
-				console.log('SeeTodo -> Base de donnée chargée correctement');
-			}); // On charge la base de donnée
-
 		/**
 		 * @name AddTodo
 		 * @desc Ajoute une tâche
@@ -7743,17 +7738,13 @@ else if (typeof define === 'function' && define.amd) {
 
 		/**
 		 * @name GetDatabase
-		 * @desc Ajoute une tâche
+		 * @desc Charge la base de donnée
 		 */
 		$scope.getDatabase = function () {
-			var newTodo = $scope.newTodo;
-			if(newTodo.title.length > 0) {
-				storage.add(newTodo)
-					.then(function success(response) {
-						console.log('SeeTodo -> Tâche "' + response.id + '" ajoutée en base');
-						$scope.newTodo = {};
-					});
-			}
+			storage.get_database()
+				.then(function success(response) {
+					console.log('SeeTodo -> Base de donnée chargée correctement');
+				});
 		};
 
 
