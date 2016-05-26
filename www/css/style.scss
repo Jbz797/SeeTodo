@@ -87,14 +87,16 @@ ion-side-menu {
     border-top-width: 1px;
   }
   .slider {
+  }
+  .slider-slides {
     @include align-items(center);
     border-color: #ddd;
     border-style: solid;
     border-bottom-width: 1px;
     color: #444;
-    /* display: -webkit-box;
+    display: -webkit-box;
     display: -ms-flexbox;
-    display: flex; */
+    display: flex;
     padding: 16px;
     white-space: nowrap;
     button {
