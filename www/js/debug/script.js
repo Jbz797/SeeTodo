@@ -3884,7 +3884,7 @@ return /******/ (function(modules) { // webpackBootstrap
 						$scope.newTodo = {};
 
 						// Invitation au swipe
-						if (storage.countTodos() === 0) {
+						if(storage.countTodos() === 0) {
 							var vitesseInvitation = 500;
 							$timeout(function () {
 									$ionicSlideBoxDelegate.next();
@@ -4064,6 +4064,7 @@ return /******/ (function(modules) { // webpackBootstrap
 			 * @returns {Number} le nombre de tâches
 			 */
 			countTodos: function () {
+				console.log('SeeTodo -> Nombre de tâches: '+todos.length);
 				return todos.length;
 			},
 
