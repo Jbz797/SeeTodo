@@ -11,3 +11,7 @@
 ## Le swipe
 <p align="center"><img src="swipe.jpg"/></p>
 - Vous pouvez faire glisser une tâche pour acceder aux boutons.
+- Les boutons :
+  - Details -> Affiche les informations détaillées de la tâche.
+  - Editer -> Permet d'ajouter ou modifier des informations concernant la tâche.
+  - Archiver -> Permet de supprimer une tâche.
