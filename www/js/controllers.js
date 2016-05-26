@@ -60,7 +60,7 @@
 						$scope.newTodo = {};
 
 						// Invitation au swipe
-						if(storage.countTodos() === 0) {
+						if(storage.countTodos() === 1) {
 							var vitesseInvitation = 500;
 							$timeout(function () {
 									$ionicSlideBoxDelegate.next();
