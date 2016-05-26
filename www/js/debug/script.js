@@ -7692,6 +7692,11 @@ else if (typeof define === 'function' && define.amd) {
 		$scope.newTodo = {};
 		$scope.swiper = {};
 		$scope.todos = storage.getTodos();
+
+		$scope.next = function () {
+			$scope.swiper.slideNext();
+		};
+
 		storage.getDatabase()
 			.then(function succes(response) {
 				console.log('SeeTodo -> Base de donnée chargée correctement');
@@ -7708,7 +7713,7 @@ else if (typeof define === 'function' && define.amd) {
 					.then(function success(response) {
 						console.log('SeeTodo -> Tâche "' + response.id + '" ajoutée en base');
 						$scope.swiper.slideNext();
-						$scope.newTodo = {};
+						$scope.next();
 					});
 			}
 		};
