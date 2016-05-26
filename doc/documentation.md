@@ -15,3 +15,10 @@
   - Details -> Affiche les informations détaillées de la tâche.
   - Editer -> Permet d'ajouter ou modifier des informations concernant la tâche.
   - Archiver -> Permet de supprimer une tâche.
+
+## Le menu
+<p align="center"><img src="menu.jpg"/></p>
+  - Toutes -> Affiche toutes les tâches.
+  - Actives -> N'affiche que les tâches pas encore effectuées.
+  - Effectuées -> N'affiche que les tâches déjà effectuées.
+  - Archivées -> Affiche les tâches supprimées, et permet de supprimer toutes les données.
