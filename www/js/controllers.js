@@ -39,12 +39,6 @@
 
 	.controller('MainCtrl', function (ionicMaterialInk, $ionicPopup, $scope, storage) {
 
-		// Options pour le swipe
-		$scope.options = {
-			loop: true,
-			effect: 'fade'
-		};
-
 		$scope.newTodo = {};
 		$scope.todos = storage.getTodos();
 		storage.getDatabase()
