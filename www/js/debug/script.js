@@ -7690,13 +7690,7 @@ else if (typeof define === 'function' && define.amd) {
 	.controller('MainCtrl', function (ionicMaterialInk, $ionicPopup, $scope, storage) {
 
 		$scope.newTodo = {};
-		$scope.swiper = {};
 		$scope.todos = storage.getTodos();
-
-		$scope.next = function () {
-			$scope.swiper.slideNext();
-		};
-
 		storage.getDatabase()
 			.then(function succes(response) {
 				console.log('SeeTodo -> Base de donnée chargée correctement');
@@ -7712,8 +7706,7 @@ else if (typeof define === 'function' && define.amd) {
 				storage.add(newTodo)
 					.then(function success(response) {
 						console.log('SeeTodo -> Tâche "' + response.id + '" ajoutée en base');
-						$scope.swiper.slideNext();
-						$scope.next();
+						$scope.newTodo = {};
 					});
 			}
 		};
