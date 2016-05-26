@@ -86,6 +86,21 @@ ion-side-menu {
   ion-slide-box:nth-child(2) .slider {
     border-top-width: 1px;
   }
+  .slider {
+    @include align-items(center);
+    border-color: #ddd;
+    border-style: solid;
+    border-bottom-width: 1px;
+    color: #444;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 16px;
+    white-space: nowrap;
+    button {
+      height: 30px;
+    }
+  }
   .main-slide {
     min-height: 66px;
     p {
