@@ -91,7 +91,7 @@ ion-side-menu {
     @include align-items(center);
     border-color: #ddd;
     border-style: solid;
-    border-bottom-width: 1px;
+    border-width: 1px 0;
     color: #444;
     display: -webkit-box;
     display: -ms-flexbox;
