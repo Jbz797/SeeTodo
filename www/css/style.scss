@@ -102,7 +102,6 @@ ion-side-menu {
     }
   }
   .main-slide {
-    min-height: 66px;
     p {
       font-size: 4.5vmin;
       line-height: 1.1;
@@ -127,7 +126,6 @@ ion-side-menu {
   }
   .edit-slide {
     @include justify-content(space-around);
-    max-height: 66px;
     padding: 16px 0;
     button {
       font-size: 3.4vmin;
