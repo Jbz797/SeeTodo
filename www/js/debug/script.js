@@ -3871,10 +3871,9 @@ return /******/ (function(modules) { // webpackBootstrap
 		$scope.newTodo = {};
 		$scope.todos = storage.getTodos();
 		var configEditTodos = {
-			finishDelayThrottle: 2,
+			finishDelayThrottle: 0,
 			finishSpeedPercent: 0.5,
 			leftOffsetPercentage: 0.8,
-			selector: '#my-list',
 			startVelocity: 1100
 		};
 
@@ -3934,7 +3933,7 @@ return /******/ (function(modules) { // webpackBootstrap
 					.then(function success(response) {
 						console.log('SeeTodo -> Tâche "' + response.id + '" modifiée');
 						$timeout(function () {
-							ionicMaterialMotion.ripple();
+							ionicMaterialMotion.ripple(configEditTodos);
 						}, 0);
 					});
 			}
