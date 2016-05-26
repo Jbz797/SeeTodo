@@ -3828,12 +3828,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	angular.module('seetodo')
 
-	.controller('AppCtrl', function (ionicMaterialInk, ionicMaterialMotion, $scope, storage,$timeout) {
-		$timeout(function(){
-	    ionicMaterialInk.displayEffect();
-	      ionicMaterialMotion.ripple();
-	  },0);
-
+	.controller('AppCtrl', function ($scope, storage, $timeout) {
 		storage.getDatabase()
 			.then(function succes(response) {
 				console.log('SeeTodo -> Base de donnée chargée correctement');
@@ -3869,7 +3864,7 @@ return /******/ (function(modules) { // webpackBootstrap
 		});
 	})
 
-	.controller('MainCtrl', function ($ionicPopup, $ionicSlideBoxDelegate, $scope, storage, $timeout) {
+	.controller('MainCtrl', function (ionicMaterialInk, ionicMaterialMotion, $ionicPopup, $ionicSlideBoxDelegate, $scope, storage, $timeout) {
 
 		$scope.newTodo = {};
 		$scope.todos = storage.getTodos();
@@ -4002,6 +3997,11 @@ return /******/ (function(modules) { // webpackBootstrap
 				}]
 			});
 		};
+
+		$timeout(function () {
+			ionicMaterialInk.displayEffect();
+			ionicMaterialMotion.ripple();
+		}, 0);
 	});
 })();
 
