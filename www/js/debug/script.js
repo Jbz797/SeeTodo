@@ -3870,6 +3870,13 @@ return /******/ (function(modules) { // webpackBootstrap
 		$scope.animation = {};
 		$scope.newTodo = {};
 		$scope.todos = storage.getTodos();
+		var configEditTodos = {
+			finishDelayThrottle: 2,
+			finishSpeedPercent: 0.5,
+			leftOffsetPercentage: 0.8,
+			selector: '#my-list',
+			startVelocity: 1100
+		};
 
 		/**
 		 * @name AddTodo
