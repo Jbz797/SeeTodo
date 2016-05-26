@@ -86,11 +86,11 @@ ion-side-menu {
   }
   .item-input,
   .slider:first-child {
+    input {
+      font-size: 4.5vmin !important;
+    }
     display: block;
     margin-top: 20px;
-  }
-  .item-input input {
-    font-size: 4.5vmin !important;
   }
   .slider:first-child ion-slide {
     border-top-width: 1px;
