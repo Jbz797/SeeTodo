@@ -3866,7 +3866,7 @@ return /******/ (function(modules) { // webpackBootstrap
 		});
 	})
 
-	.controller('MainCtrl', function (ionicMaterialInk, $ionicPopup, $ionicSlideBoxDelegate, $scope, storage,$timeout) {
+	.controller('MainCtrl', function (ionicMaterialInk, $ionicPopup, $ionicSlideBoxDelegate, $scope, storage, $timeout) {
 
 		$scope.newTodo = {};
 		$scope.todos = storage.getTodos();
@@ -3883,9 +3883,9 @@ return /******/ (function(modules) { // webpackBootstrap
 						console.log('SeeTodo -> Tâche "' + response.id + '" ajoutée en base');
 						$scope.newTodo = {};
 						$timeout(function () {
-							todoToRefresh.delete = !todoToRefresh.delete;
-						}, 0);
-						$ionicSlideBoxDelegate.next();
+							$ionicSlideBoxDelegate.next();
+							$ionicSlideBoxDelegate.previous();
+						}, 5000);
 					});
 			}
 		};

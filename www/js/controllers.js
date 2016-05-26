@@ -61,7 +61,7 @@
 						$timeout(function () {
 							$ionicSlideBoxDelegate.next();
 							$ionicSlideBoxDelegate.previous();
-						}, 1000);
+						}, 5000);
 					});
 			}
 		};
