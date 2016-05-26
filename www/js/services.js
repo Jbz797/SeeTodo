@@ -151,19 +151,6 @@
 			},
 
 			/**
-			 * @name Refresh
-			 * @desc Désactive puis re-active une tâche afin de rénitialiser le swipe
-			 * @param {Object} la tâche à actualiser
-			 */
-			refresh: function (todo) {
-				var todoToRefresh = todos[todos.indexOf(todo)];
-				todoToRefresh.delete = !todoToRefresh.delete;
-				$timeout(function () {
-					todoToRefresh.delete = !todoToRefresh.delete;
-				}, 0);
-			},
-
-			/**
 			 * @name Swith
 			 * @desc Inverse l'état d'activation d'une tâche en base et met à jour le scope
 			 * @param {Object} la tâche à inverser
