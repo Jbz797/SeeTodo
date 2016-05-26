@@ -7729,7 +7729,10 @@ else if (typeof define === 'function' && define.amd) {
 		 */
 		$scope.editTodo = function (todo) {
 			if(todo.title.length > 0) {
-				storage.edit(todo);
+				storage.edit(todo)
+					.then(function success(response) {
+						console.log('SeeTodo -> Tâche "' + todo.id + '" modifiée');
+					});
 			}
 		};
 
@@ -7897,7 +7900,6 @@ else if (typeof define === 'function' && define.amd) {
 				var that = this;
 				forage.setItem(todo.id, todo)
 					.then(function (result) {
-						console.log('SeeTodo -> Tâche "' + todo.id + '" modifiée');
 						that.refresh(todo);
 						q.resolve(result);
 					});
@@ -7918,7 +7920,6 @@ else if (typeof define === 'function' && define.amd) {
 							}
 						})
 						.then(function (result) {
-							console.log('SeeTodo -> Base de donnée chargée correctement');
 							q.resolve(result);
 						});
 					return q.promise;

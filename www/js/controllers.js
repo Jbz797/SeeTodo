@@ -82,7 +82,10 @@
 		 */
 		$scope.editTodo = function (todo) {
 			if(todo.title.length > 0) {
-				storage.edit(todo);
+				storage.edit(todo)
+					.then(function success(response) {
+						console.log('SeeTodo -> Tâche "' + todo.id + '" modifiée');
+					});
 			}
 		};
 

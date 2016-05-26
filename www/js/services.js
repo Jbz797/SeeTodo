@@ -90,7 +90,6 @@
 				var that = this;
 				forage.setItem(todo.id, todo)
 					.then(function (result) {
-						console.log('SeeTodo -> Tâche "' + todo.id + '" modifiée');
 						that.refresh(todo);
 						q.resolve(result);
 					});
@@ -111,7 +110,6 @@
 							}
 						})
 						.then(function (result) {
-							console.log('SeeTodo -> Base de donnée chargée correctement');
 							q.resolve(result);
 						});
 					return q.promise;
