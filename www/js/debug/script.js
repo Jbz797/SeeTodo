@@ -3870,6 +3870,7 @@ return /******/ (function(modules) { // webpackBootstrap
 		$scope.animation = {};
 		$scope.newTodo = {};
 		$scope.todos = storage.getTodos();
+		
 		var configEditTodos = {
 			finishDelayThrottle: 0,
 			finishSpeedPercent: 0,
