@@ -7,3 +7,7 @@
 - La liste des tâches :
   - Le premier bouton permet de passer le spécifier que vous avez effectué une tâche.
   - A droite se trouve la couleur définissant la catégorie de la tâche (par exemple içi nous avons le bleu pour les tâches professionnelles et l'orange pour les personnelles).
+
+## Le swipe
+<p align="center"><img src="swipe.jpg"/></p>
+- Vous pouvez faire glisser une tâche pour acceder aux boutons.
