@@ -83,10 +83,10 @@ ion-side-menu {
     display: block;
     margin-top: 20px;
   }
-  ion-slide-box:nth-child(2) .swiper-slide {
+  ion-slide-box:nth-child(2) .slider {
     border-top-width: 1px;
   }
-  .swiper-slide {
+  .slider {
     @include align-items(center);
     border-color: #ddd;
     border-style: solid;
