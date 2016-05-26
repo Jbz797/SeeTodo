@@ -46,7 +46,9 @@
 				forage.clear()
 					.then(function (result) {
 						console.log('SeeTodo -> Toutes les tâches ont bien été supprimées');
-						todos = [];
+						for(var variable in todos) {
+							todos[variable] = {};
+						}
 						q.resolve(result);
 					});
 				return q.promise;
