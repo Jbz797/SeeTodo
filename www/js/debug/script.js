@@ -3828,7 +3828,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	angular.module('seetodo')
 
-	.controller('AppCtrl', function ($scope, storage, $timeout) {
+	.controller('AppCtrl', function (ionicMaterialInk, $scope, storage) {
+		ionicMaterialInk.displayEffect(); // Actionne les effets de vague sur certains éléments
 		storage.getDatabase()
 			.then(function succes(response) {
 				console.log('SeeTodo -> Base de donnée chargée correctement');
@@ -3998,10 +3999,6 @@ return /******/ (function(modules) { // webpackBootstrap
 			});
 		};
 
-		$timeout(function () {
-			ionicMaterialInk.displayEffect();
-			ionicMaterialMotion.ripple();
-		}, 0);
 	});
 })();
 
