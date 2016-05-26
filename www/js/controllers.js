@@ -44,7 +44,7 @@
 
 		$scope.newTodo = {};
 		$scope.todos = storage.get_todos();
-		$scope.getDatabase();
+		$scope.getDatabase;
 
 		/**
 		 * @name AddTodo
