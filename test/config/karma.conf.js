@@ -10,20 +10,19 @@ module.exports = function (config) {
 		files: [
 			'www/lib/ionic/release/js/ionic.bundle.js',
 			'www/lib/ionic-material/dist/ionic.material.js',
-			'www/lib/swiper/dist/js/swiper.min.js',
-			'www/lib/angular-swiper/dist/angular-swiper.js',
 			'www/lib/localforage/dist/localforage.min.js',
 			'www/lib/angular-localforage/dist/angular-localForage.min.js',
-			'node_modules/angular-mocks/angular-mocks.js',
 			'www/js/*.js',
 			'test/unit/**/*.js'
 		],
 		frameworks: ['jasmine'],
 		plugins: [
-			'karma-chai-sinon',
+			'angular-mocks',
+			'karma-jasmine',
 			'karma-mocha-reporter',
 			'karma-mocha',
-			'karma-phantomjs-launcher'
+			'karma-phantomjs-launcher',
+			'mocha'
 		],
 		reporters: ['mocha'],
 		singleRun: false

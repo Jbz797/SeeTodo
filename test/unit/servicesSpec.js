@@ -1,35 +1,36 @@
 /*jshint -W020 */
 
 (function () {
-	'use strict';
 
-	describe('Angular LocalForage', function () {
+	beforeEach(module('seetodo'));
 
-		angular
-			.module('app', ['LocalForage']);
+	describe('Services', function () {
 
-		beforeEach(module('app'));
+		var $q;
+		var storage;
 
-		var $rootScope,
-			$injector,
-			$localForage;
+		var todoTest = {
+			activate: true,
+			color: false,
+			date: new Date(),
+			delete: false,
+			description: 'Description',
+			id: Math.floor(Math.random() * 100000) + 1,
+			title: 'Titre'
+		};
 
-		beforeEach(function () {
-			inject(function (_$rootScope_, _$localForage_) {
-				//inject(function (_$rootScope_) {
-				$rootScope = _$rootScope_;
-				$localForage = _$localForage_;
-				//$injector = angular.injector(['ng', 'LocalForage']);
-				//$localForage = $injector.get('$localForage');
-			});
-		});
+		beforeEach(inject(function (_$q_, _$rootScope_, _storage_) {
+			$q = _$q_;
+			$rootscope = _$rootScope_;
+			storage = _storage_;
+		}));
 
 		it('should resolve a promise', function () {
 
 			$rootScope.$apply(function () {
-				$localForage.getPromise()
+				storage.add(todoTest)
 					.then(function success(data) {
-						console.log('$localForage.getPromise()', data);
+						console.log('storage.getPromise()', data);
 						expect(data)
 							.toBe('OK');
 					});
@@ -40,26 +41,24 @@
 		it('should setItem', function () {
 
 			//$rootScope.$apply(function () {
-			//  $localForage.setItem().then(
+			//  storage.setItem().then(
 			//    function success(data) {
-			//      console.log('$localForage.setItem()', data);
+			//      console.log('storage.setItem()', data);
 			//    },
 			//    function error(err) {
-			//      console.log('$localForage.setItem()', err);
+			//      console.log('storage.setItem()', err);
 			//    });
 			//});
 
 			runs(function () {
-				return $localForage.setItem()
+				return storage.setItem()
 					.then(function success(data) {
-						console.log('$localForage.setItem()', data);
+						console.log('storage.setItem()', data);
 						expect(data)
 							.toBe('Mr. Bean');
 					});
 			});
 
 		});
-
-
 	});
 })();
