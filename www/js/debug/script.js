@@ -7691,7 +7691,6 @@ else if (typeof define === 'function' && define.amd) {
 
 		$scope.newTodo = {};
 		$scope.todos = storage.get_todos();
-		$scope.getDatabase;
 
 		/**
 		 * @name AddTodo
@@ -7820,6 +7819,7 @@ else if (typeof define === 'function' && define.amd) {
 				}]
 			});
 		};
+		$scope.getDatabase();
 	});
 })();
 
