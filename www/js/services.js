@@ -60,7 +60,7 @@
 			 * @returns {Number} le nombre de tâches
 			 */
 			countTodos: function () {
-				console.log(todos);
+				console.log('SeeTodo -> Nombre de tâches: ' + todos.length);
 				return todos.length;
 			},
 
