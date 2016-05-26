@@ -44,6 +44,8 @@
 
 		$scope.newTodo = {};
 		$scope.todos = storage.get_todos();
+		$scope.get_database();
+
 		storage.get_database()
 			.then(function succes(response) {
 				console.log('SeeTodo -> Base de donnée chargée correctement');
