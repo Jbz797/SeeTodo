@@ -1,3 +1,3 @@
 # Documentation utilisateurs
 
-![Page d'acceuil](acceuil.png)
+![Page d'acceuil](acceuil.jpg)

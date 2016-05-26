@@ -1,6 +1,6 @@
 # SeeTodo *v1.0*
 Gestionnaire de liste des tâches pour appareils android et ios.
-[Documentation utilisateurs](https://github.com/Jbz797/SeeTodo/blob/master/doc/documentation.md)
+- [Documentation utilisateurs](https://github.com/Jbz797/SeeTodo/blob/master/doc/documentation.md)
 
 ## Réalisé avec les technologies suivantes
 - [AngularJS](https://angularjs.org/)
