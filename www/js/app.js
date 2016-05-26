@@ -2,7 +2,7 @@
 
 	'use strict';
 
-	angular.module('seetodo', ['ionic', 'ionic-material', 'ksSwiper', 'LocalForageModule'])
+	angular.module('seetodo', ['ionic', 'ionic-material', 'LocalForageModule'])
 
 	.run(function ($ionicPlatform) {
 		// Configuration par défault de Ionic

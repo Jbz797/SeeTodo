@@ -20,25 +20,18 @@ var paths = {
 
 // Chemins vers les fichiers des librairies
 var libs = {
-	angular_localForage: {
+	angularLocalForage: {
 		js: './www/lib/angular-localforage/dist/angular-localForage.js'
-	},
-	angular_swiper: {
-		js: './www/lib/angular-swiper/dist/angular-swiper.js'
 	},
 	ionic: {
 		css: './scss/ionic.app.scss'
 	},
-	ionic_material: {
+	ionicMaterial: {
 		css: './www/lib/ionic-material/src/scss/index.scss',
 		js: './www/lib/ionic-material/dist/ionic.material.js'
 	},
 	localforage: {
 		js: './www/lib/localforage/dist/localforage.js'
-	},
-	swiper: {
-		css: './www/lib/swiper/dist/css/swiper.css',
-		js: './www/lib/swiper/dist/js/swiper.js'
 	}
 };
 
@@ -50,7 +43,7 @@ gulp.task('default', ['sass', 'js', 'watch']);
 
 // Minifie et concatène le css
 gulp.task('sass', function (done) {
-	gulp.src(libs.ionic_material.css)
+	gulp.src(libs.ionicMaterial.css)
 		.pipe(sass())
 		.on('error', sass.logError)
 		.pipe(minifyCss({
@@ -60,7 +53,7 @@ gulp.task('sass', function (done) {
 			extname: '.min.css'
 		}))
 		.pipe(gulp.dest('./www/lib/ionic-material/src/scss/'));
-	gulp.src([libs.ionic.css, libs.swiper.css, './www/lib/ionic-material/src/scss/index.min.css', paths.sass])
+	gulp.src([libs.ionic.css, './www/lib/ionic-material/src/scss/index.min.css', paths.sass])
 		.pipe(concat('style.css'))
 		.pipe(sass())
 		.on('error', sass.logError)
@@ -76,10 +69,10 @@ gulp.task('sass', function (done) {
 
 // Minifie et concatène le js
 gulp.task('js', function (done) {
-	gulp.src([libs.localforage.js, libs.angular_localForage.js, libs.ionic_material.js, libs.swiper.js, libs.angular_swiper.js, paths.js])
+	gulp.src([libs.localforage.js, libs.angularLocalForage.js, libs.ionicMaterial.js, paths.js])
 		.pipe(concat('script.js'))
 		.pipe(gulp.dest('./www/js/debug'));
-	gulp.src([libs.localforage.js, libs.angular_localForage.js, libs.ionic_material.js, libs.swiper.js, libs.angular_swiper.js, paths.js])
+	gulp.src([libs.localforage.js, libs.angularLocalForage.js, libs.ionicMaterial.js, paths.js])
 		.pipe(ngAnnotate())
 		.pipe(concat('script.js'))
 		.pipe(minify({
