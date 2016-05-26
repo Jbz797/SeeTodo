@@ -3882,12 +3882,17 @@ return /******/ (function(modules) { // webpackBootstrap
 					.then(function success(response) {
 						console.log('SeeTodo -> Tâche "' + response.id + '" ajoutée en base');
 						$scope.newTodo = {};
+
+						// Invitation au swipe
+						var vitesseInvitation = 500;
 						$timeout(function () {
-							$ionicSlideBoxDelegate.next();
-						}, 500);
-						$timeout(function () {
-							$ionicSlideBoxDelegate.previous();
-						}, 1000);
+								$ionicSlideBoxDelegate.next();
+							}, vitesseInvitation)
+							.then(function () {
+								$timeout(function () {
+									$ionicSlideBoxDelegate.previous();
+								}, vitesseInvitation);
+							});
 					});
 			}
 		};
