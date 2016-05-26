@@ -4057,6 +4057,15 @@ return /******/ (function(modules) { // webpackBootstrap
 			},
 
 			/**
+			 * @name countTodos
+			 * @desc Renvoi le nombre de tâches actives
+			 * @returns {Number} le nombre de tâches
+			 */
+			getTodos: function () {
+				return todos.length;
+			},
+
+			/**
 			 * @name Delete
 			 * @desc Supprime une tâche en base et met à jour le scope
 			 * @param {Object} la tâche à supprimer
