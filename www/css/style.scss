@@ -78,7 +78,9 @@ ion-side-menu {
 
 .SeeTodo {
   padding: 0 10px;
-  .item-input,
+  .slider {
+    margin: 0;
+  }
   .slider:first-child {
     display: block;
     margin-top: 20px;
