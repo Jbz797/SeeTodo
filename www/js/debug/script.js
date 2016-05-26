@@ -7691,7 +7691,9 @@ else if (typeof define === 'function' && define.amd) {
 
 		$scope.newTodo = {};
 		$scope.todos = storage.get_todos();
-		storage.get_database(); // On charge la base de donnée
+		storage.get_database().then(function succes(response){
+			console.log('SeeTodo -> Base de donnée chargée correctement');
+		}); // On charge la base de donnée
 
 		/**
 		 * @name AddTodo
