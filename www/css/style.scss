@@ -86,9 +86,9 @@ ion-side-menu {
   ion-slide-box:nth-child(2) .slider {
     border-top-width: 1px;
   }
-  .slider {
-  }
-  .slider-slides {
+
+  .main-slide,
+  .edit-slide {
     @include align-items(center);
     border-color: #ddd;
     border-style: solid;
