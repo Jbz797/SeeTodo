@@ -87,10 +87,6 @@ ion-side-menu {
     border-top-width: 1px;
   }
   .slider {
-    @include align-items(center);
-    border-color: #ddd;
-    border-style: solid;
-    border-bottom-width: 1px;
     color: #444;
     display: -webkit-box;
     display: -ms-flexbox;
