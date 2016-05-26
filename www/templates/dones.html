@@ -5,17 +5,17 @@
         <input type="text" placeholder="Ce qui est à faire" ng-model="newTodo.title">
       </label>
     </form>
-    <ks-swiper-container class="animate-ripple" ng-repeat="todo in todos | orderBy : '-date' | filter: { delete: false, activate: false }" loop="true" swiper="swiper" on-ready="onReadySwiper(swiper)">
-        <ks-swiper-slide class="swiper-slide main-slide">
-          <button class="button button-small ion-checkmark" ng-class="{'button-balanced': todo.activate, 'button-balanced-100': !todo.activate}" ng-click="switchTodo(todo)"></button>
-          <p ng-class="{'inactive': !todo.activate}">{{todo.title}}</p>
-          <div class="div_color button-{{todo.color}}"></div>
-        </ks-swiper-slide>
-        <ks-swiper-slide class="swiper-slide edit-slide">
-          <button class="button button-small button-positive" ng-click="showDetailsPopup(todo)">Détails</button>
-          <button class="button button-small button-calm" ng-click="showEditPopup(todo)">Editer</button>
-          <button class="button button-small button-assertive" ng-click="deleteTodo(todo)">Archiver</button>
-        </ks-swiper-slide>
-    </ks-swiper-container>
+    <ion-slide-box show-pager="false" ng-repeat="todo in todos | orderBy : '-date' | filter: { delete: false, activate: false }">
+      <ion-slide class="main-slide">
+        <button class="button button-small ion-checkmark" ng-class="{'button-balanced': todo.activate, 'button-balanced-100': !todo.activate}" ng-click="switchTodo(todo)"></button>
+        <p ng-class="{'inactive': !todo.activate}">{{todo.title}}</p>
+        <div class="div_color button-{{todo.color}}"></div>
+      </ion-slide>
+      <ion-slide class="edit-slide">
+        <button class="button button-small button-positive" ng-click="showDetailsPopup(todo)">Détails</button>
+        <button class="button button-small button-calm" ng-click="showEditPopup(todo)">Editer</button>
+        <button class="button button-small button-assertive" ng-click="deleteTodo(todo)">Archiver</button>
+      </ion-slide>
+    </ion-slide-box>
   </ion-content>
 </ion-view>
