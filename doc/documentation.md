@@ -1,3 +1,4 @@
 # Documentation utilisateurs
 
-![Page d'acceuil](acceuil.jpg)
+## L'écran d'acceuil
+<div style="text-align:center"><img src="acceuil.jpg"/></div>
