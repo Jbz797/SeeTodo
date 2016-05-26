@@ -6,6 +6,7 @@
 
 	.controller('AppCtrl', function (ionicMaterialInk, $scope, storage) {
 		ionicMaterialInk.displayEffect(); // Actionne les effets de vague sur certains éléments
+		ionicMaterialMotion.ripple(); // Annimation de la liste
 
 		storage.getDatabase()
 			.then(function succes(response) {
@@ -42,12 +43,10 @@
 		});
 	})
 
-	.controller('MainCtrl', function (ionicMaterialInk, $ionicPopup, $ionicSlideBoxDelegate, $scope, storage, $timeout) {
+	.controller('MainCtrl', function ($ionicPopup, $ionicSlideBoxDelegate, $scope, storage, $timeout) {
 
 		$scope.newTodo = {};
 		$scope.todos = storage.getTodos();
-
-		ionic.material.motion.ripple();
 
 		/**
 		 * @name AddTodo
