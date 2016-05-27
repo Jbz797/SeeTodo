@@ -15,7 +15,7 @@ Gulp est un tasks runners, outil permettant d'automatiser les tâches de dévelo
 #### config.xml
 Contient les informations concernant le projet *Ionic*.
 #### .stylelinttrc, .jshintrc, .htmlhintrc et .csscomb.json
-Options des linters
+Options des linters.
 #### .gitignore
 Liste les fichiers/dossiers à ignorer par git.
 #### .editorconfig
