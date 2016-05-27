@@ -3,9 +3,9 @@
 ## L'écran d’accueil
 <p align="center"><img src="acceuil.jpg"/></p>
 - En haut à gauche se trouve un bouton permettant d'afficher le menu.
-- Le champ *"ce qui est à faire"* vous permet d'ajouter de nouvelles tâches.
+- Le champ *"ce qui est à faire"* permet d'ajouter de nouvelles tâches.
 - La liste des tâches :
-  - Le premier bouton permet de passer le spécifier que vous avez effectué une tâche.
+  - Le premier bouton permet de spécifier qu'une tâche est effectuée.
   - A droite se trouve la couleur définissant la catégorie de la tâche (par exemple ici nous avons le bleu pour les tâches professionnelles et l'orange pour les personnelles).
 
 ## Le swipe
@@ -24,4 +24,4 @@
 - Archivées -> Affiche les tâches supprimées, et permet de supprimer toutes les données.
 
 ## Contact
-**Pour tout problème ou demande n'hésitez pas à me contacter via la [page dédiée](https://github.com/Jbz797/SeeTodo/issues)**
+**Pour tout problème ou demande n'hésitez pas à me contacter via la [page dédiée](https://github.com/Jbz797/SeeTodo/issues).**
