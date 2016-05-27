@@ -11,6 +11,7 @@ Gulp est un tasks runners, outil permettant d'automatiser les tâches de dévelo
 - **bump** -> Incrémente les versions du bower.json et du package.json.
 - **git** -> Commit automatique de la nouvelle version.
 - **watch** -> Surveille les fichiers *sass* et *js* et lance les tâches précédentes à toute modification.
+
 #### config.xml
 Contient les informations concernant le projet Ionic.
 #### .stylelinttrc, .jshintrc, .htmlhintrc et .csscomb.json
