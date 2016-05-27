@@ -12,12 +12,12 @@ module.exports = function (config) {
 			'www/lib/ionic-material/dist/ionic.material.js',
 			'www/lib/localforage/dist/localforage.js',
 			'www/lib/angular-localforage/dist/angular-localForage.js',
+			'node_modules/angular-mocks/angular-mocks.js',
 			'www/js/debug/script.js',
 			'test/unit/*.js'
 		],
 		frameworks: ['mocha', 'chai-sinon'],
 		plugins: [
-			'angular-mocks',
 			'karma-chai-sinon',
 			'karma-mocha-reporter',
 			'karma-mocha',

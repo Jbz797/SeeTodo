@@ -22,6 +22,8 @@ Liste les fichiers/dossiers à ignorer par git.
 Active certaines règles concernant l'éditeur (compatible avec la majorité des éditeurs ou IDE).
 #### ./hooks/
 Ce dossier contient tous les scripts liés à *Cordova*.
+#### ./plugins/
+Ce dossier contient les plugins *Cordova*.
 #### ./resources/
 Ce dossier contient notamment les icônes de l'application.
 #### ./test/

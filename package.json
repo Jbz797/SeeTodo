@@ -32,7 +32,6 @@
     "stylelint": "^6.4.2",
     "stylelint-config-standard": "^7.0.0"
   },
-  "cordovaPlugins": [],
   "cordovaPlatforms": [
     "ios",
     "android"
