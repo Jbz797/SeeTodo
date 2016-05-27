@@ -32,8 +32,7 @@
 			expect(storage.add)
 				.to.be.a('function');
 		});
-
-		/*it('La méthode "add" doit enregistrer une todo en base', function () {
+		it('La méthode "add" doit enregistrer une todo en base', function () {
 			storage.add(todoTest)
 				.then(function success(response) {
 					console.log('test');
@@ -42,7 +41,7 @@
 			console.log(result);
 			expect(result.title.to.be.equal(todoTest.title));
 			expect(result.description.to.be.equal(todoTest.description));
-		});*/
+		});
 	});
 
 })();
