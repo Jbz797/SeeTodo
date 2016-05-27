@@ -32,16 +32,12 @@
 			expect(storage.add)
 				.to.be.a('function');
 		});
-		/* it('La méthode "add" doit enregistrer une todo en base', function () {
-			storage.add(todoTest)
-				.then(function success(response) {
-					console.log('test');
-				});
+		it('La méthode "add" doit enregistrer une todo en base', function () {
+			storage.add(todoTest);
 			var result = storage.getTodo(todoTest);
-			console.log(result);
 			expect(result.title.to.be.equal(todoTest.title));
 			expect(result.description.to.be.equal(todoTest.description));
-		}); */
+		});
 	});
 
 })();
