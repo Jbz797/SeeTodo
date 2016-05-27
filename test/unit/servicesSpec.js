@@ -27,12 +27,12 @@
 			});
 		});
 
-		/* Add
+		// Add
 		it('La méthode "add" existe', function () {
 			expect(storage.add)
 				.to.be.a('function');
 		});
-		it('La méthode "add" doit enregistrer une todo en base', function () {
+		/* it('La méthode "add" doit enregistrer une todo en base', function () {
 			storage.add(todoTest)
 				.then(function success(response) {
 					console.log('test');
