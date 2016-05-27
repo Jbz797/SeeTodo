@@ -28,7 +28,7 @@ git clone https://github.com/Jbz797/SeeTodo.git
 ```
 cd SeeTodo
 ```
-#### Construire les plateformes et modules :
+#### Construire les plateformes et dépendances :
 ```
 ionic platform add ios
 ionic platform add android
@@ -40,6 +40,7 @@ npm install -g ripple-emulator
 ripple emulate
 ```
 #### Tester l'application depuis son appareil Android :
+Installer le `sdk android` puis lancer la commande :
 ```
 ionic run android
 ```
