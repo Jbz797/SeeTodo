@@ -12,16 +12,16 @@
 <p align="center"><img src="swipe.jpg"/></p>
 - Vous pouvez faire glisser une tâche pour accéder aux boutons.
 - Les boutons :
-  - Détails -> Affiche les informations détaillées de la tâche.
-  - Éditer -> Permet d'ajouter ou modifier des informations concernant la tâche.
-  - Archiver -> Permet de supprimer une tâche.
+  - **Détails** -> Affiche les informations détaillées de la tâche.
+  - **Éditer** -> Permet d'ajouter ou modifier des informations concernant la tâche.
+  - **Archiver** -> Permet de supprimer une tâche.
 
 ## Le menu
 <p align="center"><img src="menu.jpg"/></p>
-- Toutes -> Affiche toutes les tâches.
-- Actives -> N'affiche que les tâches pas encore effectuées.
-- Effectuées -> N'affiche que les tâches déjà effectuées.
-- Archivées -> Affiche les tâches supprimées, et permet de supprimer toutes les données.
+- **Toutes** -> Affiche toutes les tâches.
+- **Actives** -> N'affiche que les tâches pas encore effectuées.
+- **Effectuées** -> N'affiche que les tâches déjà effectuées.
+- **Archivées** -> Affiche les tâches supprimées, et permet de supprimer toutes les données.
 
 ## Contact
 **Pour tout problème ou demande n'hésitez pas à me contacter via la [page dédiée](https://github.com/Jbz797/SeeTodo/issues).**
