@@ -2,7 +2,7 @@
 
 (function () {
 
-	beforeEach(module('seetodo'));
+	'use strict';
 
 	describe('Services', function () {
 
@@ -19,46 +19,31 @@
 			title: 'Titre'
 		};
 
-		beforeEach(inject(function (_$q_, _$rootScope_, _storage_) {
-			$q = _$q_;
-			$rootscope = _$rootScope_;
-			storage = _storage_;
-		}));
-
-		it('should resolve a promise', function () {
-
-			$rootScope.$apply(function () {
-				storage.add(todoTest)
-					.then(function success(data) {
-						console.log('storage.getPromise()', data);
-						expect(data)
-							.toBe('OK');
-					});
+		beforeEach(function () {
+			angular.mock.module('seetodo');
+			angular.mock.inject(function (_$q_, _storage_) {
+				$q = _$q_;
+				storage = _storage_;
 			});
-
 		});
 
-		it('should setItem', function () {
+		// Add
+		it('La méthode "add" existe', function () {
+			expect(storage.add)
+				.to.be.a('function');
+		});
 
-			//$rootScope.$apply(function () {
-			//  storage.setItem().then(
-			//    function success(data) {
-			//      console.log('storage.setItem()', data);
-			//    },
-			//    function error(err) {
-			//      console.log('storage.setItem()', err);
-			//    });
-			//});
-
-			runs(function () {
-				return storage.setItem()
-					.then(function success(data) {
-						console.log('storage.setItem()', data);
-						expect(data)
-							.toBe('Mr. Bean');
-					});
-			});
-
+		it('La méthode "add" doit enregistrer une todo en base', function () {
+			/*mock = sinon.mock(storage);
+			storage.add(todoTest)
+				.then(function success(response) {
+					console.log('test');
+				});
+			var result = storage.getTodo(todoTest);
+			console.log(result);
+			expect(result.title.to.be.equal(todoTest.title));
+			expect(result.description.to.be.equal(todoTest.description));*/
 		});
 	});
+
 })();

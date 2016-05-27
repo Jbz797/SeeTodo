@@ -1,6 +1,6 @@
 {
   "name": "seetodo",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "SeeTodo: gestionnaire de liste des tâches pour appareils android et ios.",
   "scripts": {
     "test": "karma start test/config/karma.conf.js"
@@ -19,14 +19,16 @@
   },
   "devDependencies": {
     "angular-mocks": "^1.5.5",
-    "jasmine": "^2.4.1",
+    "chai": "^3.5.0",
     "karma": "^0.13.22",
-    "karma-jasmine": "^1.0.2",
+    "karma-chai-sinon": "^0.1.5",
     "karma-mocha": "^1.0.1",
     "karma-mocha-reporter": "^2.0.3",
     "karma-phantomjs-launcher": "^1.0.0",
     "mocha": "^2.5.3",
     "phantomjs-prebuilt": "^2.1.7",
+    "sinon": "^1.17.4",
+    "sinon-chai": "^2.8.0",
     "stylelint": "^6.4.2",
     "stylelint-config-standard": "^7.0.0"
   },
