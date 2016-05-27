@@ -37,4 +37,4 @@ Ici se trouve le cœur du projet, notamment les fichiers *css*, *js* et *html*.
 
 ## Contact
 **SeeTodo est un projet libre et collaboratif, n'hésitez donc pas à Fork !**
-**Pour tout problème ou demande n'hésitez pas à me contacter via la [page dédiée](https://github.com/Jbz797/SeeTodo/issues).**
+**Pour tout problème ou demande n'hésitez pas à reporter via la [page dédiée](https://github.com/Jbz797/SeeTodo/issues).**

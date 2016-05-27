@@ -24,4 +24,4 @@
 - **Archivées** -> Affiche les tâches supprimées, et permet de supprimer toutes les données.
 
 ## Contact
-**Pour tout problème ou demande n'hésitez pas à me contacter via la [page dédiée](https://github.com/Jbz797/SeeTodo/issues).**
+**Pour tout problème ou demande n'hésitez pas à reporter via la [page dédiée](https://github.com/Jbz797/SeeTodo/issues).**
