@@ -6,14 +6,14 @@
 Contiennent la liste de toutes les dépendances (`npm install` pour les installer).
 #### gulpflie.js
 Gulp est un tasks runners, outil permettant d'automatiser les tâches de développement récurrentes. Après l'avoir installé globalement (`npm install -g gulp`) vous pouvez le lancer avec la commande `gulp`. Les tâches suivantes seront exécutées:
-- **sass** -> Minifie et concatène les fichiers css.
-- **js** -> Minifie et concatène les fichiers js.
-- **bump** -> Incrémente les versions du bower.json et du package.json.
+- **sass** -> Minifie et concatène les fichiers *css*.
+- **js** -> Minifie et concatène les fichiers *js*.
+- **bump** -> Incrémente les versions du *bower.json* et du *package.json*.
 - **git** -> Commit automatique de la nouvelle version.
 - **watch** -> Surveille les fichiers *sass* et *js* et lance les tâches précédentes à toute modification.
 
 #### config.xml
-Contient les informations concernant le projet Ionic.
+Contient les informations concernant le projet *Ionic*.
 #### .stylelinttrc, .jshintrc, .htmlhintrc et .csscomb.json
 Options des linters
 #### .gitignore
